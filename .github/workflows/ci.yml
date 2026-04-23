@@ -2,7 +2,12 @@ name: CI
 
 on:
   push:
+    branches: [main]
   pull_request:
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 # Per feedback_ci_split_lint_and_test.md: all 5 jobs run in parallel,
 # not as chained steps in a single job.  Each surfaces its own failure
