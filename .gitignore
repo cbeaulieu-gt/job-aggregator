@@ -32,6 +32,9 @@ ENV/
 # Git worktrees (local-only by convention)
 .worktrees/
 
+# Temporary scratch directory (local only — clean-venv smoke tests, etc.)
+.tmp/
+
 # IDE / editor
 .vscode/
 .idea/

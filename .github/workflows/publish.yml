@@ -1,0 +1,87 @@
+name: Publish to PyPI
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+# Trusted publishing via OIDC — no API tokens stored anywhere.
+# Prerequisites:
+#   1. Register the project on PyPI + TestPyPI with trusted publisher:
+#      repo = cbeaulieu-gt/job-aggregator, workflow = publish.yml
+#   2. Create GitHub environments "testpypi" and "pypi" (optional but
+#      strongly recommended — adds manual approval gate for production).
+
+jobs:
+  # --------------------------------------------------------------------------
+  # Build sdist + wheel
+  # --------------------------------------------------------------------------
+  build:
+    name: Build distributions
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b # v8.1.0
+        with:
+          enable-cache: true
+
+      - name: Build sdist and wheel
+        run: uv build
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+  # --------------------------------------------------------------------------
+  # Publish to TestPyPI for release-candidate tags (v*.*.*-rc* / v*.*.*-alpha*)
+  # --------------------------------------------------------------------------
+  publish-testpypi:
+    name: Publish to TestPyPI (RC / alpha)
+    needs: build
+    runs-on: ubuntu-latest
+    # Only run for pre-release tags
+    if: >-
+      contains(github.ref_name, '-rc') ||
+      contains(github.ref_name, '-alpha')
+    environment: testpypi
+    permissions:
+      id-token: write
+    steps:
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+      - name: Publish to TestPyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          repository-url: https://test.pypi.org/legacy/
+
+  # --------------------------------------------------------------------------
+  # Publish to production PyPI for final tags (v*.*.* without pre-release suffix)
+  # --------------------------------------------------------------------------
+  publish-pypi:
+    name: Publish to PyPI (final release)
+    needs: build
+    runs-on: ubuntu-latest
+    # Only run for final version tags (not RC / alpha)
+    if: >-
+      !contains(github.ref_name, '-rc') &&
+      !contains(github.ref_name, '-alpha')
+    environment: pypi
+    permissions:
+      id-token: write
+    steps:
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1

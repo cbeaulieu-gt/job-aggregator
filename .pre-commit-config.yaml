@@ -1,0 +1,10 @@
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    # Keep this version in sync with the ruff version in [dependency-groups].dev
+    rev: v0.15.11
+    hooks:
+      # Linter — auto-fix safe violations on commit
+      - id: ruff-check
+        args: [--fix]
+      # Formatter — enforce ruff format style
+      - id: ruff-format
