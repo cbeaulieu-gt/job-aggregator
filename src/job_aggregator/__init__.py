@@ -2,13 +2,25 @@
 
 Provides pluggable source plugins, normalized job-record output,
 and a structured CLI.  No scoring, no database, no LLM dependencies.
-
-Public exports will be added here as subsequent issues are implemented
-(Issues B through F in the v1 execution plan).
 """
 
 import logging
 from importlib.metadata import PackageNotFoundError, version
+
+from job_aggregator.base import JobSource
+from job_aggregator.errors import (
+    CredentialsError,
+    JobAggregatorError,
+    PluginConflictError,
+    SchemaVersionError,
+    ScrapeError,
+)
+from job_aggregator.schema import (
+    JobRecord,
+    PluginField,
+    PluginInfo,
+    SearchParams,
+)
 
 # ---------------------------------------------------------------------------
 # Version
@@ -34,9 +46,21 @@ except PackageNotFoundError:
 logging.getLogger(__name__).addHandler(logging.NullHandler())
 
 # ---------------------------------------------------------------------------
-# Public API surface — intentionally empty for Issue A (skeleton).
-# Real exports (JobSource, list_plugins, get_plugin, JobRecord, …) are
-# added by Issues B through F.
+# Public API surface — Issue B exports.
+# Remaining exports (list_plugins, get_plugin, make_enabled_sources,
+# scrape_description) are added by Issues C through F.
 # ---------------------------------------------------------------------------
 
-__all__: list[str] = []
+__all__: list[str] = [
+    "CredentialsError",
+    "JobAggregatorError",
+    "JobRecord",
+    "JobSource",
+    "PluginConflictError",
+    "PluginField",
+    "PluginInfo",
+    "SchemaVersionError",
+    "ScrapeError",
+    "SearchParams",
+    "__version__",
+]
