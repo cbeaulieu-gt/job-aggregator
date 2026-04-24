@@ -29,6 +29,9 @@ ENV/
 # Claude Code local settings
 .claude/settings.local.json
 
+# Environment / credentials (never commit)
+.env
+
 # Git worktrees (local-only by convention)
 .worktrees/
 
