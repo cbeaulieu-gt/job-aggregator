@@ -15,6 +15,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Community meta files: CONTRIBUTING, SECURITY, issue templates, PR template (#20)
+- Plugin: `adzuna` source migrated from legacy repo (#5)
+- Plugin: `arbeitnow` source migrated from legacy repo (#6)
+- Plugin: `himalayas` source migrated from legacy repo (#7)
+- Plugin: `jobicy` source migrated from legacy repo (#8)
+- Plugin: `jooble` source migrated from legacy repo (#9)
+- Plugin: `jsearch` source migrated from legacy repo (#10)
+- Plugin: `remoteok` source migrated from legacy repo (#11)
+- Plugin: `remotive` source migrated from legacy repo (#12)
+- Plugin: `the_muse` source migrated from legacy repo (#13)
+- Plugin: `usajobs` source migrated from legacy repo (#14)
 
 ### Changed
 

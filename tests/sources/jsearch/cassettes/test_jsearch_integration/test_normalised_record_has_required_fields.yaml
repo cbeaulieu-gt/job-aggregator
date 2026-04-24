@@ -1,0 +1,1162 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.33.1
+      X-RapidAPI-Host:
+      - jsearch.p.rapidapi.com
+      X-RapidAPI-Key:
+      - FAKE_JSEARCH_API_KEY
+    method: GET
+    uri: https://jsearch.p.rapidapi.com/search?num_pages=1&page=1&query=python+developer+in+Atlanta%2C+GA
+  response:
+    body:
+      string: "{\"status\":\"OK\",\"request_id\":\"f2100d2b-4f96-454b-b05a-8f06fd62d165\",\"parameters\":{\"query\":\"python
+        developer in Atlanta, GA\",\"page\":1,\"num_pages\":1,\"country\":\"us\",\"language\":\"en\"},\"data\":[{\"job_id\":\"_sRDBC5uS_wC21KeAAAAAA==\",\"job_title\":\"Python
+        - Software Engineer, AI\",\"employer_name\":\"G2i Inc.\",\"employer_logo\":\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSx4amU4DHDNSbMlrpsIpIR6mIm_3fqgBklorKM&s=0\",\"employer_website\":\"https://www.g2i.co\",\"job_publisher\":\"ZipRecruiter\",\"job_employment_type\":\"Contractor\",\"job_employment_types\":[\"CONTRACTOR\"],\"job_apply_link\":\"https://www.ziprecruiter.com/c/G2i/Job/Python-Software-Engineer,-AI/-in-Atlanta,GA?jid=35fb9519bb9281a5\",\"job_apply_is_direct\":false,\"apply_options\":[{\"apply_link\":\"https://www.ziprecruiter.com/c/G2i/Job/Python-Software-Engineer,-AI/-in-Atlanta,GA?jid=35fb9519bb9281a5\",\"is_direct\":false,\"publisher\":\"ZipRecruiter\"}],\"job_description\":\"Before
+        applying\\n\\nThis role is open to contractors in accepted locations only.
+        Please confirm your country is on the list before applying - we're unable
+        to process applications from unlisted locations. List of accepted countries
+        and locations.\\n\\nFor US applicants\\n\\nThis is a 1099 independent contractor
+        role. It is not compatible with F-1 OPT, STEM OPT, or any visa status that
+        requires W-2 employment,\_guaranteed hours, or employer sponsorship.\\n\\nWe
+        are unable to provide offer letters or employment verification for this role.\\n\\nWhat
+        You'll Be Doing\\n\\nHelp train large language models (LLMs) to write production-grade
+        code across a wide range of programming languages:\\n\u2022 Compare and rank
+        multiple code snippets, explaining which is best and why\\n\u2022 Repair and
+        refactor AI-generated code for correctness, efficiency, and style\\n\u2022
+        Inject feedback (ratings, edits, test results) into the RLHF pipeline and
+        keep it running smoothly\\n\\nEnd result: the model learns to propose, critique,
+        and improve code the way you do.\\n\\nRLHF in one line: Generate code expert
+        engineers rank, edit, and justify convert that feedback into reward signals
+        reinforcement learning tunes the model toward code you'd actually ship.\\n\\nWhat
+        You'll Need\\n\u2022 3+ years of professional software engineering experience
+        in Python (constraint programming experience is a bonus, but not required)\\n\u2022
+        Strong code-review instincts - you can spot logic errors, performance traps,
+        and security issues quickly\\n\u2022 Extreme attention to detail and excellent
+        written communication skills. Much of this role involves explaining why one
+        approach is better than another. This cannot be overstated.\\n\u2022 Comfortable
+        reading documentation and language specs, and able to work well in an asynchronous,
+        low-oversight environment\\n\\nIdentity verification: Applicants will be required
+        to verify their identity and confirm they have valid documentation to work
+        as an independent contractor in their country of residence.\\n\\nWhat You
+        Don't Need\\n\u2022 No prior RLHF or AI training experience\\n\\nLogistics\\n\u2022
+        Location: Fully remote - work from anywhere on the accepted locations list\\n\u2022
+        Compensation: $30-$70/hr based on location and seniority. Note: the majority
+        of projects run at around $30/hr - higher rates apply to senior profiles and
+        specific project types\\n\u2022 Hours: Minimum 15 hrs/week, up to 40+ hrs/week
+        available - hours vary by project and are not guaranteed week to week\\n\u2022
+        Engagement: 1099 independent contractor\\n\u2022 Payment: Weekly via PayPal
+        or Stripe\\n\\nImportant: Hours are project-dependent and can vary week to
+        week. We recommend keeping other work options open alongside this engagement
+        rather than relying on it as your sole source of income.\",\"job_is_remote\":false,\"job_posted_at\":\"2
+        days ago\",\"job_posted_at_timestamp\":1776816000,\"job_posted_at_datetime_utc\":\"2026-04-22T00:00:00.000Z\",\"job_location\":\"Atlanta,
+        GA\",\"job_city\":\"Atlanta\",\"job_state\":\"Georgia\",\"job_country\":\"US\",\"job_latitude\":33.7501275,\"job_longitude\":-84.3885209,\"job_benefits\":null,\"job_benefits_strings\":null,\"job_google_link\":\"https://www.google.com/search?q=jobs&gl=us&hl=en&udm=8#vhid=vt%3D20/docid%3D_sRDBC5uS_wC21KeAAAAAA%3D%3D&vssid=jobs-detail-viewer\",\"job_salary\":null,\"job_salary_string\":\"30\u201370
+        an hour\",\"job_min_salary\":30,\"job_max_salary\":70,\"job_salary_period\":\"HOUR\",\"job_highlights\":{},\"job_onet_soc\":null,\"job_onet_job_zone\":null,\"employer_reviews\":null},{\"job_id\":\"2BHC5d5nQs06bAYpAAAAAA==\",\"job_title\":\"Multi
+        Asset Python Platform Developer PM, Associate\",\"employer_name\":\"BlackRock\",\"employer_logo\":\"https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://blackrock.com&size=128\",\"employer_website\":\"https://www.blackrock.com\",\"job_publisher\":\"BlackRock
+        Careers\",\"job_employment_type\":\"Full-time\",\"job_employment_types\":[\"FULLTIME\"],\"job_apply_link\":\"https://careers.blackrock.com/job/atlanta/multi-asset-python-platform-developer-pm-associate/45831/93514366832\",\"job_apply_is_direct\":false,\"apply_options\":[{\"apply_link\":\"https://careers.blackrock.com/job/atlanta/multi-asset-python-platform-developer-pm-associate/45831/93514366832\",\"is_direct\":false,\"publisher\":\"BlackRock
+        Careers\"}],\"job_description\":\"About this role\\n\\nBlackRock is one of
+        the world\u2019s preeminent asset management firms and a premier provider
+        of global investment management, risk management and advisory services to
+        institutional, intermediary, and individual investors around the world. BlackRock\u2019s
+        mission is to create a better financial future for our clients. We have a
+        responsibility to be the voice of the investor, and we represent each client
+        fairly and equally. Constant communication with a diverse team of partners
+        strengthens us and delivers better results for our clients. Continuous innovation
+        helps us bring the best of BlackRock to our clients. BlackRock offers a range
+        of solutions \u2014 from rigorous fundamental and quantitative active management
+        approaches aimed at maximizing outperformance to highly efficient indexing
+        strategies designed to gain broad exposure to the world\u2019s capital markets.
+        Our clients can access our investment solutions through a variety of product
+        structures, including individual and institutional separate accounts, mutual
+        funds and other pooled investment vehicles, and the industry-leading iShares\xAE
+        ETFs.\\n\\nIntroduction to Multi-Asset Strategies & Solutions\\nThe Multi-Asset
+        Strategies & Solutions (MASS) team is the investment group at the heart of
+        BlackRock's portfolio construction, asset allocation, and active management
+        ecosystem. MASS draws on the full toolkit of BlackRock\u2019s index, factor,
+        and alpha-seeking investment capabilities to deliver precise investment outcomes
+        and cutting-edge alpha insights. MASS constructs active asset allocation strategies
+        and whole portfolio solutions across a wide spectrum of commingled funds,
+        separate accounts, model portfolios, and outsourcing solutions in the wealth
+        and institutional channels. Currently, MASS manages over $1 trillion in assets
+        and has a strong presence in The United States, Europe, and Asia Pacific region.\\n\\nMASS
+        is committed to attracting, developing and retaining a diverse and inclusive
+        workforce. We are passionate about creating and promoting an environment where
+        all employees are valued and respected. Consistent with our diverse client
+        base, we recognize the benefit that diversity brings to the success of our
+        business.\\n\\nRole Overview\\nAs a technologist embedded in the Global MASS
+        Portfolio Management team, you will design, build, and enhance technology
+        and analytical tools used directly by portfolio managers. You will drive platform
+        and process improvements, strengthen investment controls, and deliver scalable
+        solutions that support global investment workflows.\\n\\nKey Responsibilities\\n\u2022
+        Build core portfolio tooling\\n\u2022 Design, develop, and maintain high-quality,
+        reusable Python components that support critical portfolio management and
+        investment decision workflows.\\n\\n\u2022 Ensure solutions are robust, performant,
+        and maintainable, with appropriate testing and documentation.\\n\\n\u2022
+        Partner with portfolio managers and citizen developers\\n\u2022 Collaborate
+        closely with portfolio managers and other investment professionals to translate
+        investment processes into effective technology solutions.\\n\\n\u2022 Coach
+        and mentor \u201Ccitizen developers\u201D to elevate the team\u2019s technical
+        standards, coding practices, and use of tooling.\\n\\n\u2022 Integrate AI
+        into development and investment workflows\\n\u2022 Proactively explore and
+        integrate AI technologies (e.g., GitHub Copilot, agentic AI frameworks) into
+        development processes and investment tools to automate workflows and enhance
+        productivity.\\n\\n\u2022 Identify and prototype use cases where AI can meaningfully
+        improve quality, speed, or insight.\\n\\n\u2022 Data and platform integration\\n\u2022
+        Partner with global technology teams (including Aladdin Engineering) to integrate
+        new data sources and capabilities through APIs and other interfaces.\\n\\n\u2022
+        Contribute to the design of data pipelines and architectures that ensure reliability,
+        scalability, and data quality.\\n\\n\u2022 Production support and monitoring\\n\u2022
+        Monitor and support critical processes and applications owned by the team,
+        ensuring high availability and reliability.\\n\\n\u2022 Respond promptly to
+        incidents and issues impacting the business, performing root-cause analysis
+        and driving permanent fixes and process improvements.\\n\\n\u2022 Engineering
+        excellence and DevOps\\n\u2022 Formalize and maintain build, release, testing,
+        and deployment processes for Python-based applications and algorithms.\\n\\n\u2022
+        Promote best practices in version control, code review, CI/CD, and environment
+        management.\\n\\n\u2022 Analytics and visualization\\n\u2022 Design and maintain
+        dashboards and data visualization solutions using tools such as Tableau, Power
+        BI, or similar.\\n\\n\u2022 Present complex information in an intuitive way
+        to support portfolio managers\u2019 decision-making.\\n\\n\u2022 Knowledge
+        sharing and documentation\\n\u2022 Develop and maintain high-quality technical
+        documentation, runbooks, and training materials.\\n\\n\u2022 Lead or contribute
+        to training sessions to expand the team\u2019s technical knowledge base.\\n\\nRequired
+        Qualifications\\n\u2022 5\u201310 years of professional software engineering
+        experience, with a strong focus on Python.\\n\\n\u2022 Proven track record
+        of writing production-grade, object-oriented Python code (packages, modules,
+        testing, and code reviews).\\n\\n\u2022 Experience building and maintaining
+        applications or services that are used in business-critical workflows.\\n\\nPreferred
+        Qualifications\\n\u2022 Degree in Computer Science, Engineering, Data Science,
+        Finance, or a related discipline.\\n\\n\u2022 Prior experience using AI tools
+        (e.g., GitHub Copilot, Windsurf, agentic AI frameworks) to automate workflows
+        or enhance developer productivity.\\n\\n\u2022 Hands-on experience with data
+        visualization tools such as Tableau or Power BI.\\n\\n\u2022 Exposure to financial
+        markets, investment products, or risk/portfolio management concepts.\\n\\n\u2022
+        Familiarity with APIs, data integration, and cloud-based architectures.\\n\\n\u2022
+        Experience with CI/CD pipelines, automated testing frameworks, and modern
+        DevOps practices.\\n\\nWhat We Look For\\n\u2022 Strong sense of ownership
+        and a proactive, solutions-oriented mindset.\\n\\n\u2022 Deep curiosity and
+        commitment to continuous learning across technology and financial markets,
+        including BlackRock\u2019s investment processes.\\n\\n\u2022 Ability to thrive
+        in fast-paced, dynamic environments with shifting priorities and tight deadlines.\\n\\n\u2022
+        Focus on operational risk, delivering resilient, well-controlled and scalable
+        solutions.\\n\\n\u2022 Exceptional analytical, problem-solving, and debugging
+        skills.\\n\\n\u2022 Clear, effective communication and the ability to partner
+        with non-technical stakeholders and global teams.\\n\\n\u2022 Collaborative,
+        low-ego approach that values diverse perspectives and challenges the status
+        quo.\\n\\n\u2022 Meticulous attention to detail and dedication to high-quality,
+        data-driven outcomes.\\n\\nFor Atlanta, GA Only the salary range for this
+        position is USD$100,000.00 - USD$140,000.00 . Additionally, employees are
+        eligible for an annual discretionary bonus, and benefits including healthcare,
+        leave benefits, and retirement benefits. BlackRock operates a pay-for-performance
+        compensation philosophy and your total compensation may vary based on role,
+        location, and firm, department and individual performance.\\n\\nOur benefits\\n\\nTo
+        help you stay energized, engaged and inspired, we offer a wide range of benefits
+        including a strong retirement plan, tuition reimbursement, comprehensive healthcare,
+        support for working parents and Flexible Time Off (FTO) so you can relax,
+        recharge and be there for the people you care about.\\n\\nOur hybrid work
+        model\\n\\nBlackRock\u2019s hybrid work model is designed to enable a culture
+        of collaboration and apprenticeship that enriches the experience of our employees,
+        while supporting flexibility for all. Employees are currently required to
+        work at least 4 days in the office per week, with the flexibility to work
+        from home 1 day a week. Some business groups may require more time in the
+        office due to their roles and responsibilities. We remain focused on increasing
+        the impactful moments that arise when we work together in person \u2013 aligned
+        with our commitment to performance and innovation. As a new joiner, you can
+        count on this hybrid model to accelerate your learning and onboarding experience
+        here at BlackRock.\\n\\nAbout BlackRock\\n\\nAt BlackRock, we are all connected
+        by one mission: to help more and more people experience financial well-being.
+        Our clients, and the people they serve, are saving for retirement, paying
+        for their children\u2019s educations, buying homes and starting businesses.
+        Their investments also help to strengthen the global economy: support businesses
+        small and large; finance infrastructure projects that connect and power cities;
+        and facilitate innovations that drive progress.\\n\\nThis mission would not
+        be possible without our smartest investment \u2013 the one we make in our
+        employees. It\u2019s why we\u2019re dedicated to creating an environment where
+        our colleagues feel welcomed, valued and supported with networks, benefits
+        and development opportunities to help them thrive.\\n\\nFor additional information
+        on BlackRock, please visit @blackrock | Twitter: @blackrock | LinkedIn: www.linkedin.com/company/blackrock\\n\\nBlackRock
+        is proud to be an equal opportunity workplace. We are committed to equal employment
+        opportunity to all applicants and existing employees, and we evaluate qualified
+        applicants without regard to race, creed, color, national origin, sex (including
+        pregnancy and gender identity/expression), sexual orientation, age, ancestry,
+        physical or mental disability, marital status, political affiliation, religion,
+        citizenship status, genetic information, veteran status, or any other basis
+        protected under applicable federal, state, or local law. View the EEOC\u2019s
+        Know Your Rights poster and its supplement and the pay transparency statement.\\n\\nBlackRock
+        is committed to full inclusion of all qualified individuals and to providing
+        reasonable accommodations or job modifications for individuals with disabilities.
+        If reasonable accommodation/adjustments are needed throughout the employment
+        process, please email Disability.Assistance@blackrock.com. All requests are
+        treated in line with our privacy policy.\\n\\nBlackRock will consider for
+        employment qualified applicants with arrest or conviction records in a manner
+        consistent with the requirements of the law, including any applicable fair
+        chance law.\",\"job_is_remote\":false,\"job_posted_at\":\"21 days ago\",\"job_posted_at_timestamp\":1775174400,\"job_posted_at_datetime_utc\":\"2026-04-03T00:00:00.000Z\",\"job_location\":\"Atlanta,
+        GA\",\"job_city\":\"Atlanta\",\"job_state\":\"Georgia\",\"job_country\":\"US\",\"job_latitude\":33.7501275,\"job_longitude\":-84.3885209,\"job_benefits\":null,\"job_benefits_strings\":null,\"job_google_link\":\"https://www.google.com/search?q=jobs&gl=us&hl=en&udm=8#vhid=vt%3D20/docid%3D2BHC5d5nQs06bAYpAAAAAA%3D%3D&vssid=jobs-detail-viewer\",\"job_salary\":null,\"job_salary_string\":null,\"job_min_salary\":null,\"job_max_salary\":null,\"job_salary_period\":null,\"job_highlights\":{},\"job_onet_soc\":null,\"job_onet_job_zone\":null,\"employer_reviews\":null},{\"job_id\":\"_MFH_9cpOAl8X7kDAAAAAA==\",\"job_title\":\"Python
+        Backend Developers\",\"employer_name\":\"Burgeon IT Services\",\"employer_logo\":\"https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://burgeonits.com&size=128\",\"employer_website\":\"https://www.burgeonits.com\",\"job_publisher\":\"Post
+        Jobs For Free\",\"job_employment_type\":\"Full-time and Contractor\",\"job_employment_types\":[\"FULLTIME\",\"CONTRACTOR\"],\"job_apply_link\":\"https://www.postjobfree.com/job/bc6mbe/python-backend-developers-atlanta-ga\",\"job_apply_is_direct\":false,\"apply_options\":[{\"apply_link\":\"https://www.postjobfree.com/job/bc6mbe/python-backend-developers-atlanta-ga\",\"is_direct\":false,\"publisher\":\"Post
+        Jobs For Free\"}],\"job_description\":\"Exciting Opportunity for Python Backend
+        Developers!\\n\\nWe are hiring for a Python Developer role focused on RESTful
+        APIs and Microservices with a leading client in Austin, TX. If you have strong
+        backend development experience and are eager to work on cutting-edge AI technologies,
+        this is a great opportunity.\\n\\nRole Details:\\n\u2022 Job Title: Python
+        Developer RESTful APIs Microservices\\n\u2022 Client: Apple\\n\u2022 Location:
+        Austin, TX (On-site / Hybrid \u2013 3 days/week in office)\\n\u2022 Duration:
+        Contract (Potential for Full-Time Conversion)\\n\u2022 Vendor Rate: $60/hr\\n\u2022
+        Experience: 7+ Years\\n\\nKey Skills Required:\\n\u2022 Strong experience
+        in Python development\\n\u2022 Expertise in building RESTful APIs and Microservices\\n\u2022
+        Hands-on experience with MongoDB (PyMongo)\\n\u2022 Experience with CI/CD
+        frameworks\\n\u2022 Knowledge of automated testing (unit, integration, end-to-end)\\n\\nKey
+        Responsibilities:\\n\u2022 Design and develop scalable backend solutions using
+        Python\\n\u2022 Build and maintain RESTful APIs and microservices\\n\u2022
+        Work with MongoDB for data storage and retrieval\\n\u2022 Implement automated
+        testing to ensure code quality\\n\u2022 Follow SDLC practices including Git
+        workflows and pull requests\\n\u2022 Continuously learn and work on AI-driven
+        technologies\\n\\nAdditional Requirements:\\n\u2022 Strong communication and
+        problem-solving skills\\n\u2022 Ability to work independently with minimal
+        supervision\\n\u2022 Willingness to adapt and learn new technologies\\n\\nInterview
+        Process:\\n\u2022 Virtual interviews (Skype/WebEx)\\n\\nWork Expectations:\\n\u2022
+        Hybrid model with 3 days/week in office (Austin, TX)\\n\u2022 Opportunity
+        for long-term or permanent role based on performance\",\"job_is_remote\":false,\"job_posted_at\":\"23
+        days ago\",\"job_posted_at_timestamp\":1775001600,\"job_posted_at_datetime_utc\":\"2026-04-01T00:00:00.000Z\",\"job_location\":\"Atlanta,
+        GA\",\"job_city\":\"Atlanta\",\"job_state\":\"Georgia\",\"job_country\":\"US\",\"job_latitude\":33.7501275,\"job_longitude\":-84.3885209,\"job_benefits\":null,\"job_benefits_strings\":null,\"job_google_link\":\"https://www.google.com/search?q=jobs&gl=us&hl=en&udm=8#vhid=vt%3D20/docid%3D_MFH_9cpOAl8X7kDAAAAAA%3D%3D&vssid=jobs-detail-viewer\",\"job_salary\":null,\"job_salary_string\":null,\"job_min_salary\":null,\"job_max_salary\":null,\"job_salary_period\":null,\"job_highlights\":{},\"job_onet_soc\":null,\"job_onet_job_zone\":null,\"employer_reviews\":null},{\"job_id\":\"sKcGzZKur5LZYA-_AAAAAA==\",\"job_title\":\"Multi
+        Asset Python Platform Developer PM, Associate\",\"employer_name\":\"BlackRock\",\"employer_logo\":\"https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://blackrock.com&size=128\",\"employer_website\":\"https://www.blackrock.com\",\"job_publisher\":\"Teal\",\"job_employment_type\":\"Full-time\",\"job_employment_types\":[\"FULLTIME\"],\"job_apply_link\":\"https://www.tealhq.com/job/multi-asset-python-platform-developer-pm-associate_7ea1aec13740d67f667521a6b73cdfecb3cc9\",\"job_apply_is_direct\":false,\"apply_options\":[{\"apply_link\":\"https://www.tealhq.com/job/multi-asset-python-platform-developer-pm-associate_7ea1aec13740d67f667521a6b73cdfecb3cc9\",\"is_direct\":false,\"publisher\":\"Teal\"}],\"job_description\":\"About
+        the position\\n\\nAbout this role BlackRock is one of the world\u2019s preeminent
+        asset management firms and a premier provider of global investment management,
+        risk management and advisory services to institutional, intermediary, and
+        individual investors around the world. BlackRock\u2019s mission is to create
+        a better financial future for our clients. We have a responsibility to be
+        the voice of the investor, and we represent each client fairly and equally.
+        Constant communication with a diverse team of partners strengthens us and
+        delivers better results for our clients. Continuous innovation helps us bring
+        the best of BlackRock to our clients. BlackRock offers a range of solutions
+        \u2014 from rigorous fundamental and quantitative active management approaches
+        aimed at maximizing outperformance to highly efficient indexing strategies
+        designed to gain broad exposure to the world\u2019s capital markets. Our clients
+        can access our investment solutions through a variety of product structures,
+        including individual and institutional separate accounts, mutual funds and
+        other pooled investment vehicles, and the industry-leading iShares\xAE ETFs.
+        Introduction to Multi-Asset Strategies & Solutions The Multi-Asset Strategies
+        & Solutions (MASS) team is the investment group at the heart of BlackRock's
+        portfolio construction, asset allocation, and active management ecosystem.
+        MASS draws on the full toolkit of BlackRock\u2019s index, factor, and alpha-seeking
+        investment capabilities to deliver precise investment outcomes and cutting-edge
+        alpha insights. MASS constructs active asset allocation strategies and whole
+        portfolio solutions across a wide spectrum of commingled funds, separate accounts,
+        model portfolios, and outsourcing solutions in the wealth and institutional
+        channels. Currently, MASS manages over \\\\$1 trillion in assets and has a
+        strong presence in The United States, Europe, and Asia Pacific region. MASS
+        is committed to attracting, developing and retaining a diverse and inclusive
+        workforce. We are passionate about creating and promoting an environment where
+        all employees are valued and respected. Consistent with our diverse client
+        base, we recognize the benefit that diversity brings to the success of our
+        business. Role Overview As a technologist embedded in the Global MASS Portfolio
+        Management team, you will design, build, and enhance technology and analytical
+        tools used directly by portfolio managers. You will drive platform and process
+        improvements, strengthen investment controls, and deliver scalable solutions
+        that support global investment workflows.\\n\\nResponsibilities\\n\u2022 Build
+        core portfolio tooling\\n\u2022 Design, develop, and maintain high-quality,
+        reusable Python components that support critical portfolio management and
+        investment decision workflows.\\n\u2022 Ensure solutions are robust, performant,
+        and maintainable, with appropriate testing and documentation.\\n\u2022 Partner
+        with portfolio managers and citizen developers\\n\u2022 Collaborate closely
+        with portfolio managers and other investment professionals to translate investment
+        processes into effective technology solutions.\\n\u2022 Coach and mentor \u201Ccitizen
+        developers\u201D to elevate the team\u2019s technical standards, coding practices,
+        and use of tooling.\\n\u2022 Integrate AI into development and investment
+        workflows\\n\u2022 Proactively explore and integrate AI technologies (e.g.,
+        GitHub Copilot, agentic AI frameworks) into development processes and investment
+        tools to automate workflows and enhance productivity.\\n\u2022 Identify and
+        prototype use cases where AI can meaningfully improve quality, speed, or insight.\\n\u2022
+        Data and platform integration\\n\u2022 Partner with global technology teams
+        (including Aladdin Engineering) to integrate new data sources and capabilities
+        through APIs and other interfaces.\\n\u2022 Contribute to the design of data
+        pipelines and architectures that ensure reliability, scalability, and data
+        quality.\\n\u2022 Production support and monitoring\\n\u2022 Monitor and support
+        critical processes and applications owned by the team, ensuring high availability
+        and reliability.\\n\u2022 Respond promptly to incidents and issues impacting
+        the business, performing root-cause analysis and driving permanent fixes and
+        process improvements.\\n\u2022 Engineering excellence and DevOps\\n\u2022
+        Formalize and maintain build, release, testing, and deployment processes for
+        Python-based applications and algorithms.\\n\u2022 Promote best practices
+        in version control, code review, CI/CD, and environment management.\\n\u2022
+        Analytics and visualization\\n\u2022 Design and maintain dashboards and data
+        visualization solutions using tools such as Tableau, Power BI, or similar.\\n\u2022
+        Present complex information in an intuitive way to support portfolio managers\u2019
+        decision-making.\\n\u2022 Knowledge sharing and documentation\\n\u2022 Develop
+        and maintain high-quality technical documentation, runbooks, and training
+        materials.\\n\u2022 Lead or contribute to training sessions to expand the
+        team\u2019s technical knowledge base.\\n\\nRequirements\\n\u2022 5\u201310
+        years of professional software engineering experience, with a strong focus
+        on Python.\\n\u2022 Proven track record of writing production-grade, object-oriented
+        Python code (packages, modules, testing, and code reviews).\\n\u2022 Experience
+        building and maintaining applications or services that are used in business-critical
+        workflows.\\n\\nNice-to-haves\\n\u2022 Degree in Computer Science, Engineering,
+        Data Science, Finance, or a related discipline.\\n\u2022 Prior experience
+        using AI tools (e.g., GitHub Copilot, Windsurf, agentic AI frameworks) to
+        automate workflows or enhance developer productivity.\\n\u2022 Hands-on experience
+        with data visualization tools such as Tableau or Power BI.\\n\u2022 Exposure
+        to financial markets, investment products, or risk/portfolio management concepts.\\n\u2022
+        Familiarity with APIs, data integration, and cloud-based architectures.\\n\u2022
+        Experience with CI/CD pipelines, automated testing frameworks, and modern
+        DevOps practices.\\n\\nBenefits\\n\u2022 employees are eligible for an annual
+        discretionary bonus, and benefits including healthcare, leave benefits, and
+        retirement benefits.\\n\u2022 strong retirement plan\\n\u2022 tuition reimbursement\\n\u2022
+        comprehensive healthcare\\n\u2022 support for working parents\\n\u2022 Flexible
+        Time Off (FTO)\",\"job_is_remote\":true,\"job_posted_at\":\"22 days ago\",\"job_posted_at_timestamp\":1775088000,\"job_posted_at_datetime_utc\":\"2026-04-02T00:00:00.000Z\",\"job_location\":\"Anywhere\",\"job_city\":null,\"job_state\":null,\"job_country\":null,\"job_latitude\":null,\"job_longitude\":null,\"job_benefits\":[\"health_insurance\"],\"job_benefits_strings\":[\"Health
+        insurance\"],\"job_google_link\":\"https://www.google.com/search?q=jobs&gl=us&hl=en&udm=8#vhid=vt%3D20/docid%3DsKcGzZKur5LZYA-_AAAAAA%3D%3D&vssid=jobs-detail-viewer\",\"job_salary\":null,\"job_salary_string\":null,\"job_min_salary\":null,\"job_max_salary\":null,\"job_salary_period\":null,\"job_highlights\":{},\"job_onet_soc\":null,\"job_onet_job_zone\":null,\"employer_reviews\":null},{\"job_id\":\"qN1LUbAgWK600ExOAAAAAA==\",\"job_title\":\"Jr.
+        R Python Developer\",\"employer_name\":\"Tata Consultancy Services\",\"employer_logo\":\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_6fWOH5aN3AayzeOP20WvgB6-qZh3CjbBeB1-&s=0\",\"employer_website\":null,\"job_publisher\":\"Lensa\",\"job_employment_type\":\"Full-time\",\"job_employment_types\":[\"FULLTIME\"],\"job_apply_link\":\"https://lensa.com/job-v1/tata-consultancy-services/atlanta-ga/junior-python-developer/d93ab2954b143bb440acc95805ca27f8\",\"job_apply_is_direct\":false,\"apply_options\":[{\"apply_link\":\"https://lensa.com/job-v1/tata-consultancy-services/atlanta-ga/junior-python-developer/d93ab2954b143bb440acc95805ca27f8\",\"is_direct\":false,\"publisher\":\"Lensa\"}],\"job_description\":\"Must
+        Have Technical/Functional Skills\\n\\n12 years of experience with R (academic,
+        internship, or professional). Working knowledge of Python for scripting and
+        data manipulation. Hands- on experience managing Posit Workbench, Connect,
+        and GPU servers in enterprise environments. Familiarity with Linux command-line
+        tools and scripting. Strong problem-solving and communication skills with
+        a desire to work in a collaborative environment.\\n\\nRoles & Responsibilities\\n\\nWe
+        are looking for a motivated Junior R/Python Developer to join our team. In
+        this role, you will help build and maintain data processing scripts, analytical
+        workflows, and reporting solutions that support our analytics and business
+        intelligence needs. You will assist in translating business requirements into
+        technical tasks, ensuring data accuracy, consistency, and reliability across
+        our systems. You will collaborate with data scientists, data engineers, analysts,
+        and business stakeholders to support the development of high quality and efficient
+        analytical solutions. Success in this role requires a strong foundation in
+        R and Python programming, basic SQL skills, a willingness to learn, and the
+        ability to work effectively in a fast paced, collaborative environment. If
+        you are eager to grow your technical skills, contribute to meaningful data
+        projects, and learn from experienced team members, we would be happy to connect
+        with you.\\n\\nKey Responsibilities\\n\\nData Processing & Script Development\\n\u2022
+        Develop and maintain basic R and Python scripts for data cleaning, transformation,
+        and preparation.\\n\u2022 Support building reusable code modules and automation
+        components under senior developer guidance.\\n\u2022 Assist in writing functions,
+        procedures, and small-scale utilities for data manipulation.\\n\\n2. Data
+        Analysis & Exploration\\n\u2022 Perform exploratory data analysis (EDA) to
+        help identify patterns, anomalies, and insights in datasets.\\n\u2022 Create
+        simple visualizations and summary reports using tools like ggplot2, Matplotlib,
+        Seaborn, or Shiny/Dash (as applicable).\\n\u2022 Support team members by generating
+        datasets needed for analytics or reporting.\\n\\nSalary Range $110000-$130,000
+        year\\n\\nTCS Employee Benefits Summary: Discretionary Annual Incentive. Comprehensive
+        Medical Coverage: Medical & Health, Dental & Vision, Disability Planning &
+        Insurance, Pet Insurance Plans. Family Support: Maternal & Parental Leaves.
+        Insurance Options: Auto & Home Insurance, Identity Theft Protection. Convenience
+        & Professional Growth: Commuter Benefits & Certification & amp; Training Reimbursement.
+        Time Off: Vacation, Time Off, Sick Leave & Holidays. Legal & Financial Assistance:
+        Legal Assistance, 401K Plan, Performance Bonus, College Fund, Student Loan
+        Refinancing.\\n\\n#LI-SP1\",\"job_is_remote\":false,\"job_posted_at\":null,\"job_posted_at_timestamp\":null,\"job_posted_at_datetime_utc\":null,\"job_location\":\"Atlanta,
+        GA\",\"job_city\":\"Atlanta\",\"job_state\":\"Georgia\",\"job_country\":\"US\",\"job_latitude\":33.7501275,\"job_longitude\":-84.3885209,\"job_benefits\":null,\"job_benefits_strings\":null,\"job_google_link\":\"https://www.google.com/search?q=jobs&gl=us&hl=en&udm=8#vhid=vt%3D20/docid%3DqN1LUbAgWK600ExOAAAAAA%3D%3D&vssid=jobs-detail-viewer\",\"job_salary\":null,\"job_salary_string\":null,\"job_min_salary\":null,\"job_max_salary\":null,\"job_salary_period\":null,\"job_highlights\":{},\"job_onet_soc\":null,\"job_onet_job_zone\":null,\"employer_reviews\":null},{\"job_id\":\"nZ4Gb_SILY3-K-0oAAAAAA==\",\"job_title\":\"Senior
+        Python Developer\",\"employer_name\":\"Cognizant\",\"employer_logo\":\"https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://cognizant.com&size=128\",\"employer_website\":\"https://www.cognizant.com\",\"job_publisher\":\"JobGet\",\"job_employment_type\":\"Full-time\",\"job_employment_types\":[\"FULLTIME\"],\"job_apply_link\":\"https://www.jobget.com/jobs/job/14f4e2cf-fb79-4d69-9f65-cbdd995a99eb\",\"job_apply_is_direct\":false,\"apply_options\":[{\"apply_link\":\"https://www.jobget.com/jobs/job/14f4e2cf-fb79-4d69-9f65-cbdd995a99eb\",\"is_direct\":false,\"publisher\":\"JobGet\"}],\"job_description\":\"**About
+        the role**\\n\\nAs a **Senior Python Developer** , you will make an impact
+        by designing and delivering scalable, cloud\u2011based analytics and data
+        engineering solutions that support high\u2011demand, enterprise applications.
+        You will be a valued member of Cognizant's **Digital Engineering** team and
+        work closely with product managers, technical leads, designers, and client
+        stakeholders to deliver reliable, high\u2011quality software that drives business
+        value.\\n\u2022 *In this role, you will:**\\n\\n+ Design, build, and deploy
+        large\u2011scale analytics and data engineering solutions on cloud platforms
+        such as **Google Cloud Platform (preferred)** or **Azure**\\n\\n+ Analyze
+        business requirements and translate them into effective technical solutions,
+        leading discussions with product and technical stakeholders as needed\\n\\n+
+        Develop applications using industry\u2011standard coding practices, including
+        writing unit tests and meeting defined code coverage targets\\n\\n+ Ensure
+        features are thoroughly tested, monitored, and successfully deployed to production
+        environments\\n\\n+ Implement and maintain monitoring and observability solutions
+        in alignment with client recommendations\\n\\n+ Document system designs and
+        service specifications, and provide guidance to development teams on functional
+        and technical documentation\\n\u2022 *Work model**\\n\\nWe strive to provide
+        flexibility wherever possible. Based on this role's business requirements,
+        this is a **remote position** open to qualified applicants in **United States.**\\n\\nRegardless
+        of your working arrangement, we support a healthy work\u2011life balance through
+        our wellbeing programs.\\n\\nThe working arrangements for this role are accurate
+        as of the date of posting and may change based on project, business, or client
+        needs. We will always be clear about expectations.\\n\u2022 *What you need
+        to have to be considered**\\n\\n+ 6+ years of hands\u2011on experience in
+        **Python development**\\n\\n+ Strong experience with **PySpark** , **SQL**
+        , **advanced data queries** , and **Airflow pipelines**\\n\\n+ Experience
+        building analytics or data engineering solutions on cloud platforms (GCP or
+        Azure)\\n\\n+ Hands\u2011on experience or solid understanding of designing
+        **large\u2011scale, high\u2011volume applications**\\n\\n+ Ability to collaborate
+        effectively with cross\u2011functional teams and communicate technical solutions
+        clearly\\n\u2022 *These will help you stand out**\\n\\n+ Experience with **Google
+        BigQuery**\\n\\n+ Knowledge of **Scala**\\n\\n+ Experience with visualization
+        tools such as **Power BI** or **Looker Studio**\\n\\n+ Exposure to enterprise\u2011scale
+        data platforms and production\u2011grade analytics systems\\n\\nWe're excited
+        to meet people who share our passion for building high\u2011quality software
+        and delivering meaningful outcomes. Even if you don't meet every qualification
+        listed, we encourage you to apply and highlight your transferable skills and
+        experiences.\\n\u2022 *Compensation**\\n\\nThe annual salary for this position
+        ranges from **$68,422 to $131,500** , depending on experience and qualifications.
+        This role is also eligible for Cognizant's discretionary annual incentive
+        program, subject to performance and applicable plan terms.\\n\u2022 *Benefits**\\n\\nCognizant
+        offers a comprehensive benefits package, including:\\n\\n+ Medical, Dental,
+        Vision, and Life Insurance\\n\\n+ Paid Holidays and Paid Time Off\\n\\n+ 401(k)
+        plan with company contributions\\n\\n+ Short\u2011term and Long\u2011term
+        Disability\\n\\n+ Paid Parental Leave\\n\\n+ Employee Stock Purchase Plan\\n\u2022
+        *Disclaimer: The salary, other compensation, and benefits information is accurate
+        as of the date of this posting. Cognizant reserves the right to modify this
+        information at any time, subject to applicable law**\\n\u2022 *Applicants
+        may be required to attend interviews in person or by video conference. In
+        addition, candidates may be required to present their current state or government
+        issued ID during each interview.**\\n\u2022 *This position does not offer
+        visa sponsorship. Candidates must be authorized to work without sponsorship
+        now or in the future, including OPT, CPT, or any other work authorization
+        requiring employer sponsorship.**\\n\\nCognizant is an equal opportunity employer.
+        All qualified applicants will receive consideration for employment without
+        regard to sex, gender identity, sexual orientation, race, color, religion,
+        national origin, disability, protected Veteran status, age, or any other characteristic
+        protected by law.\",\"job_is_remote\":false,\"job_posted_at\":\"9 days ago\",\"job_posted_at_timestamp\":1776211200,\"job_posted_at_datetime_utc\":\"2026-04-15T00:00:00.000Z\",\"job_location\":\"Atlanta,
+        GA\",\"job_city\":\"Atlanta\",\"job_state\":\"Georgia\",\"job_country\":\"US\",\"job_latitude\":33.7501275,\"job_longitude\":-84.3885209,\"job_benefits\":[\"dental_coverage\",\"health_insurance\",\"paid_time_off\"],\"job_benefits_strings\":[\"Dental
+        insurance\",\"Health insurance\",\"Paid time off\"],\"job_google_link\":\"https://www.google.com/search?q=jobs&gl=us&hl=en&udm=8#vhid=vt%3D20/docid%3DnZ4Gb_SILY3-K-0oAAAAAA%3D%3D&vssid=jobs-detail-viewer\",\"job_salary\":null,\"job_salary_string\":\"32.90\u201363.22
+        an hour\",\"job_min_salary\":32.9,\"job_max_salary\":63.22,\"job_salary_period\":\"HOUR\",\"job_highlights\":{},\"job_onet_soc\":null,\"job_onet_job_zone\":null,\"employer_reviews\":null},{\"job_id\":\"YKIzGX9y_ILzQOOlAAAAAA==\",\"job_title\":\"Python
+        Developer - Financial Applications\",\"employer_name\":\"Verifacto Inc\",\"employer_logo\":\"https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://verifacto.com&size=128\",\"employer_website\":\"https://verifacto.com\",\"job_publisher\":\"ZipRecruiter\",\"job_employment_type\":\"Full-time\",\"job_employment_types\":[\"FULLTIME\"],\"job_apply_link\":\"https://www.ziprecruiter.com/c/Verifacto/Job/Python-Developer-Financial-Applications/-in-Atlanta,GA?jid=5e92e8c363b73ee5\",\"job_apply_is_direct\":false,\"apply_options\":[{\"apply_link\":\"https://www.ziprecruiter.com/c/Verifacto/Job/Python-Developer-Financial-Applications/-in-Atlanta,GA?jid=5e92e8c363b73ee5\",\"is_direct\":false,\"publisher\":\"ZipRecruiter\"}],\"job_description\":\"About
+        the Role:\\n\\nWe are seeking a highly skilled Python Developer to join our
+        growing development team focused on building secure, scalable, and high-performance
+        financial applications. You will work on backend services, APIs, data pipelines,
+        and integrations with Credit Card Processing companies and financial institutions.
+        The ideal candidate has experience in financial technology (FinTech), strong
+        knowledge of Python, and a passion for solving complex problems.\\n\\nKey
+        Responsibilities:\\n\\n\xB7 Design, develop, and maintain financial software
+        systems using Python.\\n\\n\xB7 Build RESTful APIs and microservices to support
+        financial transactions, reporting, and data synchronization.\\n\\n\xB7 Implement
+        data processing pipelines for real-time and batch financial data.\\n\\n\xB7
+        Integrate with third-party APIs, banking services, and payment processors.\\n\\n\xB7
+        Ensure applications are secure, compliant, and perform under load.\\n\\n\xB7
+        Write clean, maintainable, and well-tested code.\\n\\n\xB7 Collaborate with
+        product managers, and QA engineers\\n\\n\xB7 Participate in code reviews and
+        architectural discussions.\\n\\n\xB7 Troubleshoot and debug production issues
+        as needed.\\n\\n\xB7 Experience with debugging\\n\\n\xB7 Familiarization with
+        Linux OS\\n\\nRequired Skills & Qualifications:\\n\\n\xB7 3+ years of Python
+        development experience.\\n\\n\xB7 Strong understanding of object-oriented
+        and functional programming principles.\\n\\n\xB7 Experience building financial
+        or transactional systems (e.g., accounting, banking, lending, insurance, or
+        investment platforms).\\n\\n\xB7 Proficiency in working with MySQL\\n\\n\xB7
+        Experience building and consuming REST APIs.\\n\\n\xB7 Familiarity with message
+        queues and asynchronous programming.\\n\\n\xB7 Strong understanding of software
+        testing (unit/integration).\\n\\n\xB7 Version control using Git.\\n\\nWhy
+        Join Us:\\n\\n\xB7 Work on innovative FinTech products that make a real impact.\\n\\n\xB7
+        Collaborative and fast-paced team environment.\\n\\n\xB7 Competitive salary,
+        stock options, and benefits.\\n\\nCompany DescriptionVerifacto is a rapidly
+        growing FinTech Software-as-a-Service company focused on improving the way
+        auto lenders manage their loans, communicate with the borrowers, and connect
+        with information. We are a leader in developing innovative software that manages
+        auto loans by mitigating insurance risk, ensuring compliance, and alleviating
+        financial risk.\",\"job_is_remote\":false,\"job_posted_at\":null,\"job_posted_at_timestamp\":null,\"job_posted_at_datetime_utc\":null,\"job_location\":\"Atlanta,
+        GA\",\"job_city\":\"Atlanta\",\"job_state\":\"Georgia\",\"job_country\":\"US\",\"job_latitude\":33.7501275,\"job_longitude\":-84.3885209,\"job_benefits\":[\"health_insurance\"],\"job_benefits_strings\":[\"Health
+        insurance\"],\"job_google_link\":\"https://www.google.com/search?q=jobs&gl=us&hl=en&udm=8#vhid=vt%3D20/docid%3DYKIzGX9y_ILzQOOlAAAAAA%3D%3D&vssid=jobs-detail-viewer\",\"job_salary\":null,\"job_salary_string\":\"90K\u2013100K
+        a year\",\"job_min_salary\":90000,\"job_max_salary\":100000,\"job_salary_period\":\"YEAR\",\"job_highlights\":{},\"job_onet_soc\":null,\"job_onet_job_zone\":null,\"employer_reviews\":null},{\"job_id\":\"bqJUVgQJBKHMlz0JAAAAAA==\",\"job_title\":\"Software
+        Engineer - Python - Junior\",\"employer_name\":\"Atlanta, GA\",\"employer_logo\":null,\"employer_website\":null,\"job_publisher\":\"Adzuna\",\"job_employment_type\":\"Full-time\",\"job_employment_types\":[\"FULLTIME\"],\"job_apply_link\":\"https://www.adzuna.com/details/5706618261\",\"job_apply_is_direct\":false,\"apply_options\":[{\"apply_link\":\"https://www.adzuna.com/details/5706618261\",\"is_direct\":false,\"publisher\":\"Adzuna\"}],\"job_description\":\"Summary:\\n\\nWork
+        Mode: Hybrid\\n\\nResponsibilities:\\n\\n\u2022 Design and implement robust
+        Python-based solutions.\\n\u2022 Collaborate with global Technology Teams
+        across different time zones.\\n\u2022 Adhere to Object-Oriented Programming
+        (OOPS) principle-based development standards.\\n\u2022 Contribute to the resolution
+        of high-impact problems/projects through in-depth evaluation of complex business
+        and system processes.\\n\u2022 Ensure application design adheres to the overall
+        architecture blueprint.\\n\u2022 Develop standards for coding, testing, debugging,
+        and implementation.\\n\u2022 Provide in-depth analysis with interpretive thinking
+        to define issues and develop innovative solutions.\\n\u2022 Implement Unit
+        Testing and TDD to ensure software quality and maintainability.\\n\u2022 Assess
+        risk when business decisions are made, ensuring compliance with applicable
+        laws, rules, and regulations.\\n\\nRequirements:\\n\\n\u2022 Bachelor's degree
+        in Computer Science, Data Science, Statistics, Mathematics, Engineering, or
+        a related field.\\n\u2022 1-3 years of experience with developing scalable
+        and reliable machine learning systems.\\n\u2022 Exposure to ML/DL/LLM algorithms,
+        model architectures, and training techniques.\\n\u2022 Proficiency in Python
+        and related modules (e.g., numpy, pandas).\\n\u2022 Proficiency utilizing
+        LLMs.\\n\u2022 Ability to work independently and collaboratively within a
+        team.\\n\\nPreferred Skills:\\n\\n\u2022 Experience in GenAI/LLMs projects.\\n\u2022
+        Familiarity with distributed data/computing tools (e.g., Hadoop, Hive, Spark,
+        MySQL).\\n\u2022 Background in financial business such as banking and risk
+        management.\\n\u2022 Experience with AI Dev tools such as Copilot.\",\"job_is_remote\":false,\"job_posted_at\":\"8
+        days ago\",\"job_posted_at_timestamp\":1776297600,\"job_posted_at_datetime_utc\":\"2026-04-16T00:00:00.000Z\",\"job_location\":\"Atlanta,
+        GA\",\"job_city\":\"Atlanta\",\"job_state\":\"Georgia\",\"job_country\":\"US\",\"job_latitude\":33.7501275,\"job_longitude\":-84.3885209,\"job_benefits\":null,\"job_benefits_strings\":null,\"job_google_link\":\"https://www.google.com/search?q=jobs&gl=us&hl=en&udm=8#vhid=vt%3D20/docid%3DbqJUVgQJBKHMlz0JAAAAAA%3D%3D&vssid=jobs-detail-viewer\",\"job_salary\":null,\"job_salary_string\":null,\"job_min_salary\":null,\"job_max_salary\":null,\"job_salary_period\":null,\"job_highlights\":{},\"job_onet_soc\":null,\"job_onet_job_zone\":null,\"employer_reviews\":null},{\"job_id\":\"GWHefX7vGx0qLQWKAAAAAA==\",\"job_title\":\"Lead
+        Python Developer, Data Analytics\",\"employer_name\":\"CVS Health\",\"employer_logo\":\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSP5IrAMWNqn7hj6LSrOfNv42t5cNZwJN9j6OyL&s=0\",\"employer_website\":\"https://www.cvshealth.com\",\"job_publisher\":\"Glassdoor\",\"job_employment_type\":\"Full-time\",\"job_employment_types\":[\"FULLTIME\"],\"job_apply_link\":\"https://www.glassdoor.com/job-listing/lead-python-developer-data-analytics-cvs-health-JV_IC1155583_KO0,36_KE37,47.htm?jl=1010097573202\",\"job_apply_is_direct\":false,\"apply_options\":[{\"apply_link\":\"https://www.glassdoor.com/job-listing/lead-python-developer-data-analytics-cvs-health-JV_IC1155583_KO0,36_KE37,47.htm?jl=1010097573202\",\"is_direct\":false,\"publisher\":\"Glassdoor\"}],\"job_description\":\"We\u2019re
+        building a world of health around every individual \u2014 shaping a more connected,
+        convenient and compassionate health experience. At CVS Health\xAE, you\u2019ll
+        be surrounded by passionate colleagues who care deeply, innovate with purpose,
+        hold ourselves accountable and prioritize safety and quality in everything
+        we do. Join us and be part of something bigger \u2013 helping to simplify
+        health care one person, one family and one community at a time.\\n\\nPosition
+        Summary\\n\\nAetna\u2019s Reporting Solutions team is looking for an initiative-taking
+        Lead Python Developer with 3+ years of experience in software engineering
+        with Python in a professional environment to join our Reporting Solutions
+        team.\\n\\nThis Lead Python Developer role is a part of the Aetna Commercial\u2019s
+        Sales Enablement department that partners with business leaders and key stakeholders
+        to optimize the achievement of strategic business objectives.\\n\\nIn this
+        exciting new role, the candidate will be accountable for designing, developing
+        new Python code for new analytics capabilities and content.\\n\\nThe work
+        environment supports and thrives on out-of-the box thinking, creative talent,
+        and a consultative approach.\\n\\nSpecifically, this role will be responsible
+        for developing and delivering new capabilities to support health care analytics
+        and reporting, benefits evaluations, and operational decision making by Aetna
+        internal and external constituents. This work requires technical, analytic,
+        and consultative skills.\\n\\n**The position may be remote or hybrid anywhere
+        in the US depending on candidate location and commute to a hub location\\n\\nKey
+        Responsibilities\\n\u2022 Leverage Python to develop new reporting and analytics
+        using healthcare data (medical, pharmacy, lab)\\n\u2022 Create business applications
+        to deliver clinical or analytic solutions to constituents in a self-service
+        fashion using Plotly Dash Enterprise.\\n\u2022 Drive forward enterprise modernization
+        opportunities leveraging Python and cloud-native technologies.\\n\u2022 Refactor
+        legacy programming code to improve turn-around-times and to take advantage
+        of modern technologies.\\n\u2022 Communicate with key stakeholders in a way
+        that is easy to understand and actionable.\\n\u2022 Define and deliver new
+        technical capabilities in support of healthcare business initiatives that
+        drive short- and long-term objectives.\\n\u2022 Work to expand, scale, and
+        automate the analyses available to the broader team and the Aetna field.\\n\u2022
+        Ability to mentor and knowledge share with peers.\\n\u2022 Monitor and maintain
+        applications and production processes required to deliver on business commitments.\\n\u2022
+        Use analytics and technology to solve business needs as well as to demonstrate
+        to customers the value of Aetna\u2019s integration with CVS Health.\\n\\nRequired
+        Qualifications\\n\u2022 3+ years of experience with a Python Data Engineering
+        Stack in a professional environment.\\n\u2022 3+ Experience with SQL query
+        development, working in a data warehouse environment as well as the ability
+        to work with large data sets from multiple data sources.\\n\u2022 Proficient
+        in usage of the following Python libraries: Polars, NumPy, Pandas.\\n\u2022
+        Proficient with: XML, JSON, YAML.\\n\u2022 Experience with AI prompting to
+        assist with development with tools like Copilot and, Claude.\\n\u2022 Proficient
+        in the use of CI/CD pipelines and Git integration.\\n\\nPreferred Qualifications\\n\u2022
+        5+ years in a technical analytics/reporting role, with 3+ years of experience
+        focusing on Python, SQL in a professional environment.\\n\\n\u2022 Experience
+        with callback architecture, including client-side callbacks, pattern-matching
+        callbacks, and callback optimization techniques for complex multi-page applications.\\n\u2022
+        Experience with Redis for application caching, session management, and real-time
+        data storage.\\n\u2022 Experience with PostgreSQL including complex query
+        optimization, indexing strategies, and database performance tuning.\\n\u2022
+        Expertise Celery for distributed task queue management and background job
+        processing, including task routing, retry logic, error handling, and monitoring.\\n\u2022
+        Expertise in XlsxWriter for generating complex Excel reports with multiple
+        worksheets, charts, conditional formatting, and data validation.\\n\u2022
+        Experience with front end development, e.g., REACT, HTML, CSS.\\n\u2022 Experience
+        with cloud computing providers (GCP, Azure, AWS)\\n\u2022 Experience with
+        specialized Python data management libraries, e.g., with DBT.\\n\u2022 Experience
+        migrating on-premises capabilities and analytical workflows to the cloud,
+        leveraging cloud-native technologies to improve efficiency and effectiveness,
+        e.g., with Google Cloud Platform.\\n\u2022 Excellent English communication
+        and presentation skills, ensuring clear and concise communication with our
+        team members and fostering a smooth and effective collaboration process.\\n\u2022
+        A strong ability to encourage teamwork and actively support the team\u2019s
+        objectives is essential.\\n\\nEducation\\n\u2022 Bachelor's degree preferred/specialized
+        training/relevant professional qualification.\\n\\nPay Range\\n\\nThe typical
+        pay range for this role is:\\n\\n$67,900.00 - $199,144.00\\n\\nThis pay range
+        represents the base hourly rate or base annual full-time salary for all positions
+        in the job grade within which this position falls. The actual base salary
+        offer will depend on a variety of factors including experience, education,
+        geography and other relevant factors. This position is eligible for a CVS
+        Health bonus, commission or short-term incentive program in addition to the
+        base pay range listed above. This position also includes an award target in
+        the company\u2019s equity award program.\\n\\nOur people fuel our future.
+        Our teams reflect the customers, patients, members and communities we serve
+        and we are committed to fostering a workplace where every colleague feels
+        valued and that they belong.\\n\\nGreat benefits for great people\\n\\nWe
+        take pride in offering a comprehensive and competitive mix of pay and benefits
+        that reflects our commitment to our colleagues and their families.\\n\\nThis
+        full\u2011time position is eligible for a comprehensive benefits package designed
+        to support the physical, emotional, and financial well\u2011being of colleagues
+        and their families. The benefits for this position include medical, dental,
+        and vision coverage, paid time off, retirement savings options, wellness programs,
+        and other resources, based on eligibility.\\n\\nAdditional details about available
+        benefits are provided during the application process and on Benefits Moments.\\n\\nWe
+        anticipate the application window for this opening will close on: 04/26/2026\\n\\nQualified
+        applicants with arrest or conviction records will be considered for employment
+        in accordance with all federal, state and local laws.\",\"job_is_remote\":false,\"job_posted_at\":\"13
+        days ago\",\"job_posted_at_timestamp\":1775865600,\"job_posted_at_datetime_utc\":\"2026-04-11T00:00:00.000Z\",\"job_location\":\"Atlanta,
+        GA\",\"job_city\":\"Atlanta\",\"job_state\":\"Georgia\",\"job_country\":\"US\",\"job_latitude\":33.7501275,\"job_longitude\":-84.3885209,\"job_benefits\":[\"paid_time_off\",\"health_insurance\",\"dental_coverage\"],\"job_benefits_strings\":[\"Paid
+        time off\",\"Health insurance\",\"Dental insurance\"],\"job_google_link\":\"https://www.google.com/search?q=jobs&gl=us&hl=en&udm=8#vhid=vt%3D20/docid%3DGWHefX7vGx0qLQWKAAAAAA%3D%3D&vssid=jobs-detail-viewer\",\"job_salary\":null,\"job_salary_string\":\"67,900\u2013199,144
+        a year\",\"job_min_salary\":67900,\"job_max_salary\":199144,\"job_salary_period\":\"YEAR\",\"job_highlights\":{},\"job_onet_soc\":null,\"job_onet_job_zone\":null,\"employer_reviews\":null},{\"job_id\":\"VzBe98G5XSUsH33zAAAAAA==\",\"job_title\":\"Python
+        Software Engineer - Ai Training\",\"employer_name\":\"YO IT CONSULTING\",\"employer_logo\":null,\"employer_website\":null,\"job_publisher\":\"ZipRecruiter\",\"job_employment_type\":\"Full-time,
+        Part-time, and Contractor\",\"job_employment_types\":[\"FULLTIME\",\"PARTTIME\",\"CONTRACTOR\"],\"job_apply_link\":\"https://www.ziprecruiter.com/c/YO-IT-CONSULTING/Job/Python-Software-Engineer-Ai-Training/-in-Atlanta,GA?jid=22a4ffb2a9730307\",\"job_apply_is_direct\":false,\"apply_options\":[{\"apply_link\":\"https://www.ziprecruiter.com/c/YO-IT-CONSULTING/Job/Python-Software-Engineer-Ai-Training/-in-Atlanta,GA?jid=22a4ffb2a9730307\",\"is_direct\":false,\"publisher\":\"ZipRecruiter\"}],\"job_description\":\"Work
+        Mode: Remote\\nEngagement Type: Independent Contractor\\nSchedule: Full-Time
+        or Part-Time Contract\\n\\nLanguage Requirement: Fluent English\\n\\nRole
+        Overview\\n\\nWe partner with leading AI teams to improve the quality, usefulness,
+        and reliability of general-purpose conversational AI systems.\\n\\nThis project
+        focuses specifically on evaluating and improving how AI systems reason about
+        code, generate programming solutions, and explain technical concepts across
+        various complexity levels.\\n\\nThe role involves rigorous technical evaluation
+        of AI-generated responses in coding and software engineering contexts.\\nWhat
+        Youll Do\\nEvaluate LLM-generated responsesto coding and software engineering
+        queries for accuracy, reasoning, clarity, and completeness\\nConduct fact-checkingusing
+        trusted public sources and authoritative references\\nConduct accuracy testing
+        byexecuting code and validating outputs using appropriate tools\\nAnnotate
+        model responsesby identifying strengths, areas of improvement, and factual
+        or conceptual inaccuracies\\nAssess code quality, readability, algorithmic
+        soundness, and explanation quality\\nEnsuremodel responses align with expected
+        conversational behaviorand system guidelines\\nApply consistent evaluation
+        standardsby following clear taxonomies, benchmarks, and detailed evaluation
+        guidelines\\n\\nWho You Are\\nYou hold aBS, MS, or PhD in Computer Science
+        or a closely related field\\nYou havesignificant real-world experience in
+        software engineeringor related technical roles\\nYou are an expert in atleast
+        one relevant programming language (e.g., Python, Java, C++, JavaScript, Go,
+        Rust)\\nYou are able to solveHackerRank or LeetCode Medium and Hardlevel problems
+        independently\\nYou have experience contributing to well-known open-source
+        projects, including merged pull requests\\nYou havesignificant experience
+        using LLMs while codingand understand their strengths and failure modes\\nYou
+        have strong attention to detailand arecomfortable evaluating complex technical
+        reasoning, identifying subtle bugs or logical flaws\\n\\nNice-to-Have Specialties\\nPrior
+        experience with RLHF, model evaluation, or data annotation work\\nTrack record
+        in competitive programming\\nExperience reviewing code in production environments\\nFamiliarity
+        with multiple programming paradigms or ecosystems\\nExperience explaining
+        complex technical concepts to non-expert audiences\\n\\nWhat Success Looks
+        Like\\nYou identify incorrect logic, inefficiencies, edge cases, or misleading
+        explanations in model-generated code, technical concepts, and system design
+        discussions\\nYour feedback improves the correctness, robustness, and clarity
+        of AI coding outputs\\nYou deliver reproducible evaluation artifacts that
+        strengthen model performance\",\"job_is_remote\":false,\"job_posted_at\":null,\"job_posted_at_timestamp\":null,\"job_posted_at_datetime_utc\":null,\"job_location\":\"Atlanta,
+        GA\",\"job_city\":\"Atlanta\",\"job_state\":\"Georgia\",\"job_country\":\"US\",\"job_latitude\":33.7501275,\"job_longitude\":-84.3885209,\"job_benefits\":null,\"job_benefits_strings\":null,\"job_google_link\":\"https://www.google.com/search?q=jobs&gl=us&hl=en&udm=8#vhid=vt%3D20/docid%3DVzBe98G5XSUsH33zAAAAAA%3D%3D&vssid=jobs-detail-viewer\",\"job_salary\":null,\"job_salary_string\":null,\"job_min_salary\":null,\"job_max_salary\":null,\"job_salary_period\":null,\"job_highlights\":{},\"job_onet_soc\":null,\"job_onet_job_zone\":null,\"employer_reviews\":null}]}"
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token
+      Access-Control-Allow-Methods:
+      - GET,OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 24 Apr 2026 00:09:50 GMT
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Server:
+      - RapidAPI-0.0.30
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+      X-Amzn-Trace-Id:
+      - Root=1-69eab4cb-2cd6cd487bc1824334a7a036;Parent=156d12c07d343fa7;Sampled=0;Lineage=1:b4918fbd:0
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-RapidAPI-Region:
+      - AWS - us-east-1
+      X-RapidAPI-Request-Id:
+      - c29ccfc142bf25e2e4d1d0926c65a73b28ef6ba9bacd52c3bff8212fbdeeed8e
+      X-RapidAPI-Version:
+      - 0.0.30
+      X-RateLimit-Requests-Limit:
+      - '10000'
+      X-RateLimit-Requests-Remaining:
+      - '9906'
+      X-RateLimit-Requests-Reset:
+      - '2324510'
+      x-amz-apigw-id:
+      - cTEv7GazoAMEZcw=
+      x-amzn-RequestId:
+      - f2100d2b-4f96-454b-b05a-8f06fd62d165
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.33.1
+      X-RapidAPI-Host:
+      - jsearch.p.rapidapi.com
+      X-RapidAPI-Key:
+      - FAKE_JSEARCH_API_KEY
+    method: GET
+    uri: https://jsearch.p.rapidapi.com/search?num_pages=1&page=1&query=python+developer&remote_jobs_only=true
+  response:
+    body:
+      string: "{\"status\":\"OK\",\"request_id\":\"a8e61ab0-3c6b-40ff-acf6-487faa681be9\",\"parameters\":{\"query\":\"python
+        developer\",\"page\":1,\"num_pages\":1,\"country\":\"us\",\"language\":\"en\"},\"data\":[{\"job_id\":\"RD-7O1IO_EJR3VySAAAAAA==\",\"job_title\":\"Python
+        Developer\",\"employer_name\":\"CACI International Inc\",\"employer_logo\":\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ66XoBR1KPoFu_3dQXnYcmJMIETG43a4BlIqH9&s=0\",\"employer_website\":null,\"job_publisher\":\"LinkedIn\",\"job_employment_type\":\"Full-time\",\"job_employment_types\":[\"FULLTIME\"],\"job_apply_link\":\"https://www.linkedin.com/jobs/view/python-developer-at-caci-international-inc-4403233104\",\"job_apply_is_direct\":false,\"apply_options\":[{\"apply_link\":\"https://www.linkedin.com/jobs/view/python-developer-at-caci-international-inc-4403233104\",\"is_direct\":false,\"publisher\":\"LinkedIn\"}],\"job_description\":\"Job
+        Title: Python Developer\\n\\nJob Category: Information Technology\\n\\nTime
+        Type: Full time\\n\\nMinimum Clearance Required to Start: Secret\\n\\nEmployee
+        Type: Regular\\n\\nPercentage of Travel Required: None\\n\\nType of Travel:
+        None\\n\\n* * *\\n\\nThe Opportunity\\n\\nLooking for a candidate to support
+        the NSWC Carderock Division's technical code with python development and database
+        administration.\\n\\nResponsibilities\\n\\nWe are currently seeking a qualified
+        candidate for a role requiring the following technical experience:\\n\\n\u2022
+        Building and managing REST APIs\\n\u2022 Proficiency with Git, GitLab, or
+        GitHub\\n\u2022 Utilizing Jenkins for CI/CD deployment\\n\u2022 Experience
+        with Vue.js and JavaScript\\n\u2022 Strong knowledge of Object-Oriented Programming
+        (OOP)\\n\u2022 Experience working with complex data structures\\n\\nQualifications\\n\\nRequired:\\n\\n\u2022
+        Secret clearance\\n\u2022 Bachelors Degree\\n\u2022 3+ years Python Development
+        experience\\n\u2022 3+ years working experience as a Software Engineer\\n\u2022
+        3+ year working with the Flask/Django Web Framework\\n\u2022 Linux development
+        experience\\n\u2022 Oracle development experience (programming experience,
+        data structure definition) Desire/Willingness to learn Ada\\n\\nDesired\\n\\n\u2022
+        Ada development experience\\n\u2022 ETL and ELT data experience\\n\\nWhat
+        You Can Expect\\n\\nA culture of integrity.\\n\\nAt CACI, we place character
+        and innovation at the center of everything we do. As a valued team member,
+        you\u2019ll be part of a high-performing group dedicated to our customer\u2019s
+        missions and driven by a higher purpose \u2013 to ensure the safety of our
+        nation.\\n\\nAn environment of trust.\\n\\nCACI values the unique contributions
+        that every employee brings to our company and our customers - every day. You\u2019ll
+        have the autonomy to take the time you need through a unique flexible time
+        off benefit and have access to robust learning resources to make your ambitions
+        a reality.\\n\\nA focus on continuous growth.\\n\\nTogether, we will advance
+        our nation's most critical missions, build on our lengthy track record of
+        business success, and find opportunities to break new ground \u2014 in your
+        career and in our legacy.\\n\\nPay Range\\n\\nThere are a host of factors
+        that can influence final salary including, but not limited to, geographic
+        location, Federal Government contract labor categories and contract wage rates,
+        relevant prior work experience, specific skills and competencies, education,
+        and certifications. Our employees value the flexibility at CACI that allows
+        them to balance quality work and their personal lives. We offer competitive
+        compensation, benefits and learning and development opportunities. Our broad
+        and competitive mix of benefits options is designed to support and protect
+        employees and their families. At CACI, you will receive comprehensive benefits
+        such as; healthcare, wellness, financial, retirement, family support, continuing
+        education, and time off benefits.\\n\\nThe Proposed Salary Range For This
+        Position Is\\n\\n$72,700 - $149,200\\n\\nCACI is an Equal Opportunity Employer.
+        All qualified applicants will receive consideration for employment without
+        regard to race, color, religion, sex, pregnancy, sexual orientation, age,
+        national origin, disability, status as a protected veteran, or any other protected
+        characteristic.\",\"job_is_remote\":false,\"job_posted_at\":\"9 hours ago\",\"job_posted_at_timestamp\":1776956400,\"job_posted_at_datetime_utc\":\"2026-04-23T15:00:00.000Z\",\"job_location\":\"Bethesda,
+        MD\",\"job_city\":\"Bethesda\",\"job_state\":\"Maryland\",\"job_country\":\"US\",\"job_latitude\":38.9848328,\"job_longitude\":-77.09431719999999,\"job_benefits\":[\"paid_time_off\",\"health_insurance\"],\"job_benefits_strings\":[\"Paid
+        time off\",\"Health insurance\"],\"job_google_link\":\"https://www.google.com/search?q=jobs&gl=us&hl=en&udm=8#vhid=vt%3D20/docid%3DRD-7O1IO_EJR3VySAAAAAA%3D%3D&vssid=jobs-detail-viewer\",\"job_salary\":null,\"job_salary_string\":null,\"job_min_salary\":null,\"job_max_salary\":null,\"job_salary_period\":null,\"job_highlights\":{},\"job_onet_soc\":null,\"job_onet_job_zone\":null,\"employer_reviews\":null},{\"job_id\":\"1RNi4iZOd8S-e58JAAAAAA==\",\"job_title\":\"Python
+        Developer/ Data Engineer\",\"employer_name\":\"Conch Technologies Inc\",\"employer_logo\":\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-C4I4mK18j7vCkCSZC3UKIFHvEFVDOp0g0Lia&s=0\",\"employer_website\":\"https://www.conchtech.com\",\"job_publisher\":\"ZipRecruiter\",\"job_employment_type\":null,\"job_employment_types\":[],\"job_apply_link\":\"https://www.ziprecruiter.com/c/Conch-Technologies/Job/Python-Developer-Data-Engineer/-in-Remote,US?jid=1ba3218ec8d27656\",\"job_apply_is_direct\":false,\"apply_options\":[{\"apply_link\":\"https://www.ziprecruiter.com/c/Conch-Technologies/Job/Python-Developer-Data-Engineer/-in-Remote,US?jid=1ba3218ec8d27656\",\"is_direct\":false,\"publisher\":\"ZipRecruiter\"}],\"job_description\":\"Hi,\\nGreetings
+        from Conch Technologies Inc\\n\\nPosition: Python Developer/ Data Engineer\\nLocation:
+        100% REMOTE (Candidate will have to work in est zone)\\nDuration: 6 month
+        contract\\n\\nInperson Assesment on below location:\\n\\nBaltimore, MD, Boca
+        Raton, FL, Chicago, IL, Coral Gables, FL, Fort Lauderdale, FL, Miami, FL,
+        New York City, NY, Radnor, PA, Rancho Cordova, CA, Salt Lake City, UT, San
+        Mateo, CA, San Ramon, CA, Short Hills, NJ, St. Petersburg, FL, Stamford, CT,
+        Washington, D.C., Wilmington, DE\\n\\nInterview Process: 1st Round - 15-20
+        mins Convo w/HM & 2nd Round - Coding Assessment (1-2 hours) In person assessment\\n\\nProject:
+        Aladdin Integration - running compliance checks when buying accounts in different
+        countries, the violations that come up, it will need to be put into a report
+        (current data is up to 7 years)\\n\\nTech Skills:\\n\u2022 Python\\n\u2022
+        Investment Asset Management Experience - someone who understands compliance
+        (equity fixed income derivatives)\\n\u2022 Python Reporting\\n\u2022 Does
+        not need Aladdin experience fyi\\n\u2022 Basic asset classes experience needed\\n\u2022
+        Investment lifecycle exp\\n\u2022 Basic SQL exp - querying\\n\u2022 API exp\\n\u2022
+        AWS exp is a plus\\n\u2022 Companies like BlackRock, Vanguard, PIMCO, State
+        Street, Fidelity Investments, Capital Group\\n\\nWith Regards,\\n\\nNayak
+        Teketi\\n\\nDesk: 901-317-3453\\n\\nEmail: nayak@conchtech.com\\n\\nWeb: www.conchtech.com\",\"job_is_remote\":false,\"job_posted_at\":\"9
+        hours ago\",\"job_posted_at_timestamp\":1776956400,\"job_posted_at_datetime_utc\":\"2026-04-23T15:00:00.000Z\",\"job_location\":\"Washington,
+        DC\",\"job_city\":\"Washington\",\"job_state\":\"District of Columbia\",\"job_country\":\"US\",\"job_latitude\":38.9072873,\"job_longitude\":-77.0369274,\"job_benefits\":null,\"job_benefits_strings\":null,\"job_google_link\":\"https://www.google.com/search?q=jobs&gl=us&hl=en&udm=8#vhid=vt%3D20/docid%3D1RNi4iZOd8S-e58JAAAAAA%3D%3D&vssid=jobs-detail-viewer\",\"job_salary\":null,\"job_salary_string\":null,\"job_min_salary\":null,\"job_max_salary\":null,\"job_salary_period\":null,\"job_highlights\":{},\"job_onet_soc\":null,\"job_onet_job_zone\":null,\"employer_reviews\":null},{\"job_id\":\"VOt19vrd8ghD0rqkAAAAAA==\",\"job_title\":\"Python
+        - Software Engineer, AI\",\"employer_name\":\"G2i Inc.\",\"employer_logo\":\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSx4amU4DHDNSbMlrpsIpIR6mIm_3fqgBklorKM&s=0\",\"employer_website\":\"https://www.g2i.co\",\"job_publisher\":\"ZipRecruiter\",\"job_employment_type\":\"Contractor\",\"job_employment_types\":[\"CONTRACTOR\"],\"job_apply_link\":\"https://www.ziprecruiter.com/c/G2i/Job/Python-Software-Engineer,-AI/-in-Arlington,VA?jid=839daaa6c0f4c203\",\"job_apply_is_direct\":false,\"apply_options\":[{\"apply_link\":\"https://www.ziprecruiter.com/c/G2i/Job/Python-Software-Engineer,-AI/-in-Arlington,VA?jid=839daaa6c0f4c203\",\"is_direct\":false,\"publisher\":\"ZipRecruiter\"}],\"job_description\":\"Before
+        applying\\n\\nThis role is open to contractors in accepted locations only.
+        Please confirm your country is on the list before applying - we're unable
+        to process applications from unlisted locations. List of accepted countries
+        and locations.\\n\\nFor US applicants\\n\\nThis is a 1099 independent contractor
+        role. It is not compatible with F-1 OPT, STEM OPT, or any visa status that
+        requires W-2 employment,\_guaranteed hours, or employer sponsorship.\\n\\nWe
+        are unable to provide offer letters or employment verification for this role.\\n\\nWhat
+        You'll Be Doing\\n\\nHelp train large language models (LLMs) to write production-grade
+        code across a wide range of programming languages:\\n\u2022 Compare and rank
+        multiple code snippets, explaining which is best and why\\n\u2022 Repair and
+        refactor AI-generated code for correctness, efficiency, and style\\n\u2022
+        Inject feedback (ratings, edits, test results) into the RLHF pipeline and
+        keep it running smoothly\\n\\nEnd result: the model learns to propose, critique,
+        and improve code the way you do.\\n\\nRLHF in one line: Generate code expert
+        engineers rank, edit, and justify convert that feedback into reward signals
+        reinforcement learning tunes the model toward code you'd actually ship.\\n\\nWhat
+        You'll Need\\n\u2022 3+ years of professional software engineering experience
+        in Python (constraint programming experience is a bonus, but not required)\\n\u2022
+        Strong code-review instincts - you can spot logic errors, performance traps,
+        and security issues quickly\\n\u2022 Extreme attention to detail and excellent
+        written communication skills. Much of this role involves explaining why one
+        approach is better than another. This cannot be overstated.\\n\u2022 Comfortable
+        reading documentation and language specs, and able to work well in an asynchronous,
+        low-oversight environment\\n\\nIdentity verification: Applicants will be required
+        to verify their identity and confirm they have valid documentation to work
+        as an independent contractor in their country of residence.\\n\\nWhat You
+        Don't Need\\n\u2022 No prior RLHF or AI training experience\\n\\nLogistics\\n\u2022
+        Location: Fully remote - work from anywhere on the accepted locations list\\n\u2022
+        Compensation: $30-$70/hr based on location and seniority. Note: the majority
+        of projects run at around $30/hr - higher rates apply to senior profiles and
+        specific project types\\n\u2022 Hours: Minimum 15 hrs/week, up to 40+ hrs/week
+        available - hours vary by project and are not guaranteed week to week\\n\u2022
+        Engagement: 1099 independent contractor\\n\u2022 Payment: Weekly via PayPal
+        or Stripe\\n\\nImportant: Hours are project-dependent and can vary week to
+        week. We recommend keeping other work options open alongside this engagement
+        rather than relying on it as your sole source of income.\",\"job_is_remote\":false,\"job_posted_at\":\"2
+        days ago\",\"job_posted_at_timestamp\":1776816000,\"job_posted_at_datetime_utc\":\"2026-04-22T00:00:00.000Z\",\"job_location\":\"Arlington,
+        VA\",\"job_city\":\"Arlington\",\"job_state\":\"Virginia\",\"job_country\":\"US\",\"job_latitude\":38.8816208,\"job_longitude\":-77.09098089999999,\"job_benefits\":null,\"job_benefits_strings\":null,\"job_google_link\":\"https://www.google.com/search?q=jobs&gl=us&hl=en&udm=8#vhid=vt%3D20/docid%3DVOt19vrd8ghD0rqkAAAAAA%3D%3D&vssid=jobs-detail-viewer\",\"job_salary\":null,\"job_salary_string\":\"30\u201370
+        an hour\",\"job_min_salary\":30,\"job_max_salary\":70,\"job_salary_period\":\"HOUR\",\"job_highlights\":{},\"job_onet_soc\":null,\"job_onet_job_zone\":null,\"employer_reviews\":null},{\"job_id\":\"yjRR0WZ_PfFYcpgfAAAAAA==\",\"job_title\":\"Python
+        Developer\",\"employer_name\":\"CACI International Inc\",\"employer_logo\":\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_UWz2-naerDFCRPxBJHMbwR4uoKqDT458Iri8&s=0\",\"employer_website\":null,\"job_publisher\":\"Built
+        In\",\"job_employment_type\":\"Full-time\",\"job_employment_types\":[\"FULLTIME\"],\"job_apply_link\":\"https://builtin.com/job/python-developer/9139014\",\"job_apply_is_direct\":false,\"apply_options\":[{\"apply_link\":\"https://builtin.com/job/python-developer/9139014\",\"is_direct\":false,\"publisher\":\"Built
+        In\"}],\"job_description\":\"Job Title: Python Developer\\n\\nJob Category:
+        Information Technology\\n\\nTime Type: Full time\\n\\nMinimum Clearance Required
+        to Start: Secret\\n\\nEmployee Type: Regular\\n\\nPercentage of Travel Required:
+        None\\n\\nType of Travel: None\\n\\n* * *\\n\\nThe Opportunity:\\nLooking
+        for a candidate to support the NSWC Carderock Division's technical code with
+        python development and database administration.\\nResponsibilities:\\nWe are
+        currently seeking a qualified candidate for a role requiring the following
+        technical experience:\\n\u2022 Building and managing REST APIs\\n\\n\u2022
+        Proficiency with Git, GitLab, or GitHub\\n\\n\u2022 Utilizing Jenkins for
+        CI/CD deployment\\n\\n\u2022 Experience with Vue.js and JavaScript\\n\\n\u2022
+        Strong knowledge of Object-Oriented Programming (OOP)\\n\\n\u2022 Experience
+        working with complex data structures\\n\\nQualifications:\\nRequired:\\n\u2022
+        Secret clearance\\n\\n\u2022 Bachelors Degree\\n\\n\u2022 3+ years Python
+        Development experience\\n\\n\u2022 3+ years working experience as a Software
+        Engineer\\n\\n\u2022 3+ year working with the Flask/Django Web Framework\\n\\n\u2022
+        Linux development experience\\n\\n\u2022 Oracle development experience (programming
+        experience, data structure definition) Desire/Willingness to learn Ada\\n\\nDesired:\\n\u2022
+        Ada development experience\\n\\n\u2022 ETL and ELT data experience\\n\\n-What
+        You Can Expect:\\nA culture of integrity.\\nAt CACI, we place character and
+        innovation at the center of everything we do. As a valued team member, you\u2019ll
+        be part of a high-performing group dedicated to our customer\u2019s missions
+        and driven by a higher purpose \u2013 to ensure the safety of our nation.\\nAn
+        environment of trust.\\nCACI values the unique contributions that every employee
+        brings to our company and our customers - every day. You\u2019ll have the
+        autonomy to take the time you need through a unique flexible time off benefit
+        and have access to robust learning resources to make your ambitions a reality.\\nA
+        focus on continuous growth.\\nTogether, we will advance our nation's most
+        critical missions, build on our lengthy track record of business success,
+        and find opportunities to break new ground \u2014 in your career and in our
+        legacy.\\nPay Range:\\nThere are a host of factors that can influence final
+        salary including, but not limited to, geographic location, Federal Government
+        contract labor categories and contract wage rates, relevant prior work experience,
+        specific skills and competencies, education, and certifications. Our employees
+        value the flexibility at CACI that allows them to balance quality work and
+        their personal lives. We offer competitive compensation, benefits and learning
+        and development opportunities. Our broad and competitive mix of benefits options
+        is designed to support and protect employees and their families. At CACI,
+        you will receive comprehensive benefits such as; healthcare, wellness, financial,
+        retirement, family support, continuing education, and time off benefits.\\nThe
+        proposed salary range for this position is:\\n$72,700 - $149,200\\n\\nCACI
+        is an Equal Opportunity Employer. All qualified applicants will receive consideration
+        for employment without regard to race, color, religion, sex, pregnancy, sexual
+        orientation, age, national origin, disability, status as a protected veteran,
+        or any other protected characteristic.\",\"job_is_remote\":false,\"job_posted_at\":\"1
+        day ago\",\"job_posted_at_timestamp\":1776902400,\"job_posted_at_datetime_utc\":\"2026-04-23T00:00:00.000Z\",\"job_location\":\"Bethesda,
+        MD\",\"job_city\":\"Bethesda\",\"job_state\":\"Maryland\",\"job_country\":\"US\",\"job_latitude\":38.9848328,\"job_longitude\":-77.09431719999999,\"job_benefits\":[\"health_insurance\",\"paid_time_off\"],\"job_benefits_strings\":[\"Health
+        insurance\",\"Paid time off\"],\"job_google_link\":\"https://www.google.com/search?q=jobs&gl=us&hl=en&udm=8#vhid=vt%3D20/docid%3DyjRR0WZ_PfFYcpgfAAAAAA%3D%3D&vssid=jobs-detail-viewer\",\"job_salary\":null,\"job_salary_string\":\"72.7K\u2013149K
+        a year\",\"job_min_salary\":72700,\"job_max_salary\":149000,\"job_salary_period\":\"YEAR\",\"job_highlights\":{},\"job_onet_soc\":null,\"job_onet_job_zone\":null,\"employer_reviews\":null},{\"job_id\":\"3PUZ4oggbOt5tH4JAAAAAA==\",\"job_title\":\"AI
+        Python Developer\",\"employer_name\":\"PTR Global\",\"employer_logo\":\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsnyMIYyjNwRgngPeK55nNNfOdU-J0bNVbfGTT&s=0\",\"employer_website\":\"https://www.ptrglobal.com\",\"job_publisher\":\"LinkedIn\",\"job_employment_type\":\"Contractor\",\"job_employment_types\":[\"CONTRACTOR\"],\"job_apply_link\":\"https://www.linkedin.com/jobs/view/ai-python-developer-at-ptr-global-4404818876\",\"job_apply_is_direct\":false,\"apply_options\":[{\"apply_link\":\"https://www.linkedin.com/jobs/view/ai-python-developer-at-ptr-global-4404818876\",\"is_direct\":false,\"publisher\":\"LinkedIn\"}],\"job_description\":\"Position:
+        Senior Data Scientist\\nLocation: McLean, Virginia\\nDuration: 6+ months\\nJob
+        ID: 176073\\n\\nJob Overview:\\n\\nThe Senior Data Scientist will play a pivotal
+        role in leveraging advanced data analytics, machine learning, and statistical
+        modeling to drive business insights and decision-making. This position requires
+        a deep understanding of data science methodologies and the ability to work
+        collaboratively with cross-functional teams to solve complex problems and
+        deliver actionable results.\\n\\nResponsibilities:\\n\u2022 Develop and implement
+        advanced machine learning models and algorithms to analyze large datasets.\\n\u2022
+        Collaborate with stakeholders to identify business challenges and translate
+        them into data-driven solutions.\\n\u2022 Perform data preprocessing, cleaning,
+        and transformation to ensure data quality and usability.\\n\u2022 Visualize
+        and communicate findings effectively to both technical and non-technical audiences.\\n\u2022
+        Stay updated on the latest trends and advancements in data science and machine
+        learning.\\n\u2022 Document processes, methodologies, and results for future
+        reference and reproducibility.\\n\\nQualifications:\\n\u2022 Master's or Ph.D.
+        in Data Science, Computer Science, Statistics, or a related field.\\n\u2022
+        Proven experience in data science, machine learning, and statistical modeling.\\n\u2022
+        Proficiency in programming languages such as Python, R, or SQL.\\n\u2022 Experience
+        with data visualization tools like Tableau, Power BI, or similar.\\n\u2022
+        Strong problem-solving skills and the ability to work independently or as
+        part of a team.\\n\u2022 Excellent communication skills to convey complex
+        technical concepts to diverse audiences.\\n\\nAbout PTR Global: PTR Global
+        is a leading provider of information technology and workforce solutions. PTR
+        Global has become one of the largest providers in its industry, with over
+        5000 professionals providing services across the U.S. and Canada. For more
+        information visit www.ptrglobal.com\\n\\nAt PTR Global, we understand the
+        importance of your privacy and security. We NEVER ASK job applicants to:\\n\u2022
+        Pay any fee to be considered for, submitted to, or selected for any opportunity.\\n\u2022
+        Purchase any product, service, or gift cards from us or for us as part of
+        an application, interview, or selection process.\\n\u2022 Provide sensitive
+        financial information such as credit card numbers or banking information.
+        Successfully placed or hired candidates would only be asked for banking details
+        after accepting an offer from us during our official onboarding processes
+        as part of payroll setup.\\n\\nPay Range: $85 - $90\\n\\nThe specific compensation
+        for this position will be determined by several factors, including the scope,
+        complexity, and location of the role, as well as the cost of labor in the
+        market; the skills, education, training, credentials, and experience of the
+        candidate; and other conditions of employment. Our full-time consultants have
+        access to benefits, including medical, dental, vision, and 401K contributions,
+        as well as PTO, sick leave, and other benefits mandated by applicable state
+        or localities where you reside or work.\\n\\nIf you receive a suspicious message,
+        email, or phone call claiming to be from PTR Global do not respond or click
+        on any links. Instead, contact us directly at +1 214-740-2424. To report any
+        concerns, please email us at legal@pinnacle1.com\\n\\nAdd your LinkedIn Hashtag
+        at end of the job description\",\"job_is_remote\":false,\"job_posted_at\":\"2
+        days ago\",\"job_posted_at_timestamp\":1776816000,\"job_posted_at_datetime_utc\":\"2026-04-22T00:00:00.000Z\",\"job_location\":\"McLean,
+        VA\",\"job_city\":\"McLean\",\"job_state\":\"Virginia\",\"job_country\":\"US\",\"job_latitude\":38.9338676,\"job_longitude\":-77.1772604,\"job_benefits\":[\"dental_coverage\",\"paid_time_off\",\"health_insurance\"],\"job_benefits_strings\":[\"Dental
+        insurance\",\"Paid time off\",\"Health insurance\"],\"job_google_link\":\"https://www.google.com/search?q=jobs&gl=us&hl=en&udm=8#vhid=vt%3D20/docid%3D3PUZ4oggbOt5tH4JAAAAAA%3D%3D&vssid=jobs-detail-viewer\",\"job_salary\":null,\"job_salary_string\":null,\"job_min_salary\":null,\"job_max_salary\":null,\"job_salary_period\":null,\"job_highlights\":{},\"job_onet_soc\":null,\"job_onet_job_zone\":null,\"employer_reviews\":null},{\"job_id\":\"Lo9DUBQb-HS9iqk3AAAAAA==\",\"job_title\":\"Senior
+        Python Developer - Contingent\",\"employer_name\":\"ARETUM Holdings LLC\",\"employer_logo\":\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYK48pdwu977WVLy2UcIstyNa35EZ4p6ex8hRy&s=0\",\"employer_website\":null,\"job_publisher\":\"Women
+        For Hire- Job Board\",\"job_employment_type\":\"Full-time\",\"job_employment_types\":[\"FULLTIME\"],\"job_apply_link\":\"https://jobs.womenforhire.com/job/usa/capitol-heights-md/senior-python-developer-contingent-826566/\",\"job_apply_is_direct\":false,\"apply_options\":[{\"apply_link\":\"https://jobs.womenforhire.com/job/usa/capitol-heights-md/senior-python-developer-contingent-826566/\",\"is_direct\":false,\"publisher\":\"Women
+        For Hire- Job Board\"}],\"job_description\":\"ARETUM Holdings LLC\\nDescription\\n\\nPublic
+        Trust Eligibility Required\\n\\nThis is a contingent position, meaning employment
+        is dependent upon the successful award of the associated contract to Aretum
+        and completion of any required background investigation or security clearance
+        verification.\\n\\nAbout Aretum\\n\\nAretum is a mission-driven organization
+        committed to delivering innovative, technology-enabled solutions to our customers
+        across defense, civilian, and homeland security sectors. Our teams work at
+        the intersection of strategy, technology, and transformation, helping agencies
+        solve their most critical challenges. We believe in investing in our people
+        and creating a culture where collaboration, inclusion, and professional growth
+        are at the forefront.\\n\\nJob Summary\\n\\nAretum is seeking a skilled and
+        motivated Senior Python Developer. As a Senior Python Developer, you will
+        assist in leading the integration of a custom application with other client
+        based systems.\\n\\nDue to the nature of our work as a federal consulting
+        organization, employees may be expected to handle Controlled Unclassified
+        Information (CUI) and must adhere to applicable safeguarding and compliance
+        requirements.\\n\\nResponsibilities\\n\u2022 Work cross-functionally in an
+        Agile environment\\n\u2022 Build FastAPIs for the display of content\\n\u2022
+        Create microservices\\n\u2022 Work on front-end and back-end code\\n\u2022
+        Mentor peers and junior developers in Python design\\n\u2022 Build ETL processes\\n\u2022
+        Work in a highly collaborative environment\\n\u2022 Juggle multiple tasks
+        at once\\n\u2022 Work independently and collaboratively as needed\\n\u2022
+        Utilize interpersonal skills and strong communication skills\\n\u2022 Work
+        directly with the Project Manager to support emerging client needs\\n\\nRequirements\\n\u2022
+        8+ years of solid Python development experience\\n\u2022 8+ years of overall
+        (OOP) programming experience\\n\u2022 Bachelor\u2019s Degree (or 2 additional
+        years of experience)\\n\u2022 API development and integration experience\\n\u2022
+        Experience with Microservices\\n\u2022 Experience with JavaScript and JQuery\\n\u2022
+        Experience with Search engines, such as Solr or Elasticsearch\\n\u2022 Experience
+        designing and developing enterprise Web and Search systems\\n\u2022 Experience
+        with enterprise database technologies, such as Postgres and MySQL\\n\u2022
+        Experience building and managing container technologies such as Docker, Podman,
+        Kubernetes, etc.\\n\u2022 Comfortable with working with open source-based
+        solutions\\n\u2022 Familiar with enterprise use of Python\\n\u2022 Expert
+        in continuous integration/continuous delivery solutions\\n\u2022 Experience
+        with large-scale AWS based solutions and Terraform\\n\u2022 Agile environment
+        experience\\n\\nPreferred Qualifications\\n\u2022 Bachelor's Degree in computer
+        science, engineering or related field\\n\u2022 Experience with the federal
+        government\\n\u2022 Experience with FastAPIs (Highly preferred)\\n\\nTravel
+        Requirements\\n\\nThis is a remote position; however, occasional travel may
+        be required based on project needs, client meetings, team collaboration events,
+        or training sessions. Travel is expected to be less than 10% and will be communicated
+        in advance whenever possible.\\n\\nEEO Statement\\n\\nAretum is committed
+        to fostering a workplace rooted in excellence, integrity, and equal opportunity
+        for all. We adhere to merit-based hiring practices, ensuring that all employment
+        decisions are made based on qualifications, skills, and ability to perform
+        the job, without preference or consideration of factors unrelated to job performance.\\n\\nAs
+        an Equal Opportunity Employer, Aretum complies with all applicable federal,
+        state, and local employment laws.\\n\\nWe are proud to support our nation\u2019s
+        veterans and military families, providing career opportunities that honor
+        their service and experience.\\n\\nIf you require reasonable accommodation
+        during the hiring process due to a disability, please contact hr@aretum.com
+        for assistance.\\n\\nEqual Opportunity Employer/Veterans/Disabled\\n\\nU.S.
+        Work Authorization\\n\\nApplicants must be U.S. citizens or currently authorized
+        to work in the United States on a full-time basis. This position supports
+        a federal government contract and requires the ability to obtain and maintain
+        a Public Trust or Suitability Determination, depending on the agency\u2019s
+        background investigation requirements. Sponsorship is not available.\\n\\nBenefits\\n\u2022
+        Health Care Plan (Medical, Dental & Vision)\\n\u2022 Retirement Plan (401k)\\n\u2022
+        Life Insurance (Basic, Voluntary & AD&D)\\n\u2022 Paid Time Off\\n\u2022 Family
+        Leave (Maternity, Paternity)\\n\u2022 Short Term & Long-Term Disability\\n\u2022
+        Training & Development\\n\\nARETUM is an equal opportunity employer, committed
+        to diversity and inclusion. All qualified candidates will receive equal consideration
+        for employment without regard to disability, race, color, religious creed,
+        national origin, sexual orientation/gender identity, or age.\\n\\nARETUM utilizes
+        e-Verify to check employment authorization.\\n\\nEEO/AA/F/M/Vet/Disabled.\\n\\nEqual
+        employment opportunity, including veterans and individuals with disabilities.\\n\\nPI284043104\",\"job_is_remote\":false,\"job_posted_at\":\"12
+        hours ago\",\"job_posted_at_timestamp\":1776945600,\"job_posted_at_datetime_utc\":\"2026-04-23T12:00:00.000Z\",\"job_location\":\"Capitol
+        Heights, MD\",\"job_city\":\"Capitol Heights\",\"job_state\":\"Maryland\",\"job_country\":\"US\",\"job_latitude\":38.8851122,\"job_longitude\":-76.9158068,\"job_benefits\":[\"paid_time_off\",\"health_insurance\",\"dental_coverage\"],\"job_benefits_strings\":[\"Paid
+        time off\",\"Health insurance\",\"Dental insurance\"],\"job_google_link\":\"https://www.google.com/search?q=jobs&gl=us&hl=en&udm=8#vhid=vt%3D20/docid%3DLo9DUBQb-HS9iqk3AAAAAA%3D%3D&vssid=jobs-detail-viewer\",\"job_salary\":null,\"job_salary_string\":null,\"job_min_salary\":null,\"job_max_salary\":null,\"job_salary_period\":null,\"job_highlights\":{},\"job_onet_soc\":null,\"job_onet_job_zone\":null,\"employer_reviews\":null},{\"job_id\":\"CCTr2KSQOwVCqdiiAAAAAA==\",\"job_title\":\"Python
+        Developer (Analytics & Modernization)\",\"employer_name\":\"VeeRteq Solutions
+        LLC\",\"employer_logo\":\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrfKWLQlaZh0WXtz4uM6dEM9Ibzo0JfpuJ5zAz&s=0\",\"employer_website\":null,\"job_publisher\":\"LinkedIn\",\"job_employment_type\":\"Full-time\",\"job_employment_types\":[\"FULLTIME\"],\"job_apply_link\":\"https://www.linkedin.com/jobs/view/python-developer-analytics-modernization-at-veerteq-solutions-llc-4402979971\",\"job_apply_is_direct\":false,\"apply_options\":[{\"apply_link\":\"https://www.linkedin.com/jobs/view/python-developer-analytics-modernization-at-veerteq-solutions-llc-4402979971\",\"is_direct\":false,\"publisher\":\"LinkedIn\"}],\"job_description\":\"Job
+        Title: Senior Python Developer (Analytics & Modernization)\\n\\nExperience:
+        8+ Years USA\\n\\nLocation: Remote\\n\\nJob Summary\\n\\nWe are seeking a
+        highly skilled Senior Python Developer to lead the modernization of our data
+        and analytics ecosystem. You will be a key driver in migrating legacy SAS
+        environments to modern R/Python infrastructures, refactoring complex codebases,
+        and establishing scalable data processing solutions. The ideal candidate will
+        bridge the gap between business requirements and technical execution, providing
+        both hands-on development and high-level architectural support for our analytics
+        teams.\\n\\nKey Responsibilities\\n\\n\u2022 Analytics Modernization: Lead
+        and execute migration initiatives, converting legacy SAS programs and macros
+        into high-performance, modular Python or R scripts.\\n\u2022 Data Pipeline
+        Development: Design, build, and maintain robust Python-based data processing,
+        automation, and analytics pipelines.\\n\u2022 Environment Administration:
+        Support and manage Posit / RStudio environments to ensure seamless access
+        and scalability for data science teams.\\n\u2022 Code Refactoring: Evaluate
+        existing legacy code for optimization opportunities, ensuring new solutions
+        adhere to modern security and performance standards.\\n\u2022 Cross-Functional
+        Collaboration: Partner with business stakeholders and analytics teams to translate
+        complex requirements into scalable technical architectures.\\n\u2022 User
+        Support: Provide technical guidance and troubleshoot issues for analytics
+        platform users as needed.\\n\\nRequired Skills & Experience\\n\\n\u2022 Core
+        Technical Expertise: 8+ years of software development experience with deep
+        proficiency in Python for data engineering and analytics.\\n\u2022 Migration
+        Background: Proven experience leading SAS to R/Python migration projects,
+        including translating SAS DATA steps and PROC SQL into open-source alternatives.\\n\u2022
+        Database Mastery: Expert-level knowledge of SQL and relational database design.\\n\u2022
+        Analytics Ecosystems: Hands-on experience supporting and managing Posit (formerly
+        RStudio) or similar centralized data science environments.\\n\u2022 Modern
+        DevOps: Proficiency with Git for version control and familiarity with CI/CD
+        practices to ensure code quality and security.\\n\u2022 Analytical Mindset:
+        Strong ability to perform complex data analysis and ensure statistical reproducibility
+        during the migration process.\\n\\nNice-to-Have Skills\\n\\n\u2022 Experience
+        with cloud data platforms (AWS, Snowflake, or Databricks).\\n\u2022 Familiarity
+        with containerization (Docker/Kubernetes).\\n\u2022 Relevant technical certifications
+        in Python, R, or Cloud Architecture.\\n\\nEducational Qualifications\\n\\n\u2022
+        Bachelor s or Master s degree in Computer Science, Engineering, Mathematics,
+        or a related technical field (BE/ME, BTech/MTech, BSc/MSc).\",\"job_is_remote\":false,\"job_posted_at\":\"7
+        days ago\",\"job_posted_at_timestamp\":1776384000,\"job_posted_at_datetime_utc\":\"2026-04-17T00:00:00.000Z\",\"job_location\":\"Washington,
+        DC\",\"job_city\":\"Washington\",\"job_state\":\"District of Columbia\",\"job_country\":\"US\",\"job_latitude\":38.9072873,\"job_longitude\":-77.0369274,\"job_benefits\":null,\"job_benefits_strings\":null,\"job_google_link\":\"https://www.google.com/search?q=jobs&gl=us&hl=en&udm=8#vhid=vt%3D20/docid%3DCCTr2KSQOwVCqdiiAAAAAA%3D%3D&vssid=jobs-detail-viewer\",\"job_salary\":null,\"job_salary_string\":null,\"job_min_salary\":null,\"job_max_salary\":null,\"job_salary_period\":null,\"job_highlights\":{},\"job_onet_soc\":null,\"job_onet_job_zone\":null,\"employer_reviews\":null},{\"job_id\":\"SwRzKURMV0zP-Dg9AAAAAA==\",\"job_title\":\"Sr.
+        Python Developer\",\"employer_name\":\"Unisys\",\"employer_logo\":\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwCvjt_zKqxX4cSE9Z5nEBGVYrxGehKuxb3z4J&s=0\",\"employer_website\":\"https://www.unisys.com\",\"job_publisher\":\"LinkedIn\",\"job_employment_type\":\"Contractor\",\"job_employment_types\":[\"CONTRACTOR\"],\"job_apply_link\":\"https://www.linkedin.com/jobs/view/sr-python-developer-at-unisys-4403221317\",\"job_apply_is_direct\":false,\"apply_options\":[{\"apply_link\":\"https://www.linkedin.com/jobs/view/sr-python-developer-at-unisys-4403221317\",\"is_direct\":false,\"publisher\":\"LinkedIn\"}],\"job_description\":\"Python
+        Development\\n\\nStrong proficiency in Python for backend service development\\n\\nExperience
+        with relevant Python libraries such as Pandas, Boto3, and data processing
+        packages\\n\\nProficiency with automated testing using PyTest, including fixtures,
+        mocking, and parameterization\\n\\nUnderstanding of clean code principles,
+        error handling, type hints, and maintainable design.\\n\\nHands-on experience
+        building RESTful APIs using Flask, Django, or FastAPI\\n\\nKnowledge of authentication
+        and authorization mechanisms (JWT, OAuth2)\\n\\nExperience implementing API
+        versioning, request validation, and structured error handling\\n\\nUnderstanding
+        of performance considerations such as throughput, latency, and caching\\n\\nPractical
+        experience with key AWS services including:\\n\\nLambda, S3, Step Functions,
+        Glue, EC2, ECS/Fargate, RDS, Redshift, CloudWatch\\n\\nAbility to design event
+        driven, serverless, and containerized architectures\\n\\nFamiliarity with
+        distributed systems patterns such as retries, dead letter queues, and idempotent
+        operations\\n\\nExperience monitoring applications via CloudWatch metrics,
+        logs, and alarms\\n\\nHands-on experience with GitLab for version control
+        and CI/CD pipeline development\\n\\nExperience using Terraform (or similar)
+        for infrastructure as code\\n\\n#LI-CGTS\\n\\nTS-2652\",\"job_is_remote\":false,\"job_posted_at\":\"9
+        hours ago\",\"job_posted_at_timestamp\":1776956400,\"job_posted_at_datetime_utc\":\"2026-04-23T15:00:00.000Z\",\"job_location\":\"Reston,
+        VA\",\"job_city\":\"Reston\",\"job_state\":\"Virginia\",\"job_country\":\"US\",\"job_latitude\":38.9586307,\"job_longitude\":-77.35700279999999,\"job_benefits\":null,\"job_benefits_strings\":null,\"job_google_link\":\"https://www.google.com/search?q=jobs&gl=us&hl=en&udm=8#vhid=vt%3D20/docid%3DSwRzKURMV0zP-Dg9AAAAAA%3D%3D&vssid=jobs-detail-viewer\",\"job_salary\":null,\"job_salary_string\":null,\"job_min_salary\":null,\"job_max_salary\":null,\"job_salary_period\":null,\"job_highlights\":{},\"job_onet_soc\":null,\"job_onet_job_zone\":null,\"employer_reviews\":null},{\"job_id\":\"o4w_O-dq8Kr5W9ogAAAAAA==\",\"job_title\":\"Python
+        Developer\",\"employer_name\":\"Accenture Federal Services\",\"employer_logo\":\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMqC6rcMNJhMQmxMTqhrNT3RVja-8Q87bsrLIe&s=0\",\"employer_website\":\"https://www.accenture.com\",\"job_publisher\":\"ZipRecruiter\",\"job_employment_type\":\"Full-time\",\"job_employment_types\":[\"FULLTIME\"],\"job_apply_link\":\"https://www.ziprecruiter.com/c/Accenture-Federal-Services/Job/Python-Developer/-in-Arlington,VA?jid=a83aaaa49d254648\",\"job_apply_is_direct\":false,\"apply_options\":[{\"apply_link\":\"https://www.ziprecruiter.com/c/Accenture-Federal-Services/Job/Python-Developer/-in-Arlington,VA?jid=a83aaaa49d254648\",\"is_direct\":false,\"publisher\":\"ZipRecruiter\"}],\"job_description\":\"The
+        work:\\n\\nBased in Winchester, VA, we are looking for a skilled Python Developer
+        to join our team. The ideal candidate will have extensive experience with
+        Django or Flask for building web applications or APIs, as well as proficiency
+        in FastAPI for modern asynchronous web APIs. The candidate should also be
+        adept at creating and managing RESTful and GraphQL APIs, and have a good understanding
+        of front-end technologies such as HTML, CSS, and JavaScript. Experience with
+        authentication, authorization, session management, and deployment processes
+        is essential.\\n\\nKey Responsibilities:\\n\u2022 Develop and maintain web
+        applications and APIs using Django or Flask.\\n\u2022 Build modern asynchronous
+        web APIs using FastAPI.\\n\u2022 Design and implement RESTful and GraphQL
+        APIs.\\n\u2022 Work collaboratively with front-end developers to ensure seamless
+        integration of web applications.\\n\u2022 Implement authentication, authorization,
+        and session management mechanisms.\\n\u2022 Deploy applications using platforms
+        such as Heroku, AWS, Docker, and Nginx.\\n\u2022 Set up and maintain CI/CD
+        pipelines for continuous integration and deployment.\\n\\nHere's what you
+        need:\\n\u2022 Experience with Django or Flask for building web applications
+        or APIs.\\n\u2022 Proficiency in FastAPI for asynchronous web API development.\\n\u2022
+        Solid understanding of RESTful and GraphQL APIs.\\n\u2022 Strong skills in
+        HTML, CSS, and JavaScript.\\n\u2022 Experience with authentication, authorization,
+        and session management.\\n\u2022 Familiarity with deployment tools and platforms
+        such as Heroku, AWS, Docker, and Nginx.\\n\u2022 Experience with setting up
+        and maintaining CI/CD pipelines.\\n\u2022 Requires active Top Secret clearance.\\n\u2022
+        Must be willing to work onsite.\\n\\nPreferred Qualifications:\\n\u2022 Strong
+        problem-solving and troubleshooting skills.\\n\u2022 Ability to work both
+        independently and as part of a team.\\n\u2022 Willingness to stay updated
+        with the latest industry trends and technologies.\\n\\nSkills and Abilities:\\n\u2022
+        Excellent communication and collaboration skills.\\n\u2022 Strong attention
+        to detail and a focus on quality.\\n\u2022 Ability to manage multiple tasks
+        and projects simultaneously.\\n\\n#LI-PublicSafety\",\"job_is_remote\":false,\"job_posted_at\":\"10
+        days ago\",\"job_posted_at_timestamp\":1776124800,\"job_posted_at_datetime_utc\":\"2026-04-14T00:00:00.000Z\",\"job_location\":\"Arlington,
+        VA\",\"job_city\":\"Arlington\",\"job_state\":\"Virginia\",\"job_country\":\"US\",\"job_latitude\":38.8816208,\"job_longitude\":-77.09098089999999,\"job_benefits\":null,\"job_benefits_strings\":null,\"job_google_link\":\"https://www.google.com/search?q=jobs&gl=us&hl=en&udm=8#vhid=vt%3D20/docid%3Do4w_O-dq8Kr5W9ogAAAAAA%3D%3D&vssid=jobs-detail-viewer\",\"job_salary\":null,\"job_salary_string\":null,\"job_min_salary\":null,\"job_max_salary\":null,\"job_salary_period\":null,\"job_highlights\":{},\"job_onet_soc\":null,\"job_onet_job_zone\":null,\"employer_reviews\":null},{\"job_id\":\"uRVo5-O2j3zufA0vAAAAAA==\",\"job_title\":\"Senior
+        Python Developer - Contingent\",\"employer_name\":\"Aretum\",\"employer_logo\":\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzgC_0xgAYkzAUC5N8H42V-JMa6SYsMRseJDyW&s=0\",\"employer_website\":\"https://aretum.com\",\"job_publisher\":\"LinkedIn\",\"job_employment_type\":\"Full-time\",\"job_employment_types\":[\"FULLTIME\"],\"job_apply_link\":\"https://www.linkedin.com/jobs/view/senior-python-developer-contingent-at-aretum-4404435670\",\"job_apply_is_direct\":false,\"apply_options\":[{\"apply_link\":\"https://www.linkedin.com/jobs/view/senior-python-developer-contingent-at-aretum-4404435670\",\"is_direct\":false,\"publisher\":\"LinkedIn\"}],\"job_description\":\"Public
+        Trust Eligibility Required\\n\\nThis is a contingent position, meaning employment
+        is dependent upon the successful award of the associated contract to Aretum
+        and completion of any required background investigation or security clearance
+        verification.\\n\\nAbout Aretum\\n\\nAretum is a mission-driven organization
+        committed to delivering innovative, technology-enabled solutions to our customers
+        across defense, civilian, and homeland security sectors. Our teams work at
+        the intersection of strategy, technology, and transformation, helping agencies
+        solve their most critical challenges. We believe in investing in our people
+        and creating a culture where collaboration, inclusion, and professional growth
+        are at the forefront.\\n\\nJob Summary\\n\\nAretum is seeking a skilled and
+        motivated Senior Python Developer. As a Senior Python Developer, you will
+        assist in leading the integration of a custom application with other client
+        based systems.\\n\\nDue to the nature of our work as a federal consulting
+        organization, employees may be expected to handle Controlled Unclassified
+        Information (CUI) and must adhere to applicable safeguarding and compliance
+        requirements.\\n\\nResponsibilities\\n\u2022 Work cross-functionally in an
+        Agile environment\\n\u2022 Build FastAPIs for the display of content\\n\u2022
+        Create microservices\\n\u2022 Work on front-end and back-end code\\n\u2022
+        Mentor peers and junior developers in Python design\\n\u2022 Build ETL processes\\n\u2022
+        Work in a highly collaborative environment\\n\u2022 Juggle multiple tasks
+        at once\\n\u2022 Work independently and collaboratively as needed\\n\u2022
+        Utilize interpersonal skills and strong communication skills\\n\u2022 Work
+        directly with the Project Manager to support emerging client needs\\n\\nRequirements\\n\u2022
+        8+ years of solid Python development experience\\n\u2022 8+ years of overall
+        (OOP) programming experience\\n\u2022 Bachelor's Degree (or 2 additional years
+        of experience)\\n\u2022 API development and integration experience\\n\u2022
+        Experience with Microservices\\n\u2022 Experience with JavaScript and JQuery\\n\u2022
+        Experience with Search engines, such as Solr or Elasticsearch\\n\u2022 Experience
+        design and developing enterprise Web and Search systems\\n\u2022 Experience
+        with enterprise database technologies, such as Postgres and MySQL\\n\u2022
+        Experience building and managing container technologies such as Docker, Podman,
+        Kubernetes, etc.\\n\u2022 Comfortable with working with open source-based
+        solutions\\n\u2022 Familiar with enterprise use of Python\\n\u2022 Expert
+        in continuous integration/continuous delivery solutions\\n\u2022 Experience
+        with large-scale AWS based solutions and Terraform\\n\u2022 Agile environment
+        experience\\n\\nPreferred Qualifications\\n\u2022 Bachelor's Degree in computer
+        science, engineering or related field\\n\u2022 Experience with the federal
+        government\\n\u2022 Experience with FastAPIs (Highly preferred)\\n\\nTravel
+        Requirements\\n\\nThis is a remote position; however, occasional travel may
+        be required based on project needs, client meetings, team collaboration events,
+        or training sessions. Travel is expected to be less than 10% and will be communicated
+        in advance whenever possible.\\n\\nEEO Statement\\n\\nAretum is committed
+        to fostering a workplace rooted in excellence, integrity, and equal opportunity
+        for all. We adhere to merit-based hiring practices, ensuring that all employment
+        decisions are made based on qualifications, skills, and ability to perform
+        the job, without preference or consideration of factors unrelated to job performance.\\n\\nAs
+        an Equal Opportunity Employer, Aretum complies with all applicable federal,
+        state, and local employment laws.\\n\\nWe are proud to support our nation's
+        veterans and military families, providing career opportunities that honor
+        their service and experience.\\n\\nIf you require reasonable accommodation
+        during the hiring process due to a disability, please contact hr@aretum.com
+        for assistance.\\n\\nEqual Opportunity Employer/Veterans/Disabled\\n\\nU.S.
+        Work Authorization\\n\\nApplicants must be U.S. citizens or currently authorized
+        to work in the United States on a full-time basis. This position supports
+        a federal government contract and requires the ability to obtain and maintain
+        a Public Trust or Suitability Determination, depending on the agency's background
+        investigation requirements. Sponsorship is not available.\\n\\nBenefits\\n\u2022
+        Health Care Plan (Medical, Dental & Vision)\\n\u2022 Retirement Plan (401k)\\n\u2022
+        Life Insurance (Basic, Voluntary & AD&D)\\n\u2022 Paid Time Off\\n\u2022 Family
+        Leave (Maternity, Paternity)\\n\u2022 Short Term & Long-Term Disability\\n\u2022
+        Training & Development\",\"job_is_remote\":true,\"job_posted_at\":\"1 day
+        ago\",\"job_posted_at_timestamp\":1776902400,\"job_posted_at_datetime_utc\":\"2026-04-23T00:00:00.000Z\",\"job_location\":\"Anywhere\",\"job_city\":null,\"job_state\":null,\"job_country\":null,\"job_latitude\":null,\"job_longitude\":null,\"job_benefits\":[\"dental_coverage\",\"health_insurance\",\"paid_time_off\"],\"job_benefits_strings\":[\"Dental
+        insurance\",\"Health insurance\",\"Paid time off\"],\"job_google_link\":\"https://www.google.com/search?q=jobs&gl=us&hl=en&udm=8#vhid=vt%3D20/docid%3DuRVo5-O2j3zufA0vAAAAAA%3D%3D&vssid=jobs-detail-viewer\",\"job_salary\":null,\"job_salary_string\":null,\"job_min_salary\":null,\"job_max_salary\":null,\"job_salary_period\":null,\"job_highlights\":{},\"job_onet_soc\":null,\"job_onet_job_zone\":null,\"employer_reviews\":null}]}"
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token
+      Access-Control-Allow-Methods:
+      - GET,OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 24 Apr 2026 00:09:54 GMT
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Server:
+      - RapidAPI-0.0.30
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+      X-Amzn-Trace-Id:
+      - Root=1-69eab4cf-2ee6235f16578f183ace1051;Parent=15c3800dc95d17d5;Sampled=0;Lineage=1:b4918fbd:0
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-RapidAPI-Region:
+      - AWS - us-east-1
+      X-RapidAPI-Request-Id:
+      - 3e75a928e2c070e686619926d6569f971cc2fbffb84284ecbb51d0d6989cd206
+      X-RapidAPI-Version:
+      - 0.0.30
+      X-RateLimit-Requests-Limit:
+      - '10000'
+      X-RateLimit-Requests-Remaining:
+      - '9905'
+      X-RateLimit-Requests-Reset:
+      - '2324506'
+      x-amz-apigw-id:
+      - cTEwbGAaoAMEtxQ=
+      x-amzn-RequestId:
+      - a8e61ab0-3c6b-40ff-acf6-487faa681be9
+    status:
+      code: 200
+      message: OK
+version: 1

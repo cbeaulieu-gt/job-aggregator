@@ -707,16 +707,16 @@ are decisions the migrator makes based on that reading.
 
 | Plugin | DISPLAY_NAME | GEO_SCOPE | ACCEPTS_QUERY | ACCEPTS_LOCATION | ACCEPTS_COUNTRY | RATE_LIMIT_NOTES | REQUIRED_SEARCH_FIELDS |
 |---|---|---|---|---|---|---|---|
-| adzuna | Adzuna | global-by-country | always | true | true | "1 req/sec, 250/day on free tier" | ("country","what","where") (current) |
-| arbeitnow | ? | TBD | ? | ? | ? | ? | ? |
-| himalayas | ? | remote-only (likely) | ? | ? | ? | ? | ? |
-| jobicy | ? | remote-only (likely) | ? | ? | ? | ? | ? |
-| jooble | ? | global | ? | ? | ? | ? | ? |
-| jsearch | ? | global | always | ? | ? | "RapidAPI quota varies by plan" | ? |
+| adzuna | Adzuna | global-by-country | always | true | true | "~1 req/sec sustained; free tier capped at 250 req/day." | ("country","query") — verified #5 |
+| arbeitnow | Arbeitnow | regional | never | false | false | "Public API; no documented rate limit. Practical cap: ~1 req/s." | () |
+| himalayas | Himalayas | remote-only | never | false | false | "Public API; no published limit. Observed soft limit ~1 req/sec." | () |
+| jobicy | Jobicy | remote-only | partial | false | false | "No published rate limit; single request per run." | () |
+| jooble | Jooble | global | always | true | false | "No published hard limit; free-tier key, use responsibly." | () |
+| jsearch | JSearch (RapidAPI) | global | always | true | false | "RapidAPI quota varies by plan; free tier 200 requests/month" | ("query",) |
 | remoteok | RemoteOK | remote-only | never | false | false | "Public, soft rate limits" | () |
-| remotive | ? | remote-only (likely) | ? | ? | ? | ? | ? |
-| the_muse | ? | TBD | ? | ? | ? | ? | ? |
-| usajobs | USAJobs | federal-us | partial | ? | false (US-only) | "Email-tagged user-agent required" | ? |
+| remotive | Remotive | remote-only | always | false | false | "No published rate limit; public API, use conservatively." | () |
+| the_muse | The Muse | global | partial | false | false | "Public API; no published hard limit. Optional api_key reduces throttling." | () |
+| usajobs | USAJobs | federal-us | partial | false | false | "Email-tagged user-agent required; no published numeric limit" | () |
 
 The audit is real work, not mechanical. The values shown for adzuna,
 remoteok, jsearch, and usajobs are starting points based on what is already

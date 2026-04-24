@@ -23,6 +23,10 @@ venv/
 env/
 ENV/
 
+# Credentials and secrets
+.env
+*.env
+
 # uv
 # (uv.lock is committed intentionally for reproducibility)
 
