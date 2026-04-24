@@ -14,6 +14,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Plugin: `usajobs` source migrated from legacy repo (#14)
+
 ### Changed
 
 ### Deprecated
