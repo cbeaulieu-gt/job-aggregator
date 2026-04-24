@@ -208,7 +208,7 @@ def make_enabled_sources(
             continue
 
         try:
-            instance = cls(credentials=plugin_creds, search=search)  # type: ignore[call-arg]
+            instance = cls(credentials=plugin_creds, search=search)
             result.append(instance)
         except CredentialsError as exc:
             logger.debug("Skipping plugin %r: CredentialsError — %s", key, exc)

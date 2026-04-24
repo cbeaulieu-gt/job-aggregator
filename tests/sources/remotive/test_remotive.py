@@ -315,6 +315,5 @@ class TestConstructor:
         assert plugin is not None
 
     def test_category_param_accepted(self) -> None:
-        # category is no longer a constructor arg; hardcoded to None internally
-        plugin = Plugin()
+        plugin = Plugin(search=SearchParams(extra={"category": "software-dev"}))
         assert plugin is not None

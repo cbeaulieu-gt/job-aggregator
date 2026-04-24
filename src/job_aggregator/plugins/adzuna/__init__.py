@@ -103,13 +103,14 @@ class Plugin(JobSource):
             raise CredentialsError(self.SOURCE, missing)
 
         s = search or SearchParams()
+        extra = s.extra or {}
         self._app_id: str = str(creds["app_id"])
         self._app_key: str = str(creds["app_key"])
         self._query: str = s.query or ""
         self._country: str = s.country or ""
         self._location: str | None = s.location
         self._max_pages: int = s.max_pages if s.max_pages is not None else _DEFAULT_MAX_PAGES
-        self._results_per_page: int = _DEFAULT_RESULTS_PER_PAGE
+        self._results_per_page: int = int(extra.get("results_per_page", _DEFAULT_RESULTS_PER_PAGE))
         self._salary_min: int | None = None
         self._distance: int | None = None
         self._max_days_old: int | None = None

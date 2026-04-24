@@ -442,4 +442,4 @@ class TestMakeEnabledSources:
             )
 
         assert len(result) == 1
-        assert result[0]._search is search  # type: ignore[attr-defined]
+        assert result[0]._search is search

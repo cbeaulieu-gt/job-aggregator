@@ -144,7 +144,7 @@ class JobSource(abc.ABC):
         self,
         *,
         credentials: dict[str, Any] | None = None,
-        search: "SearchParams | None" = None,
+        search: SearchParams | None = None,
     ) -> None:
         """Store credentials and search parameters on the instance.
 
@@ -162,7 +162,7 @@ class JobSource(abc.ABC):
                 no search parameters are provided.
         """
         self._credentials: dict[str, Any] = credentials or {}
-        self._search: "SearchParams | None" = search
+        self._search: SearchParams | None = search
 
     # ------------------------------------------------------------------
     # Subclass enforcement hook

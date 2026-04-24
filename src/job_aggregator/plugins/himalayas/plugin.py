@@ -181,7 +181,10 @@ class Plugin(JobSource):
                 parameters.
         """
         super().__init__(credentials=credentials, search=search)
-        self._page_size: int = _DEFAULT_PAGE_SIZE
+        extra = search.extra if search is not None else None
+        self._page_size: int = int(
+            extra.get("page_size", _DEFAULT_PAGE_SIZE) if extra else _DEFAULT_PAGE_SIZE
+        )
         self._total: int | None = None  # cached after the first API response
 
     # ------------------------------------------------------------------

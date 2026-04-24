@@ -34,7 +34,6 @@ def api_key() -> str:
 def test_pages_returns_results(api_key: str) -> None:
     """pages() yields at least one page with at least one normalised record."""
     from job_aggregator.plugins.jsearch import Plugin
-
     from job_aggregator.schema import SearchParams
 
     plugin = Plugin(

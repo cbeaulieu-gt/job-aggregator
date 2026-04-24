@@ -15,6 +15,7 @@ from __future__ import annotations
 import pytest
 
 from job_aggregator.plugins.jobicy import Plugin
+from job_aggregator.schema import SearchParams
 
 
 @pytest.mark.vcr()
@@ -25,7 +26,7 @@ def test_pages_yields_at_least_one_listing() -> None:
     the plugin can successfully call the API and return results without
     raising.
     """
-    plugin = Plugin()
+    plugin = Plugin(search=SearchParams(extra={"count": 5}))
     pages = list(plugin.pages())
     assert len(pages) >= 1, "Expected at least one page of results"
     assert len(pages[0]) >= 1, "Expected at least one listing on first page"
@@ -38,7 +39,7 @@ def test_normalise_produces_valid_record_shape() -> None:
     Walks the first listing returned by the cassette and checks that all
     identity and always-present fields are populated.
     """
-    plugin = Plugin()
+    plugin = Plugin(search=SearchParams(extra={"count": 5}))
     pages = list(plugin.pages())
     assert pages, "No pages returned from cassette"
 

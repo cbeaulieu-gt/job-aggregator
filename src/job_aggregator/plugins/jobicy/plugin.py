@@ -145,7 +145,8 @@ class Plugin(JobSource):
         """
         super().__init__(credentials=credentials, search=search)
         self._query: str | None = search.query if search is not None else None
-        self._count: int = _MAX_COUNT
+        extra = search.extra if search is not None else None
+        self._count: int = int(extra.get("count", _MAX_COUNT) if extra else _MAX_COUNT)
 
     # ------------------------------------------------------------------
     # JobSource interface

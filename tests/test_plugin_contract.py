@@ -19,14 +19,12 @@ constructor and schema machinery.
 from __future__ import annotations
 
 from typing import Any
-from unittest.mock import patch
 
 import pytest
 
 from job_aggregator.auto_register import discover_plugins
 from job_aggregator.base import JobSource
 from job_aggregator.schema import SearchParams
-
 
 # ---------------------------------------------------------------------------
 # Helpers
@@ -94,9 +92,7 @@ class TestSettingsSchemaIsClassmethod:
         )
 
     @pytest.mark.parametrize("cls", _PLUGIN_CLASSES, ids=_PLUGIN_IDS)
-    def test_settings_schema_is_classmethod_descriptor(
-        self, cls: type[JobSource]
-    ) -> None:
+    def test_settings_schema_is_classmethod_descriptor(self, cls: type[JobSource]) -> None:
         """``settings_schema`` must be bound as a classmethod on the class.
 
         Args:
@@ -106,8 +102,7 @@ class TestSettingsSchemaIsClassmethod:
 
         method = inspect.getattr_static(cls, "settings_schema")
         assert isinstance(method, classmethod), (
-            f"{cls.__name__}.settings_schema must be a @classmethod, "
-            f"got {type(method)}"
+            f"{cls.__name__}.settings_schema must be a @classmethod, got {type(method)}"
         )
 
 
@@ -132,8 +127,7 @@ class TestCanonicalConstructorSignature:
         creds = _stub_credentials(cls)
         instance = cls(credentials=creds, search=None)
         assert isinstance(instance, JobSource), (
-            f"{cls.__name__}(credentials=..., search=None) did not return "
-            f"a JobSource instance"
+            f"{cls.__name__}(credentials=..., search=None) did not return a JobSource instance"
         )
 
     @pytest.mark.parametrize("cls", _PLUGIN_CLASSES, ids=_PLUGIN_IDS)
@@ -155,9 +149,7 @@ class TestCanonicalConstructorSignature:
         )
 
     @pytest.mark.parametrize("cls", _PLUGIN_CLASSES, ids=_PLUGIN_IDS)
-    def test_no_auth_plugin_accepts_none_credentials(
-        self, cls: type[JobSource]
-    ) -> None:
+    def test_no_auth_plugin_accepts_none_credentials(self, cls: type[JobSource]) -> None:
         """Plugins with no required credentials accept ``credentials=None``.
 
         Credential-requiring plugins are skipped (they would raise

@@ -39,7 +39,8 @@ def _make_source_class(source_key: str) -> type[JobSource]:
         RATE_LIMIT_NOTES = "None."
         REQUIRED_SEARCH_FIELDS = ()
 
-        def settings_schema(self) -> dict[str, Any]:
+        @classmethod
+        def settings_schema(cls) -> dict[str, Any]:
             return {}
 
         def pages(self) -> Iterator[list[dict[str, Any]]]:

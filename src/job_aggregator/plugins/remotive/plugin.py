@@ -149,8 +149,11 @@ class RemotivePlugin(JobSource):
         """
         super().__init__(credentials=credentials, search=search)
         self._query: str | None = search.query if search is not None else None
-        self._category: str | None = None
-        self._limit: int = 100
+        extra = search.extra if search is not None else None
+        self._category: str | None = extra.get("category") if extra else None
+        self._limit: int = (
+            search.max_pages if search is not None and search.max_pages is not None else 100
+        )
 
     # ------------------------------------------------------------------
     # JobSource interface

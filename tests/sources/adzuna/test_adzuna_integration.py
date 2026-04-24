@@ -43,7 +43,12 @@ def plugin(credentials: dict[str, str]) -> Plugin:
     """Return a Plugin configured for a minimal GB search."""
     return Plugin(
         credentials=credentials,
-        search=SearchParams(query="python developer", country="gb", max_pages=1),
+        search=SearchParams(
+            query="python developer",
+            country="gb",
+            max_pages=1,
+            extra={"results_per_page": 5},
+        ),
     )
 
 
