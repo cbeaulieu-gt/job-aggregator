@@ -55,7 +55,7 @@ jobs:
         run: uv sync --group dev
 
       - name: Type check
-        run: uv run mypy src/
+        run: uv run mypy src/ tests/ scripts/
 
   # --------------------------------------------------------------------------
   # Job 3: deptry — import / dependency hygiene

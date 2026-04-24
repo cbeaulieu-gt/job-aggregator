@@ -16,7 +16,7 @@ from __future__ import annotations
 import argparse
 import sys
 from pathlib import Path
-from typing import Any
+from typing import Any, cast
 from unittest.mock import MagicMock, patch
 
 import pytest
@@ -103,7 +103,7 @@ class TestArgumentParsing:
 
     def _parse(self, argv: list[str]) -> argparse.Namespace:
         """Parse argv without sys.argv side-effects."""
-        return ps.build_arg_parser().parse_args(argv)
+        return cast(argparse.Namespace, ps.build_arg_parser().parse_args(argv))
 
     def test_default_mode_is_dry_run(self) -> None:
         """Running with no flags must default to dry-run mode."""
