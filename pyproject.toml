@@ -48,6 +48,7 @@ jsearch = "job_aggregator.plugins.jsearch:Plugin"
 remoteok = "job_aggregator.plugins.remoteok:Plugin"
 remotive = "job_aggregator.plugins.remotive:Plugin"
 the_muse = "job_aggregator.plugins.the_muse:Plugin"
+usajobs = "job_aggregator.plugins.usajobs:Plugin"
 # Third-party plugins may also register here via their own pyproject.toml.
 
 # ---------------------------------------------------------------------------
