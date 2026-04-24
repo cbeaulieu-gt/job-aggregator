@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- v1.0 documentation set: output_schema.md, plugin_authoring.md, credentials_format.md, sample-output.jsonl, README quickstart (#19)
 - Community meta files: CONTRIBUTING, SECURITY, issue templates, PR template (#20)
 - Plugin: `adzuna` source migrated from legacy repo (#5)
 - Plugin: `arbeitnow` source migrated from legacy repo (#6)
