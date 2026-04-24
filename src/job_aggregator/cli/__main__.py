@@ -8,9 +8,7 @@ parallel-PR integration a 2-line diff per new command.
 Current sub-commands:
     ``jobs``    — fetch, normalise, dedup, and emit job listings (Issue #16 / Phase D).
     ``sources`` — list registered plugins as JSON (Issue F / #18).
-
-Stub sub-commands:
-    ``hydrate`` — scrape full descriptions (Issue #18 / Phase E, not yet implemented).
+    ``hydrate`` — scrape full descriptions (Issue #17 / Phase E).
 
 Public API (consumed by tests):
     :func:`main` — console-script entry point.
@@ -25,6 +23,7 @@ import argparse
 import sys
 
 from job_aggregator import __version__
+from job_aggregator.cli import hydrate as _hydrate_cmd
 from job_aggregator.cli import jobs as _jobs_cmd
 from job_aggregator.cli import sources as _sources_cmd
 
@@ -72,53 +71,9 @@ def _build_parser() -> argparse.ArgumentParser:
     # Register each sub-command module here — one line per module.
     _jobs_cmd.register(subparsers)
     _sources_cmd.register(subparsers)
-
-    # ------------------------------------------------------------------
-    # hydrate stub — Phase E (Issue #18, not yet implemented).
-    # Registering here keeps --help accurate; the real module will
-    # replace this with its own register() call when it lands.
-    # ------------------------------------------------------------------
-    _add_hydrate_stub(subparsers)
+    _hydrate_cmd.register(subparsers)
 
     return parser
-
-
-def _add_hydrate_stub(
-    subparsers: argparse._SubParsersAction[argparse.ArgumentParser],
-) -> None:
-    """Register the ``hydrate`` stub subparser.
-
-    Full implementation is delivered by Issue #18 (Phase E).  This stub
-    registers the subcommand so ``--help`` documents it and the parallel
-    PR can introduce the real module without touching other registrations.
-
-    Args:
-        subparsers: The subparsers action from the top-level parser.
-    """
-    p = subparsers.add_parser(
-        "hydrate",
-        help=(
-            "Scrape full job descriptions for records produced by `jobs`. "
-            "(Not yet implemented — Phase E)"
-        ),
-    )
-    p.set_defaults(func=_cmd_hydrate_stub)
-
-
-def _cmd_hydrate_stub(args: argparse.Namespace) -> None:
-    """Stub handler for the ``hydrate`` subcommand.
-
-    Exits non-zero with a not-yet-implemented message until Issue #18
-    (Phase E) delivers the real implementation.
-
-    Args:
-        args: Parsed namespace (unused by stub).
-    """
-    print(
-        "hydrate: not yet implemented (Issue #18 / Phase E).",
-        file=sys.stderr,
-    )
-    sys.exit(1)
 
 
 # ---------------------------------------------------------------------------
