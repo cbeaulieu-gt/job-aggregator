@@ -715,7 +715,7 @@ are decisions the migrator makes based on that reading.
 | jsearch | ? | global | always | ? | ? | "RapidAPI quota varies by plan" | ? |
 | remoteok | RemoteOK | remote-only | never | false | false | "Public, soft rate limits" | () |
 | remotive | ? | remote-only (likely) | ? | ? | ? | ? | ? |
-| the_muse | ? | TBD | ? | ? | ? | ? | ? |
+| the_muse | The Muse | global | partial | false | false | "Public API; no published hard limit. Optional api_key reduces throttling." | () |
 | usajobs | USAJobs | federal-us | partial | ? | false (US-only) | "Email-tagged user-agent required" | ? |
 
 The audit is real work, not mechanical. The values shown for adzuna,
