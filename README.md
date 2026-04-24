@@ -7,32 +7,49 @@ Reusable job aggregation library: pluggable source plugins, normalized output, n
 [![Python versions](https://img.shields.io/pypi/pyversions/job-aggregator)](https://pypi.org/project/job-aggregator/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Status
-
-**Pre-1.0 / Alpha.** The public API, output schema, and credentials format
-are under active development and may change between releases until `v1.0.0`
-is tagged. See the [design spec](docs/superpowers/specs/2026-04-23-job-aggregator-design.md)
-for the full architecture and the execution plan for the delivery roadmap.
-
 ## Installation
 
 ```bash
 pip install job-aggregator
 ```
 
-> **Note:** This requires v1.0.0 to be published to PyPI. Pre-release
-> versions (`v1.0.0-rc*`) are available on
-> [TestPyPI](https://test.pypi.org/project/job-aggregator/) once the
-> Code-complete gate is reached.
-
 ## Quickstart
 
-```python
-# Coming soon — see issues #16, #17, #18
+```bash
+# List available plugins and whether credentials are configured
+job-aggregator sources
+
+# Fetch listings and enrich with full descriptions in a pipeline
+job-aggregator jobs --query "python developer" --hours 24 \
+  | job-aggregator hydrate > full.jsonl
 ```
 
-## Design documentation
+Each line of `full.jsonl` after the first is a normalized job record. The
+first line is the output envelope (see [docs/output_schema.md](docs/output_schema.md)
+for the full field reference).
 
-See [`docs/superpowers/specs/2026-04-23-job-aggregator-design.md`](docs/superpowers/specs/2026-04-23-job-aggregator-design.md)
-for the full design specification, including the output schema, plugin
-contract, credentials format, and CLI surface.
+To use sources that require API credentials, pass a credentials file:
+
+```bash
+job-aggregator jobs --query "python developer" \
+  --credentials ~/.job-aggregator/creds.json \
+  | job-aggregator hydrate > full.jsonl
+```
+
+See [docs/credentials_format.md](docs/credentials_format.md) for the
+credentials file format and per-plugin field requirements.
+
+## Documentation
+
+- [Output Schema](docs/output_schema.md) — envelope structure, record fields,
+  `description_source` truth table, versioning policy, and supported sources.
+- [Plugin Authoring Guide](docs/plugin_authoring.md) — how to write and
+  register a new source plugin.
+- [Credentials Format](docs/credentials_format.md) — credentials file format
+  and per-plugin field requirements.
+
+## Status
+
+**Pre-1.0 / Alpha.** The public API, output schema, and credentials format
+are under active development and may change between releases until `v1.0.0`
+is tagged.
