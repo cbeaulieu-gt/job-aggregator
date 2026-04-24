@@ -42,6 +42,7 @@ job-aggregator = "job_aggregator.cli.__main__:main"
 # Plugin entry-points are registered here by subsequent issues (B1-B10).
 # Third-party plugins may also register here via their own pyproject.toml.
 # Example: adzuna = "job_aggregator.plugins.adzuna:AdzunaSource"
+jobicy = "job_aggregator.plugins.jobicy:Plugin"
 
 # ---------------------------------------------------------------------------
 # Dependency groups (PEP 735 — read natively by uv)
