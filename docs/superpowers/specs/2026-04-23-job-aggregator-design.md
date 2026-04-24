@@ -342,6 +342,11 @@ class SearchParams:
     country: str | None = None        # ISO 3166-1 alpha-2
     hours: int = 168
     max_pages: int | None = None      # per-source cap; None = each plugin's default
+    extra: dict[str, Any] | None = None  # plugin-specific freeform config (unstable)
+    # `extra` is symmetric with JobRecord.extra: plugin-specific kwargs that do not
+    # belong in the shared schema (e.g. Remotive category, Himalayas page_size, Jobicy
+    # count, Adzuna results_per_page).  Not covered by schema_version — consumers use
+    # extra.* at their own risk.
 ```
 
 `job-matcher-pr/ingest.py` migration:
