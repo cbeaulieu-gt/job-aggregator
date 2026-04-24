@@ -1,0 +1,437 @@
+"""Jobs orchestrator: fetch + normalize + dedup + emit.
+
+This module implements the ``jobs`` command's core loop:
+
+1. Resolve which plugins to run (``sources`` / ``exclude_sources`` filters).
+2. Optionally emit Q4 stderr warning for ``--query`` + non-``always`` sources.
+3. For each enabled source: instantiate the plugin class, iterate
+   ``pages()``, normalise each raw dict, dedup by ``(source, source_id)``
+   with URL normalisation, and accumulate records.
+4. Respect the ``limit`` cap on emitted records.
+5. Assemble the §9.2 envelope (with ``query_applied`` when a query is
+   given) and serialise to JSON or JSONL.
+
+The orchestrator is pure-Python and free of I/O side effects beyond the
+``sys.stderr`` Q4 warning.  Callers are responsible for writing the
+returned string to stdout or a file.
+
+Public API:
+    :func:`run_jobs` — main entry point consumed by the CLI and tests.
+"""
+
+from __future__ import annotations
+
+import json
+import sys
+from typing import Any
+from urllib.parse import urlparse, urlunparse
+
+from job_aggregator.auto_register import discover_plugins
+from job_aggregator.base import JobSource
+from job_aggregator.envelope import build_envelope, build_jsonl_lines
+from job_aggregator.normalizer import normalize
+from job_aggregator.schema import JobRecord
+
+# ---------------------------------------------------------------------------
+# URL normalisation helpers
+# ---------------------------------------------------------------------------
+
+
+def _normalize_url(url: str) -> str:
+    """Strip query params, fragments, and trailing slashes from *url*.
+
+    Used as the deduplication key alongside ``(source, source_id)``.
+    The original URL is **not** modified in the emitted record — this
+    function is only used to compute the dedup key.
+
+    Args:
+        url: A raw URL string from a plugin record.
+
+    Returns:
+        The URL with query string, fragment, and trailing slash removed.
+        Returns the original value unchanged if it does not look like an
+        HTTP/HTTPS URL.
+    """
+    if not url or not url.startswith(("http://", "https://")):
+        return url
+    parsed = urlparse(url)
+    # Rebuild without query or fragment; strip trailing slash from path
+    clean_path = parsed.path.rstrip("/") or "/"
+    normalised = urlunparse((parsed.scheme, parsed.netloc, clean_path, "", "", ""))
+    return normalised
+
+
+# ---------------------------------------------------------------------------
+# Plugin instantiation helper
+# ---------------------------------------------------------------------------
+
+
+def _instantiate_plugin(
+    cls: type[JobSource],
+    credentials: dict[str, Any],
+    params: dict[str, Any],
+) -> JobSource:
+    """Instantiate a plugin class with a best-effort constructor call.
+
+    Plugins in this codebase use several constructor signatures:
+
+    * ``__init__(credentials, params)`` — most credential-requiring plugins.
+    * ``__init__(credentials=None, params=None)`` — credential-optional.
+    * ``__init__(max_pages=None)`` — no-auth plugins (Himalayas, Arbeitnow).
+    * ``__init__()`` — zero-arg (rare stubs).
+
+    This function attempts the full ``(credentials, params)`` signature
+    first, then falls back to ``(params)`` (params-only), then ``()``
+    (zero-arg).  A ``TypeError`` on the final attempt is re-raised so
+    callers can distinguish a real construction error from a signature
+    mismatch.
+
+    Args:
+        cls: The plugin class to instantiate.
+        credentials: Credentials dict for the source key (may be empty).
+        params: Search params dict (``query``, ``location``, ``country``,
+            ``hours``, ``max_pages`` as applicable).
+
+    Returns:
+        An instantiated :class:`~job_aggregator.base.JobSource`.
+
+    Raises:
+        TypeError: If none of the attempted signatures succeed.
+    """
+    # Attempt 1: (credentials, params)
+    try:
+        return cls(credentials=credentials, params=params)  # type: ignore[call-arg]
+    except TypeError:
+        pass
+
+    # Attempt 2: positional (credentials, params) for plugins that
+    # declare positional-only args
+    try:
+        return cls(credentials, params)  # type: ignore[call-arg]
+    except TypeError:
+        pass
+
+    # Attempt 3: zero-arg (no-credential, no-query plugins)
+    try:
+        return cls()
+    except TypeError:
+        pass
+
+    # Final: raise so the caller surfaces a clear error
+    raise TypeError(
+        f"Cannot instantiate plugin {cls.__name__!r}: no compatible constructor signature found."
+    )
+
+
+# ---------------------------------------------------------------------------
+# Query-applied helper
+# ---------------------------------------------------------------------------
+
+
+def _build_query_applied(
+    plugin_classes: dict[str, type[JobSource]],
+) -> dict[str, bool]:
+    """Build the ``query_applied`` mapping for the envelope.
+
+    A source has ``query_applied=True`` only when its ``ACCEPTS_QUERY``
+    class attribute is ``"always"``.  ``"partial"`` and ``"never"``
+    both map to ``False`` because the query is not reliably applied.
+
+    Args:
+        plugin_classes: Mapping of plugin key → class for all *enabled*
+            sources (after ``sources`` / ``exclude_sources`` filtering).
+
+    Returns:
+        Dict mapping plugin key → ``bool``.
+    """
+    return {key: cls.ACCEPTS_QUERY == "always" for key, cls in plugin_classes.items()}
+
+
+# ---------------------------------------------------------------------------
+# Q4 stderr warning
+# ---------------------------------------------------------------------------
+
+
+def _emit_query_warning(
+    query: str,
+    plugin_classes: dict[str, type[JobSource]],
+) -> None:
+    """Print a Q4 warning to stderr if any source will not apply *query*.
+
+    Emits exactly one line to ``sys.stderr`` naming every source whose
+    ``ACCEPTS_QUERY`` is ``"never"`` or ``"partial"`` so the user knows
+    their query will be silently ignored for those sources.
+
+    Args:
+        query: The ``--query`` string supplied by the user.
+        plugin_classes: Enabled plugin mapping (post-filter).
+    """
+    limited_keys = sorted(
+        key for key, cls in plugin_classes.items() if cls.ACCEPTS_QUERY in ("never", "partial")
+    )
+    if not limited_keys:
+        return
+    keys_str = ", ".join(limited_keys)
+    print(
+        f"WARNING: --query {query!r} will not apply to: {keys_str} (accepts_query=never, partial)",
+        file=sys.stderr,
+    )
+
+
+# ---------------------------------------------------------------------------
+# Main orchestrator entry point
+# ---------------------------------------------------------------------------
+
+
+def run_jobs(
+    *,
+    plugin_classes: dict[str, type[JobSource]] | None = None,
+    credentials: dict[str, Any] | None = None,
+    format: str = "jsonl",
+    query: str | None = None,
+    location: str | None = None,
+    country: str | None = None,
+    hours: int = 168,
+    max_pages: int | None = None,
+    sources: list[str] | None = None,
+    exclude_sources: list[str] | None = None,
+    limit: int = 0,
+    strict: bool = False,
+    dry_run: bool = False,
+    generated_at: str | None = None,
+) -> str:
+    """Run the ``jobs`` fetch-normalize-dedup-emit pipeline.
+
+    Discovers (or accepts) plugins, resolves the enabled set, runs the
+    fetch loop, deduplicates records, and serialises the result to a
+    string in the requested format.
+
+    Args:
+        plugin_classes: Optional pre-resolved plugin mapping (for tests).
+            When ``None``, :func:`~job_aggregator.auto_register.discover_plugins`
+            is called to discover installed plugins via entry-points.
+        credentials: Credentials dict keyed by plugin ``SOURCE`` (the
+            ``"plugins"`` sub-dict from the credentials file).  Defaults
+            to an empty dict.
+        format: Output format; one of ``"jsonl"`` or ``"json"``.
+            Defaults to ``"jsonl"``.
+        query: Free-text search query.  Passed to plugins that support it.
+        location: Location hint.  Passed to plugins that accept it.
+        country: ISO 3166-1 alpha-2 country code.
+        hours: Lookback window in hours.  Defaults to 168 (one week).
+        max_pages: Per-source page cap.  ``None`` uses each plugin's
+            default.
+        sources: Allowlist of plugin keys to run.  When non-empty, only
+            listed keys are run (unknown keys are silently ignored).
+        exclude_sources: Blocklist of plugin keys to skip.
+        limit: Maximum number of records to emit.  ``0`` means unlimited.
+        strict: When ``True``, re-raise the first source error instead of
+            recording it in ``sources_failed``.
+        dry_run: When ``True``, skip the fetch loop entirely and return an
+            envelope with ``jobs=[]``.
+        generated_at: Optional ISO-8601 UTC string override for the
+            ``generated_at`` envelope field.  Used in tests for
+            deterministic output.
+
+    Returns:
+        A string containing the serialised output (JSONL lines joined by
+        ``"\\n"`` or a single JSON object).
+
+    Raises:
+        Exception: Any exception raised by a plugin's ``pages()`` call
+            when ``strict=True``.
+    """
+    creds: dict[str, Any] = credentials or {}
+
+    # ------------------------------------------------------------------
+    # 1. Resolve enabled plugin classes
+    # ------------------------------------------------------------------
+    if plugin_classes is None:
+        plugin_classes = discover_plugins()
+
+    enabled: dict[str, type[JobSource]] = dict(plugin_classes)
+
+    # Apply --sources allowlist
+    if sources:
+        enabled = {k: v for k, v in enabled.items() if k in sources}
+
+    # Apply --exclude-sources blocklist
+    if exclude_sources:
+        enabled = {k: v for k, v in enabled.items() if k not in exclude_sources}
+
+    # ------------------------------------------------------------------
+    # 2. Q4 query warning (before any fetching)
+    # ------------------------------------------------------------------
+    if query:
+        _emit_query_warning(query, enabled)
+
+    # ------------------------------------------------------------------
+    # 3. Build search params dict for plugin constructors
+    # ------------------------------------------------------------------
+    params: dict[str, Any] = {
+        "query": query,
+        "location": location,
+        "country": country,
+        "hours": hours,
+        "max_pages": max_pages,
+    }
+
+    # ------------------------------------------------------------------
+    # 4. Build query_applied mapping (only when query is given)
+    # ------------------------------------------------------------------
+    query_applied: dict[str, bool] | None = None
+    if query:
+        query_applied = _build_query_applied(enabled)
+
+    # ------------------------------------------------------------------
+    # 5. Build request_summary for the envelope
+    # ------------------------------------------------------------------
+    request_summary: dict[str, Any] = {
+        "hours": hours,
+        "query": query,
+        "location": location,
+        "country": country,
+        "sources": list(enabled.keys()),
+    }
+
+    # ------------------------------------------------------------------
+    # 6. Dry-run: return envelope immediately with no fetch
+    # ------------------------------------------------------------------
+    if dry_run:
+        return _serialise(
+            jobs=[],
+            sources_used=[],
+            sources_failed=[],
+            request_summary=request_summary,
+            query_applied=query_applied,
+            format=format,
+            generated_at=generated_at,
+        )
+
+    # ------------------------------------------------------------------
+    # 7. Fetch + normalise + dedup loop
+    # ------------------------------------------------------------------
+    # Dedup key: (source, source_id) — URLs are used as secondary check
+    seen: set[tuple[str, str]] = set()
+    records: list[JobRecord] = []
+    sources_used: list[str] = []
+    sources_failed: list[str] = []
+
+    for key, cls in enabled.items():
+        source_creds: dict[str, Any] = creds.get(key, {})
+        try:
+            plugin = _instantiate_plugin(cls, source_creds, params)
+            source_had_records = False
+            for page in plugin.pages():
+                for raw in page:
+                    normalised_raw = plugin.normalise(raw)
+                    record = normalize(normalised_raw)
+                    # Dedup
+                    dedup_key = (record["source"], record["source_id"])
+                    if dedup_key in seen:
+                        continue
+                    seen.add(dedup_key)
+                    records.append(record)
+                    source_had_records = True
+                    # Respect limit
+                    if limit > 0 and len(records) >= limit:
+                        break
+                if limit > 0 and len(records) >= limit:
+                    break
+            if not sources_used or key not in sources_used:
+                sources_used.append(key)
+            _ = source_had_records  # suppress unused warning
+        except Exception as exc:
+            if strict:
+                raise
+            sources_failed.append(key)
+            print(
+                f"ERROR: source {key!r} failed: {exc}",
+                file=sys.stderr,
+            )
+            continue
+
+        if limit > 0 and len(records) >= limit:
+            break
+
+    # ------------------------------------------------------------------
+    # 8. Serialise and return
+    # ------------------------------------------------------------------
+    return _serialise(
+        jobs=records,
+        sources_used=sources_used,
+        sources_failed=sources_failed,
+        request_summary=request_summary,
+        query_applied=query_applied,
+        format=format,
+        generated_at=generated_at,
+    )
+
+
+# ---------------------------------------------------------------------------
+# Serialisation helpers
+# ---------------------------------------------------------------------------
+
+
+def _serialise(
+    *,
+    jobs: list[JobRecord],
+    sources_used: list[str],
+    sources_failed: list[str],
+    request_summary: dict[str, Any],
+    query_applied: dict[str, bool] | None,
+    format: str,
+    generated_at: str | None,
+) -> str:
+    """Serialise the run result to the requested output format string.
+
+    Builds the §9.2 envelope and appends ``query_applied`` when present.
+
+    Args:
+        jobs: Normalised :class:`~job_aggregator.schema.JobRecord` list.
+        sources_used: Plugin keys that successfully contributed records.
+        sources_failed: Plugin keys that raised during the run.
+        request_summary: Search-parameter summary dict.
+        query_applied: Optional mapping of plugin key → bool.  Included
+            in the envelope only when non-``None``.
+        format: One of ``"json"`` or ``"jsonl"``.
+        generated_at: Optional override for the ``generated_at`` timestamp.
+
+    Returns:
+        Serialised string in the requested format.
+
+    Raises:
+        ValueError: If *format* is not ``"json"`` or ``"jsonl"``.
+    """
+    if format == "json":
+        envelope = build_envelope(
+            command="jobs",
+            sources_used=sources_used,
+            sources_failed=sources_failed,
+            request_summary=request_summary,
+            jobs=jobs,
+            generated_at=generated_at,
+        )
+        if query_applied is not None:
+            envelope["query_applied"] = query_applied
+        return json.dumps(envelope, separators=(",", ":"))
+
+    if format == "jsonl":
+        lines = list(
+            build_jsonl_lines(
+                command="jobs",
+                sources_used=sources_used,
+                sources_failed=sources_failed,
+                request_summary=request_summary,
+                jobs=jobs,
+                generated_at=generated_at,
+            )
+        )
+        # The envelope is the first line — inject query_applied into it
+        if query_applied is not None and lines:
+            first_obj = json.loads(lines[0])
+            first_obj["query_applied"] = query_applied
+            lines[0] = json.dumps(first_obj, separators=(",", ":"))
+        return "\n".join(lines)
+
+    raise ValueError(f"Unknown format {format!r}: expected 'json' or 'jsonl'.")

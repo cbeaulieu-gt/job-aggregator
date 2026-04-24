@@ -21,6 +21,7 @@ from job_aggregator.normalizer import (
     classify_description_source,
     normalize,
 )
+from job_aggregator.orchestrator import run_jobs
 from job_aggregator.registry import (
     get_plugin,
     list_plugins,
@@ -57,7 +58,7 @@ except PackageNotFoundError:
 logging.getLogger(__name__).addHandler(logging.NullHandler())
 
 # ---------------------------------------------------------------------------
-# Public API surface — Issue B + F exports.
+# Public API surface — Issues B + D + F exports.
 # Remaining exports (scrape_description) are added by Issue E.
 # One symbol per line for clean merge diffs with parallel PRs.
 # ---------------------------------------------------------------------------
@@ -82,4 +83,5 @@ __all__: list[str] = [
     "list_plugins",
     "make_enabled_sources",
     "normalize",
+    "run_jobs",
 ]
