@@ -73,6 +73,10 @@ uv run ruff format src tests scripts
 uv run mypy src tests scripts
 ```
 
+CI runs `mypy --strict` against `src/`, `tests/`, and `scripts/`. If you add another
+top-level directory with Python code, extend the `Type check` step in
+`.github/workflows/ci.yml` to cover it.
+
 ---
 
 ## Dependency audit
