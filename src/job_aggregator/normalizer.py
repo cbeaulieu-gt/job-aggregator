@@ -30,11 +30,9 @@ from job_aggregator.schema import JobRecord
 # ---------------------------------------------------------------------------
 # Public constants
 # ---------------------------------------------------------------------------
-
-#: Minimum character length for a description to be classified as "full".
-#: Imported by the ``hydrate`` orchestrator and by ``ingest.py`` in
-#: ``job-matcher-pr`` (never redefined locally there — spec §9.6).
-SCRAPE_MIN_LENGTH: int = 500
+# Canonical definition lives in scraping.py (spec §9.6).  Re-exported here
+# so that existing callers of normalizer.SCRAPE_MIN_LENGTH keep working.
+from job_aggregator.scraping import SCRAPE_MIN_LENGTH as SCRAPE_MIN_LENGTH
 
 # ---------------------------------------------------------------------------
 # description_source classifier — §9.6 truth table (jobs orchestrator rows)

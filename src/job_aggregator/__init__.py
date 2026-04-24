@@ -16,8 +16,8 @@ from job_aggregator.errors import (
     SchemaVersionError,
     ScrapeError,
 )
+from job_aggregator.hydrator import HydrateConfig, hydrate
 from job_aggregator.normalizer import (
-    SCRAPE_MIN_LENGTH,
     classify_description_source,
     normalize,
 )
@@ -33,6 +33,7 @@ from job_aggregator.schema import (
     PluginInfo,
     SearchParams,
 )
+from job_aggregator.scraping import SCRAPE_MIN_LENGTH, scrape_description
 
 # ---------------------------------------------------------------------------
 # Version
@@ -66,6 +67,7 @@ logging.getLogger(__name__).addHandler(logging.NullHandler())
 __all__: list[str] = [
     "SCRAPE_MIN_LENGTH",
     "CredentialsError",
+    "HydrateConfig",
     "JobAggregatorError",
     "JobRecord",
     "JobSource",
@@ -80,8 +82,10 @@ __all__: list[str] = [
     "build_jsonl_lines",
     "classify_description_source",
     "get_plugin",
+    "hydrate",
     "list_plugins",
     "make_enabled_sources",
     "normalize",
     "run_jobs",
+    "scrape_description",
 ]

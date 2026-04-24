@@ -65,6 +65,7 @@ dev = [
     "pip-audit",
     "pre-commit",
     "python-dotenv>=1.0",
+    "responses>=0.25",
     "types-requests>=2.31",
 ]
 
