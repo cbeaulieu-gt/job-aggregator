@@ -18,6 +18,7 @@ import pytest
 
 from job_aggregator.errors import CredentialsError
 from job_aggregator.plugins.jooble import Plugin
+from job_aggregator.schema import SearchParams
 
 # ---------------------------------------------------------------------------
 # Fixtures
@@ -57,17 +58,22 @@ MINIMAL_LISTING: dict[str, Any] = {
 # ---------------------------------------------------------------------------
 
 
-def make_plugin(**cred_overrides: str) -> Plugin:
+def make_plugin(
+    search: SearchParams | None = None,
+    **cred_overrides: str,
+) -> Plugin:
     """Construct a Plugin with default valid credentials, applying overrides.
 
     Args:
+        search: Optional :class:`~job_aggregator.schema.SearchParams`
+            to pass to the constructor.  Defaults to ``None``.
         **cred_overrides: Key-value pairs to merge into the credential dict.
 
     Returns:
         A constructed Plugin instance.
     """
     creds = {**VALID_CREDS, **cred_overrides}
-    return Plugin(credentials=creds)
+    return Plugin(credentials=creds, search=search)
 
 
 # ---------------------------------------------------------------------------
@@ -144,8 +150,7 @@ class TestCredentials:
 
     def test_settings_schema_declares_api_key(self) -> None:
         """settings_schema() must declare the api_key field as required."""
-        plugin = make_plugin()
-        schema = plugin.settings_schema()
+        schema = Plugin.settings_schema()
         assert "api_key" in schema
         assert schema["api_key"]["required"] is True
         assert schema["api_key"]["type"] == "password"
@@ -402,12 +407,11 @@ class TestPaginationLogic:
         """pages() never yields more pages than max_pages allows."""
         plugin = Plugin(
             credentials=VALID_CREDS,
-            max_pages=2,
-            results_per_page=1,
+            search=SearchParams(max_pages=2),
         )
-        # 10 total results → 10 pages, but max_pages=2 caps at 2.
-        first_response = self._make_api_response(10, [RAW_LISTING])
-        subsequent_response = self._make_api_response(10, [RAW_LISTING])
+        # 100 total results / 20 per page = 5 pages, but max_pages=2 caps at 2.
+        first_response = self._make_api_response(100, [RAW_LISTING])
+        subsequent_response = self._make_api_response(100, [RAW_LISTING])
 
         mock_resp = MagicMock()
         mock_resp.raise_for_status.return_value = None
@@ -422,10 +426,9 @@ class TestPaginationLogic:
         """pages() stops early when a page returns zero results."""
         plugin = Plugin(
             credentials=VALID_CREDS,
-            max_pages=5,
-            results_per_page=1,
+            search=SearchParams(max_pages=5),
         )
-        # 3 total → up to 3 pages, but page 2 returns empty.
+        # API reports 3 total but page 2 returns empty (early stop).
         first_response = self._make_api_response(3, [RAW_LISTING])
         empty_response = self._make_api_response(3, [])
 
@@ -441,12 +444,12 @@ class TestPaginationLogic:
 
     def test_total_pages_uses_ceiling_division(self) -> None:
         """total_pages() computes ceil(totalCount / results_per_page)."""
+        # Default results_per_page=20; 50 total → ceil(50/20) = 3.
         plugin = Plugin(
             credentials=VALID_CREDS,
-            max_pages=99,
-            results_per_page=10,
+            search=SearchParams(max_pages=99),
         )
-        response = self._make_api_response(25, [RAW_LISTING])
+        response = self._make_api_response(50, [RAW_LISTING])
 
         mock_resp = MagicMock()
         mock_resp.raise_for_status.return_value = None
@@ -455,14 +458,13 @@ class TestPaginationLogic:
         with patch("requests.post", return_value=mock_resp):
             total = plugin.total_pages()
 
-        assert total == math.ceil(25 / 10)  # 3
+        assert total == math.ceil(50 / 20)  # 3 (default results_per_page=20)
 
     def test_total_pages_capped_by_max_pages(self) -> None:
         """total_pages() is capped at max_pages even when API says more."""
         plugin = Plugin(
             credentials=VALID_CREDS,
-            max_pages=2,
-            results_per_page=1,
+            search=SearchParams(max_pages=2),
         )
         response = self._make_api_response(1000, [RAW_LISTING])
 

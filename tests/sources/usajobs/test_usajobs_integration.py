@@ -20,6 +20,7 @@ import os
 import pytest
 
 from job_aggregator.plugins.usajobs import Plugin
+from job_aggregator.schema import SearchParams
 
 # Credentials are loaded from .env by conftest.py pytest_configure hook
 # before any test module is imported.  This file does not load dotenv
@@ -55,7 +56,7 @@ def _plugin_from_env() -> Plugin:
         email = "FAKE_USAJOBS_EMAIL"
     return Plugin(
         credentials={"api_key": api_key, "email": email},
-        params={"query": "software engineer", "max_pages": 1},
+        search=SearchParams(query="software engineer", max_pages=1),
     )
 
 

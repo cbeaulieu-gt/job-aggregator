@@ -26,6 +26,7 @@ import requests
 
 from job_aggregator.base import JobSource
 from job_aggregator.errors import ScrapeError
+from job_aggregator.schema import SearchParams
 
 logger = logging.getLogger(__name__)
 
@@ -130,32 +131,36 @@ class RemotivePlugin(JobSource):
 
     def __init__(
         self,
-        query: str | None = None,
-        category: str | None = None,
-        limit: int = 100,
+        *,
+        credentials: dict[str, Any] | None = None,
+        search: SearchParams | None = None,
     ) -> None:
         """Initialise the Remotive plugin.
 
+        Remotive requires no authentication; the ``credentials``
+        argument is accepted for API uniformity but is silently ignored.
+
         Args:
-            query: Optional free-text keyword filter forwarded to the
-                Remotive ``search`` query parameter.
-            category: Optional job category slug (e.g. ``"software-dev"``,
-                ``"design"``) forwarded to the Remotive ``category``
-                parameter.  See https://remotive.com/api/remote-jobs for
-                valid values.  Defaults to ``None`` (all categories).
-            limit: Maximum number of listings to request.  Remotive caps
-                the response at their server-side maximum regardless.
-                Defaults to ``100``.
+            credentials: Accepted for interface uniformity; not used.
+            search: :class:`~job_aggregator.schema.SearchParams` instance.
+                ``query`` is forwarded to the Remotive ``search``
+                parameter.  Location and country are ignored because
+                Remotive is a remote-only board.
         """
-        self._query = query
-        self._category = category
-        self._limit = limit
+        super().__init__(credentials=credentials, search=search)
+        self._query: str | None = search.query if search is not None else None
+        extra = search.extra if search is not None else None
+        self._category: str | None = extra.get("category") if extra else None
+        self._limit: int = (
+            search.max_pages if search is not None and search.max_pages is not None else 100
+        )
 
     # ------------------------------------------------------------------
     # JobSource interface
     # ------------------------------------------------------------------
 
-    def settings_schema(self) -> dict[str, Any]:
+    @classmethod
+    def settings_schema(cls) -> dict[str, Any]:
         """Return an empty schema — Remotive requires no credentials.
 
         Returns:

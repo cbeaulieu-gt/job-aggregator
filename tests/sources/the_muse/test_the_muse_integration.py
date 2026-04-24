@@ -23,8 +23,9 @@ def test_live_search_returns_records() -> None:
     fields populated.
     """
     from job_aggregator.plugins.the_muse import Plugin
+    from job_aggregator.schema import SearchParams
 
-    plugin = Plugin(query="Software Engineer", max_pages=1)
+    plugin = Plugin(search=SearchParams(query="Software Engineer", max_pages=1))
     all_records: list[dict] = []  # type: ignore[type-arg]
     for page in plugin.pages():
         all_records.extend(page)

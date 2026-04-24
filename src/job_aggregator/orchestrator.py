@@ -30,7 +30,7 @@ from job_aggregator.auto_register import discover_plugins
 from job_aggregator.base import JobSource
 from job_aggregator.envelope import build_envelope, build_jsonl_lines
 from job_aggregator.normalizer import normalize
-from job_aggregator.schema import JobRecord
+from job_aggregator.schema import JobRecord, SearchParams
 
 # ---------------------------------------------------------------------------
 # URL normalisation helpers
@@ -69,58 +69,30 @@ def _normalize_url(url: str) -> str:
 def _instantiate_plugin(
     cls: type[JobSource],
     credentials: dict[str, Any],
-    params: dict[str, Any],
+    search: SearchParams,
 ) -> JobSource:
-    """Instantiate a plugin class with a best-effort constructor call.
+    """Instantiate a plugin class with the canonical constructor signature.
 
-    Plugins in this codebase use several constructor signatures:
+    All plugins implement the standardised keyword-only signature::
 
-    * ``__init__(credentials, params)`` — most credential-requiring plugins.
-    * ``__init__(credentials=None, params=None)`` — credential-optional.
-    * ``__init__(max_pages=None)`` — no-auth plugins (Himalayas, Arbeitnow).
-    * ``__init__()`` — zero-arg (rare stubs).
-
-    This function attempts the full ``(credentials, params)`` signature
-    first, then falls back to ``(params)`` (params-only), then ``()``
-    (zero-arg).  A ``TypeError`` on the final attempt is re-raised so
-    callers can distinguish a real construction error from a signature
-    mismatch.
+        cls(*, credentials: dict | None = None, search: SearchParams | None = None)
 
     Args:
         cls: The plugin class to instantiate.
         credentials: Credentials dict for the source key (may be empty).
-        params: Search params dict (``query``, ``location``, ``country``,
-            ``hours``, ``max_pages`` as applicable).
+        search: :class:`~job_aggregator.schema.SearchParams` instance
+            carrying the user's query, location, country, hours, and
+            max_pages preferences.
 
     Returns:
         An instantiated :class:`~job_aggregator.base.JobSource`.
 
     Raises:
-        TypeError: If none of the attempted signatures succeed.
+        TypeError: If the constructor call fails (unexpected signature).
+        CredentialsError: Propagated from the plugin when required
+            credentials are missing or empty.
     """
-    # Attempt 1: (credentials, params)
-    try:
-        return cls(credentials=credentials, params=params)  # type: ignore[call-arg]
-    except TypeError:
-        pass
-
-    # Attempt 2: positional (credentials, params) for plugins that
-    # declare positional-only args
-    try:
-        return cls(credentials, params)  # type: ignore[call-arg]
-    except TypeError:
-        pass
-
-    # Attempt 3: zero-arg (no-credential, no-query plugins)
-    try:
-        return cls()
-    except TypeError:
-        pass
-
-    # Final: raise so the caller surfaces a clear error
-    raise TypeError(
-        f"Cannot instantiate plugin {cls.__name__!r}: no compatible constructor signature found."
-    )
+    return cls(credentials=credentials, search=search)
 
 
 # ---------------------------------------------------------------------------
@@ -266,15 +238,15 @@ def run_jobs(
         _emit_query_warning(query, enabled)
 
     # ------------------------------------------------------------------
-    # 3. Build search params dict for plugin constructors
+    # 3. Build SearchParams for plugin constructors
     # ------------------------------------------------------------------
-    params: dict[str, Any] = {
-        "query": query,
-        "location": location,
-        "country": country,
-        "hours": hours,
-        "max_pages": max_pages,
-    }
+    search_params = SearchParams(
+        query=query,
+        location=location,
+        country=country,
+        hours=hours,
+        max_pages=max_pages,
+    )
 
     # ------------------------------------------------------------------
     # 4. Build query_applied mapping (only when query is given)
@@ -320,7 +292,7 @@ def run_jobs(
     for key, cls in enabled.items():
         source_creds: dict[str, Any] = creds.get(key, {})
         try:
-            plugin = _instantiate_plugin(cls, source_creds, params)
+            plugin = _instantiate_plugin(cls, source_creds, search_params)
             source_had_records = False
             for page in plugin.pages():
                 for raw in page:

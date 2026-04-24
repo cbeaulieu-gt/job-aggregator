@@ -8,6 +8,7 @@ from __future__ import annotations
 import pytest
 
 from job_aggregator.plugins.adzuna import Plugin
+from job_aggregator.schema import SearchParams
 
 # ---------------------------------------------------------------------------
 # ClassVar / metadata tests
@@ -72,32 +73,24 @@ class TestPluginMetadata:
 class TestSettingsSchema:
     """Verify the credentials schema declares app_id and app_key."""
 
-    def setup_method(self) -> None:
-        """Instantiate plugin with minimal valid credentials."""
-        self.plugin = Plugin(
-            query="python",
-            country="gb",
-            credentials={"app_id": "fake_id", "app_key": "fake_key"},
-        )
-
     def test_schema_has_app_id(self) -> None:
         """settings_schema must declare the app_id field."""
-        schema = self.plugin.settings_schema()
+        schema = Plugin.settings_schema()
         assert "app_id" in schema
 
     def test_schema_has_app_key(self) -> None:
         """settings_schema must declare the app_key field."""
-        schema = self.plugin.settings_schema()
+        schema = Plugin.settings_schema()
         assert "app_key" in schema
 
     def test_app_id_is_required(self) -> None:
         """app_id must be marked required=True."""
-        schema = self.plugin.settings_schema()
+        schema = Plugin.settings_schema()
         assert schema["app_id"].get("required") is True
 
     def test_app_key_is_required(self) -> None:
         """app_key must be marked required=True."""
-        schema = self.plugin.settings_schema()
+        schema = Plugin.settings_schema()
         assert schema["app_key"].get("required") is True
 
 
@@ -114,11 +107,7 @@ class TestCredentialsValidation:
         from job_aggregator.errors import CredentialsError
 
         with pytest.raises(CredentialsError) as exc_info:
-            Plugin(
-                query="python",
-                country="gb",
-                credentials={"app_key": "fake_key"},
-            )
+            Plugin(credentials={"app_key": "fake_key"})
         assert "app_id" in str(exc_info.value)
 
     def test_missing_app_key_raises(self) -> None:
@@ -126,11 +115,7 @@ class TestCredentialsValidation:
         from job_aggregator.errors import CredentialsError
 
         with pytest.raises(CredentialsError) as exc_info:
-            Plugin(
-                query="python",
-                country="gb",
-                credentials={"app_id": "fake_id"},
-            )
+            Plugin(credentials={"app_id": "fake_id"})
         assert "app_key" in str(exc_info.value)
 
     def test_empty_credentials_raises(self) -> None:
@@ -138,7 +123,7 @@ class TestCredentialsValidation:
         from job_aggregator.errors import CredentialsError
 
         with pytest.raises(CredentialsError):
-            Plugin(query="python", country="gb", credentials={})
+            Plugin(credentials={})
 
 
 # ---------------------------------------------------------------------------
@@ -179,9 +164,8 @@ class TestNormalise:
     def setup_method(self) -> None:
         """Instantiate plugin with minimal valid credentials."""
         self.plugin = Plugin(
-            query="python",
-            country="gb",
             credentials={"app_id": "fake_id", "app_key": "fake_key"},
+            search=SearchParams(query="python", country="gb"),
         )
 
     def test_source_field(self) -> None:

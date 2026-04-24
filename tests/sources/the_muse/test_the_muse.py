@@ -11,6 +11,7 @@ from typing import Any
 from unittest.mock import patch
 
 from job_aggregator.base import JobSource
+from job_aggregator.schema import SearchParams
 
 # ---------------------------------------------------------------------------
 # Helpers — synthetic raw records matching The Muse API shape
@@ -143,22 +144,21 @@ class TestPluginConstruction:
         """Plugin accepts a query (used as category filter)."""
         from job_aggregator.plugins.the_muse import Plugin
 
-        p = Plugin(query="Data Engineer")
+        p = Plugin(search=SearchParams(query="Data Engineer"))
         assert p is not None
 
     def test_instantiates_with_max_pages(self) -> None:
         """Plugin accepts a max_pages argument."""
         from job_aggregator.plugins.the_muse import Plugin
 
-        p = Plugin(max_pages=3)
+        p = Plugin(search=SearchParams(max_pages=3))
         assert p is not None
 
     def test_settings_schema_returns_empty_dict(self) -> None:
         """settings_schema() returns an empty dict (no credentials required)."""
         from job_aggregator.plugins.the_muse import Plugin
 
-        schema = Plugin().settings_schema()
-        assert schema == {}
+        assert Plugin.settings_schema() == {}
 
 
 # ---------------------------------------------------------------------------
@@ -362,10 +362,10 @@ class TestPages:
     are fetched subsequently.
     """
 
-    def _plugin(self, **kwargs: Any) -> Any:
+    def _plugin(self, search: SearchParams | None = None) -> Any:
         from job_aggregator.plugins.the_muse import Plugin
 
-        return Plugin(**kwargs)
+        return Plugin(search=search)
 
     def test_pages_yields_normalised_records(self) -> None:
         """pages() yields lists of normalised dicts when page 0 has results."""
@@ -417,7 +417,7 @@ class TestPages:
         """pages() yields at most max_pages pages."""
         raw_job = _make_raw_job()
 
-        plugin = self._plugin(max_pages=2)
+        plugin = self._plugin(search=SearchParams(max_pages=2))
 
         def fake_get_page(page: int) -> dict[str, Any]:
             return {"results": [raw_job], "page_count": 10}

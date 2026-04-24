@@ -92,8 +92,7 @@ class TestSettingsSchema:
 
     def test_settings_schema_empty(self) -> None:
         """Jobicy needs no API key; settings_schema must return {}."""
-        plugin = Plugin()
-        assert plugin.settings_schema() == {}
+        assert Plugin.settings_schema() == {}
 
 
 # ---------------------------------------------------------------------------

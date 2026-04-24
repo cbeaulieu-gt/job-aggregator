@@ -28,6 +28,7 @@ import requests
 
 from job_aggregator.base import JobSource
 from job_aggregator.errors import CredentialsError, ScrapeError
+from job_aggregator.schema import SearchParams
 
 logger = logging.getLogger(__name__)
 
@@ -122,8 +123,9 @@ class Plugin(JobSource):
 
     def __init__(
         self,
-        credentials: dict[str, Any],
-        params: dict[str, Any] | None = None,
+        *,
+        credentials: dict[str, Any] | None = None,
+        search: SearchParams | None = None,
     ) -> None:
         """Construct a Plugin instance, validating required credentials.
 
@@ -131,23 +133,19 @@ class Plugin(JobSource):
             credentials: Dict containing ``api_key`` and ``email``.
                 Both fields are required; a missing or empty value
                 raises :exc:`~job_aggregator.errors.CredentialsError`.
-            params: Optional search parameters.  Supported keys:
-
-                - ``query`` (:class:`str`): free-text keyword sent to
-                  the ``Keyword`` API parameter.  Defaults to
-                  ``"software engineer"``.
-                - ``max_pages`` (:class:`int` | ``None``): maximum
-                  number of pages to fetch.  ``None`` means fetch all
-                  available pages.
+            search: :class:`~job_aggregator.schema.SearchParams` carrying
+                ``query`` and ``max_pages``.  Location and country are
+                ignored because the USAJobs API does not support them.
 
         Raises:
             CredentialsError: If ``api_key`` or ``email`` is missing or
                 empty in *credentials*.
         """
-        params = params or {}
+        super().__init__(credentials=credentials, search=search)
+        creds: dict[str, Any] = credentials or {}
 
-        api_key: str = str(credentials.get("api_key") or "").strip()
-        email: str = str(credentials.get("email") or "").strip()
+        api_key: str = str(creds.get("api_key") or "").strip()
+        email: str = str(creds.get("email") or "").strip()
 
         missing: list[str] = []
         if not api_key:
@@ -157,20 +155,20 @@ class Plugin(JobSource):
         if missing:
             raise CredentialsError(self.SOURCE, missing)
 
+        s = search or SearchParams()
         self._api_key: str = api_key
         # email is used as the User-Agent header per USAJobs API requirements
         self._email: str = email
-        self._query: str = str(params.get("query") or "software engineer")
-        self._max_pages: int | None = params.get("max_pages")
-        self._results_per_page: int = int(
-            params.get("results_per_page") or _DEFAULT_RESULTS_PER_PAGE
-        )
+        self._query: str = s.query or "software engineer"
+        self._max_pages: int | None = s.max_pages
+        self._results_per_page: int = _DEFAULT_RESULTS_PER_PAGE
 
     # ------------------------------------------------------------------
     # JobSource interface
     # ------------------------------------------------------------------
 
-    def settings_schema(self) -> dict[str, Any]:
+    @classmethod
+    def settings_schema(cls) -> dict[str, Any]:
         """Return the credential field definitions for USAJobs.
 
         Returns:

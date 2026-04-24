@@ -142,6 +142,12 @@ class SearchParams:
             (one week).
         max_pages: Per-source page cap.  ``None`` means each plugin
             uses its own default maximum.
+        extra: Plugin-specific freeform configuration, symmetric with
+            :attr:`JobRecord.extra`.  Intended for parameters that are
+            meaningful only to a single plugin (e.g. Remotive's
+            ``category`` filter, Himalayas' ``page_size``, Jobicy's
+            ``count``).  Not covered by schema versioning; consumers
+            depend on ``extra.*`` at their own risk.
     """
 
     query: str | None = None
@@ -149,6 +155,7 @@ class SearchParams:
     country: str | None = None
     hours: int = 168
     max_pages: int | None = None
+    extra: dict[str, Any] | None = None
 
 
 # ---------------------------------------------------------------------------

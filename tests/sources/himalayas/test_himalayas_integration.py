@@ -14,16 +14,17 @@ from __future__ import annotations
 import pytest
 
 from job_aggregator.plugins.himalayas import Plugin
+from job_aggregator.schema import SearchParams
 
 
 @pytest.fixture()
 def plugin() -> Plugin:
-    """Return a Plugin instance with page_size=1 to keep cassettes small.
+    """Return a Plugin instance with page_size=1 to match cassettes.
 
     Returns:
         A :class:`Plugin` configured for a single-listing first page.
     """
-    return Plugin(page_size=1)
+    return Plugin(search=SearchParams(extra={"page_size": 1}))
 
 
 @pytest.mark.vcr()

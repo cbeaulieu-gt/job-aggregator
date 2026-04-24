@@ -20,6 +20,7 @@ from typing import Any
 from unittest.mock import MagicMock, patch
 
 from job_aggregator.plugins.arbeitnow import Plugin
+from job_aggregator.schema import SearchParams
 
 # ---------------------------------------------------------------------------
 # Fixtures: synthetic raw listing dicts
@@ -128,8 +129,7 @@ class TestSettingsSchema:
 
     def test_returns_empty_dict(self) -> None:
         """settings_schema() returns {}."""
-        plugin = Plugin()
-        assert plugin.settings_schema() == {}
+        assert Plugin.settings_schema() == {}
 
 
 # ---------------------------------------------------------------------------
@@ -408,7 +408,7 @@ class TestPages:
         meta_response = {"data": [FULL_RAW], "meta": {"last_page": 10}}
         page_response = {"data": [FULL_RAW], "meta": {"last_page": 10}}
 
-        plugin = Plugin(max_pages=2)
+        plugin = Plugin(search=SearchParams(max_pages=2))
         with patch("job_aggregator.plugins.arbeitnow.plugin.requests.get") as mock_get:
             mock_resp = MagicMock()
             mock_resp.status_code = 200

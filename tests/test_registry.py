@@ -56,14 +56,15 @@ def _make_cred_plugin(source_key: str, cred_field: str = "api_key") -> type[JobS
 
         def __init__(
             self,
-            credentials: dict[str, Any],
-            search: SearchParams,
+            *,
+            credentials: dict[str, Any] | None = None,
+            search: SearchParams | None = None,
         ) -> None:
             """Minimal init: store credentials."""
-            self._credentials = credentials
-            self._search = search
+            super().__init__(credentials=credentials, search=search)
 
-        def settings_schema(self) -> dict[str, Any]:
+        @classmethod
+        def settings_schema(cls) -> dict[str, Any]:
             return {
                 cred_field: {
                     "label": "API Key",
@@ -98,12 +99,17 @@ def _make_no_cred_plugin(source_key: str) -> type[JobSource]:
         RATE_LIMIT_NOTES = "None."
         REQUIRED_SEARCH_FIELDS: ClassVar[tuple[str, ...]] = ()
 
-        def __init__(self, credentials: dict[str, Any], search: SearchParams) -> None:
+        def __init__(
+            self,
+            *,
+            credentials: dict[str, Any] | None = None,
+            search: SearchParams | None = None,
+        ) -> None:
             """Minimal init."""
-            self._credentials = credentials
-            self._search = search
+            super().__init__(credentials=credentials, search=search)
 
-        def settings_schema(self) -> dict[str, Any]:
+        @classmethod
+        def settings_schema(cls) -> dict[str, Any]:
             return {}
 
         def pages(self) -> Iterator[list[dict[str, Any]]]:
@@ -436,4 +442,4 @@ class TestMakeEnabledSources:
             )
 
         assert len(result) == 1
-        assert result[0]._search is search  # type: ignore[attr-defined]
+        assert result[0]._search is search

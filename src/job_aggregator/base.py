@@ -11,6 +11,7 @@ Example::
     from typing import Any
 
     from job_aggregator.base import JobSource
+    from job_aggregator.schema import SearchParams
 
 
     class MySource(JobSource):
@@ -25,7 +26,8 @@ Example::
         RATE_LIMIT_NOTES = "No published limit."
         REQUIRED_SEARCH_FIELDS: tuple[str, ...] = ()
 
-        def settings_schema(self) -> dict[str, Any]:
+        @classmethod
+        def settings_schema(cls) -> dict[str, Any]:
             return {
                 "api_key": {
                     "label": "API Key",
@@ -33,6 +35,16 @@ Example::
                     "required": True,
                 }
             }
+
+        def __init__(
+            self,
+            *,
+            credentials: dict[str, Any] | None = None,
+            search: SearchParams | None = None,
+        ) -> None:
+            super().__init__(credentials=credentials, search=search)
+            creds = credentials or {}
+            # validate credentials here …
 
         def pages(self) -> Iterator[list[dict[str, Any]]]:
             ...
@@ -46,7 +58,10 @@ from __future__ import annotations
 import abc
 import inspect
 from collections.abc import Iterator
-from typing import Any, ClassVar, Literal
+from typing import TYPE_CHECKING, Any, ClassVar, Literal
+
+if TYPE_CHECKING:
+    from job_aggregator.schema import SearchParams
 
 # ---------------------------------------------------------------------------
 # Required class-level attribute names — enforced by __init_subclass__
@@ -122,6 +137,34 @@ class JobSource(abc.ABC):
     REQUIRED_SEARCH_FIELDS: ClassVar[tuple[str, ...]] = ()
 
     # ------------------------------------------------------------------
+    # Canonical constructor
+    # ------------------------------------------------------------------
+
+    def __init__(
+        self,
+        *,
+        credentials: dict[str, Any] | None = None,
+        search: SearchParams | None = None,
+    ) -> None:
+        """Store credentials and search parameters on the instance.
+
+        Concrete subclasses **must** call ``super().__init__()`` with the
+        same keyword arguments before performing their own credential
+        validation.  The base implementation simply stores the raw values;
+        validation is the subclass's responsibility.
+
+        Args:
+            credentials: Credentials dict for the plugin (may be
+                ``None`` for no-auth plugins).
+            search: :class:`~job_aggregator.schema.SearchParams` instance
+                carrying the user's search query, location, country,
+                hours, and page-count preferences.  May be ``None`` when
+                no search parameters are provided.
+        """
+        self._credentials: dict[str, Any] = credentials or {}
+        self._search: SearchParams | None = search
+
+    # ------------------------------------------------------------------
     # Subclass enforcement hook
     # ------------------------------------------------------------------
 
@@ -162,9 +205,14 @@ class JobSource(abc.ABC):
     # Abstract methods (must be implemented by every concrete subclass)
     # ------------------------------------------------------------------
 
+    @classmethod
     @abc.abstractmethod
-    def settings_schema(self) -> dict[str, Any]:
+    def settings_schema(cls) -> dict[str, Any]:
         """Return the field definitions used to build :class:`~job_aggregator.schema.PluginInfo`.
+
+        Declared as a ``@classmethod`` so callers can introspect a plugin's
+        schema without constructing an instance.  Concrete subclasses must
+        decorate their override with ``@classmethod`` as well.
 
         Each key in the returned dict is a credential / configuration
         field name; the value is a dict describing the field with the

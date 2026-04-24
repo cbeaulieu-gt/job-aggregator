@@ -17,6 +17,7 @@ import os
 import pytest
 
 from job_aggregator.plugins.adzuna import Plugin
+from job_aggregator.schema import SearchParams
 
 # ---------------------------------------------------------------------------
 # Fixtures
@@ -41,11 +42,13 @@ def credentials() -> dict[str, str]:
 def plugin(credentials: dict[str, str]) -> Plugin:
     """Return a Plugin configured for a minimal GB search."""
     return Plugin(
-        query="python developer",
-        country="gb",
         credentials=credentials,
-        max_pages=1,
-        results_per_page=5,
+        search=SearchParams(
+            query="python developer",
+            country="gb",
+            max_pages=1,
+            extra={"results_per_page": 5},
+        ),
     )
 
 

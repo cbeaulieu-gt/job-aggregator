@@ -203,12 +203,14 @@ class TestDeduplication:
 
             def __init__(
                 self,
+                *,
                 credentials: dict[str, Any] | None = None,
-                params: dict[str, Any] | None = None,
+                search: Any | None = None,
             ) -> None:
                 pass
 
-            def settings_schema(self) -> dict[str, Any]:
+            @classmethod
+            def settings_schema(cls) -> dict[str, Any]:
                 return {}
 
             def pages(self) -> Iterator[list[dict[str, Any]]]:

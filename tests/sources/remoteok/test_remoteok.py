@@ -115,7 +115,7 @@ class TestSettingsSchema:
 
     def test_empty_schema(self, plugin: Plugin) -> None:
         """settings_schema must return {} for a no-credentials source."""
-        assert plugin.settings_schema() == {}
+        assert Plugin.settings_schema() == {}
 
 
 # ---------------------------------------------------------------------------
