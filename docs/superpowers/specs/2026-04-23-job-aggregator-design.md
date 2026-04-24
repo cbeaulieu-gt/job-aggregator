@@ -711,7 +711,7 @@ are decisions the migrator makes based on that reading.
 | arbeitnow | ? | TBD | ? | ? | ? | ? | ? |
 | himalayas | ? | remote-only (likely) | ? | ? | ? | ? | ? |
 | jobicy | ? | remote-only (likely) | ? | ? | ? | ? | ? |
-| jooble | ? | global | ? | ? | ? | ? | ? |
+| jooble | Jooble | global | always | true | false | "No published hard limit; free-tier key, use responsibly." | () |
 | jsearch | ? | global | always | ? | ? | "RapidAPI quota varies by plan" | ? |
 | remoteok | RemoteOK | remote-only | never | false | false | "Public, soft rate limits" | () |
 | remotive | ? | remote-only (likely) | ? | ? | ? | ? | ? |
