@@ -14,6 +14,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Plugin: `remoteok` source migrated from legacy repo (#11)
+
 ### Changed
 
 ### Deprecated
