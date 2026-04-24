@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Community meta files: CONTRIBUTING, SECURITY, issue templates, PR template (#20)
+- Plugin: `adzuna` source migrated from legacy repo (#5)
 
 ### Changed
 

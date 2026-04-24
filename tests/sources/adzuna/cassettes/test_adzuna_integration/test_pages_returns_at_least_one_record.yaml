@@ -1,0 +1,83 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.33.1
+    method: GET
+    uri: https://api.adzuna.com/v1/api/jobs/gb/search/1?app_id=FAKE_APP_ID&app_key=FAKE_APP_KEY&what=python+developer&results_per_page=5&content-type=application%2Fjson
+  response:
+    body:
+      string: '{"results":[{"longitude":-4.25596,"latitude":55.86026,"description":"Role:
+        Python Developers Glasgow Location: Glasgow (5 days onsite) Mode of work:
+        Contract and Permanent Type of work: Fully onsite Domain: Banking / Finance
+        / Trading Market Risk Skills: Strong Python application development in banking/risk
+        applications & calc engines Exposure to cloud technologies Familiarity with
+        Athena ecosystem or similar (SecDB, Quartz) Note: not AWS Athena Trade Lifecycle
+        / Market Risk / Risk platform experience Kubernetes & Docker preferred. Job
+        Description: Python Role D…","company":{"display_name":"Purview Consultancy
+        Services Ltd","__CLASS__":"Adzuna::API::Response::Company"},"contract_type":"contract","category":{"label":"IT
+        Jobs","tag":"it-jobs","__CLASS__":"Adzuna::API::Response::Category"},"created":"2026-04-22T10:36:00Z","location":{"area":["UK","Scotland","Glasgow"],"display_name":"Glasgow,
+        Scotland","__CLASS__":"Adzuna::API::Response::Location"},"salary_max":71652.72,"id":"5707019777","redirect_url":"https://www.adzuna.co.uk/jobs/land/ad/5707019777?se=FAKE_SE&utm_medium=api&utm_source=FAKE_APP_ID&v=FAKE_V","__CLASS__":"Adzuna::API::Response::Job","adref":"FAKE_ADREF","salary_is_predicted":"1","salary_min":71652.72,"title":"Python
+        Developer"},{"location":{"__CLASS__":"Adzuna::API::Response::Location","area":["UK","Northern
+        Ireland","Belfast"],"display_name":"Belfast, Northern Ireland"},"salary_max":90000,"created":"2026-04-02T20:36:55Z","__CLASS__":"Adzuna::API::Response::Job","id":"5687661760","redirect_url":"https://www.adzuna.co.uk/jobs/land/ad/5687661760?se=FAKE_SE&utm_medium=api&utm_source=FAKE_APP_ID&v=FAKE_V","adref":"FAKE_ADREF","salary_is_predicted":"0","description":"Senior
+        Python Developer needed to join the worlds newest IoT company Are you a Senior/Principal
+        level Python developer looking for a new challenge? Do you want to work with
+        some of the brightest minds in Northern Ireland? Want to work on true greenfield
+        projects that nobody has done before? The Role In this hands on role, you''ll
+        be joining a small team of highly capable professionals responsible for designing,
+        developing, and maintaining high-performance and scalable Applications using
+        the Go p…","category":{"label":"IT Jobs","tag":"it-jobs","__CLASS__":"Adzuna::API::Response::Category"},"title":"Senior
+        Python Developer","company":{"__CLASS__":"Adzuna::API::Response::Company","display_name":"Ocho"},"salary_min":90000},{"salary_max":61250.66,"location":{"area":["UK","London"],"display_name":"London,
+        UK","__CLASS__":"Adzuna::API::Response::Location"},"created":"2026-03-11T12:11:56Z","__CLASS__":"Adzuna::API::Response::Job","redirect_url":"https://www.adzuna.co.uk/jobs/land/ad/5661637903?se=FAKE_SE&utm_medium=api&utm_source=FAKE_APP_ID&v=FAKE_V","id":"5661637903","adref":"FAKE_ADREF","salary_is_predicted":"1","title":"Python
+        Developer","salary_min":61250.66,"contract_time":"full_time","latitude":51.503378,"longitude":-0.139134,"description":"Python
+        Developer Inside IR35 Contract - Up to £800 per day 3 Days per week in
+        London 6-Month Initial Contract (2 Years Project Scope) Start Date : April
+        2026 We have partnered with a leading Commodities Trading Firm who are looking
+        to reinforce their Development teams. You''ll be working directly with the
+        business, to develop solutions to enhance their workflows. Primary Responsibilities
+        Design, develop and maintain their Python-based applications and automation,
+        working closely with business us…","category":{"label":"IT Jobs","__CLASS__":"Adzuna::API::Response::Category","tag":"it-jobs"},"contract_type":"contract","company":{"__CLASS__":"Adzuna::API::Response::Company","display_name":"Hunter
+        Bond"}},{"location":{"__CLASS__":"Adzuna::API::Response::Location","display_name":"UK","area":["UK"]},"salary_max":44064.8,"contract_time":"full_time","created":"2026-04-10T13:39:41Z","__CLASS__":"Adzuna::API::Response::Job","id":"5695648832","redirect_url":"https://www.adzuna.co.uk/jobs/land/ad/5695648832?se=FAKE_SE&utm_medium=api&utm_source=FAKE_APP_ID&v=FAKE_V","salary_is_predicted":"1","adref":"FAKE_ADREF","description":"Discover
+        your future at Citi Working at Citi is far more than just a job. A career
+        with us means joining a team of more than 230,000 dedicated people from around
+        the globe. At Citi, you''ll have the opportunity to grow your career, give
+        back to your community and make a real impact. Job Overview The Applications
+        Development Intermediate Programmer Analyst is an intermediate level position
+        responsible for participation in the establishment and implementation of new
+        or revised application systems …","category":{"label":"IT Jobs","tag":"it-jobs","__CLASS__":"Adzuna::API::Response::Category"},"title":"Python
+        Developer - Citi","salary_min":44064.8,"company":{"display_name":"Citi","__CLASS__":"Adzuna::API::Response::Company"}},{"latitude":51.503378,"longitude":-0.139134,"contract_time":"full_time","category":{"label":"IT
+        Jobs","tag":"it-jobs","__CLASS__":"Adzuna::API::Response::Category"},"company":{"display_name":"mthree","__CLASS__":"Adzuna::API::Response::Company"},"description":"We
+        are hiring a skilled back-end Python Developer to join a high-performing technology
+        team at a top-tier investment bank. You’ll be instrumental in delivering
+        a greenfield system monitoring and performance analysis tool for global trading
+        platforms – a solution that will provide critical insights into system
+        health and behavior across the trading stack. This is a chance to build something
+        from scratch, with full ownership of backend components, data ingestion, and
+        real-time analytics in a Linu…","__CLASS__":"Adzuna::API::Response::Job","redirect_url":"https://www.adzuna.co.uk/jobs/land/ad/5701585440?se=FAKE_SE&utm_medium=api&utm_source=FAKE_APP_ID&v=FAKE_V","id":"5701585440","salary_max":66663.34,"location":{"__CLASS__":"Adzuna::API::Response::Location","area":["UK","London"],"display_name":"London,
+        UK"},"created":"2026-04-16T20:46:25Z","title":"Python Developer - mthree","salary_min":66663.34,"adref":"FAKE_ADREF","salary_is_predicted":"1"}],"__CLASS__":"Adzuna::API::Response::JobSearchResults","mean":72008.84,"count":1370}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Origin, X-Requested-With, Content-Type, Accept
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf8
+      Server:
+      - nginx/1.18.0 (Ubuntu)
+      Vary:
+      - Content-Type
+      X-Catalyst:
+      - '5.90132'
+    status:
+      code: 200
+      message: OK
+version: 1

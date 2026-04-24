@@ -707,7 +707,7 @@ are decisions the migrator makes based on that reading.
 
 | Plugin | DISPLAY_NAME | GEO_SCOPE | ACCEPTS_QUERY | ACCEPTS_LOCATION | ACCEPTS_COUNTRY | RATE_LIMIT_NOTES | REQUIRED_SEARCH_FIELDS |
 |---|---|---|---|---|---|---|---|
-| adzuna | Adzuna | global-by-country | always | true | true | "1 req/sec, 250/day on free tier" | ("country","what","where") (current) |
+| adzuna | Adzuna | global-by-country | always | true | true | "~1 req/sec sustained; free tier capped at 250 req/day." | ("country","query") — verified #5 |
 | arbeitnow | ? | TBD | ? | ? | ? | ? | ? |
 | himalayas | ? | remote-only (likely) | ? | ? | ? | ? | ? |
 | jobicy | ? | remote-only (likely) | ? | ? | ? | ? | ? |
