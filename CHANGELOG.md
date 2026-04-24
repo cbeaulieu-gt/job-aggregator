@@ -23,6 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Plugin: `jsearch` source migrated from legacy repo (#10)
 - Plugin: `remoteok` source migrated from legacy repo (#11)
 - Plugin: `remotive` source migrated from legacy repo (#12)
+- Plugin: `the_muse` source migrated from legacy repo (#13)
 
 ### Changed
 

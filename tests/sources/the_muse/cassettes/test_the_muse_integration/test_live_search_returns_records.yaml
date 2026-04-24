@@ -1,0 +1,740 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.33.1
+    method: GET
+    uri: https://www.themuse.com/api/public/jobs?category=Software+Engineer&page=0&results_per_page=20
+  response:
+    body:
+      string: '{"page": 0, "page_count": 1, "items_per_page": 20, "took": 4, "timed_out":
+        false, "total": 13, "results": [{"contents": "<div>\n    <p>Pilotly is the
+        first market research platform built for creative content. By allowing viewers
+        to give feedback in real-time on unreleased content, we help Hollywood make
+        better decisions through data.</p>\n    <p>Collecting millions of data points
+        is a great start to understanding viewer response but creating actionable
+        insights is the goal. For this we have a Studio Insights Dashboard, that allows
+        professional video creators to visualize they data they collect when screening
+        content. There are also opportunities to work on our viewer portal as well,
+        where people watch exclusive media content and give their feedback.</p>\n    <p>When
+        you join us, you''ll work with a team of highly talented team of engineers
+        and product visionaries, that work together to create new powerful features
+        / services every week.</p>\n    <p>Learn more about us :\u00a0<a href=\"https://youtu.be/9nqbU2VJjY0\">https://youtu.be/9nqbU2VJjY0</a></p>\n    <p>===Requirements===</p>\n    <p>+Strong
+        experience and accomplishments building scalable web applications that have
+        design parity with provided graphics and user flow.</p>\n    <p>+Experience
+        on a development team and the tools they use to deploy into dev, staging and
+        production environments (GIT, AWS, etc)</p>\n    <p>+Extensive experience
+        with React Native as well as React JS</p>\n    <p>+Ability to create back-end
+        routines to provide the front-end properly organize data for display</p>\n    <p>+An
+        affinity for television, film or music doesn''t hurt either</p>\n    <p>===Some
+        Things You\u2019ll Be Doing===</p>\n    <p>\u2022 Leading development on our
+        native app and mobile efforts, while also participating in the growth of our
+        client insights dashboard to gain knowledge of the entire product stack</p>\n    <p>\u2022
+        Working on features as a team, from inception to launch, in the entire platform
+        code base from the backend to the desktop and web UI\u2019s in technologies
+        ranging from Node to React and Javascript</p>\n    <p>\u2022 Refactoring and
+        improving legacy code and code quality, supporting new development, and maintaining
+        and improving quality while adding functionality</p>\n    <p>\u2022 Participate
+        in online learning to continuously advance your coding skill set with respect
+        to CSS, React and other emerging coding syntax</p>\n    <p>\u2022 Creating
+        and contributing in a highly collaborative and diverse environment</p>\n</div>",
+        "name": "Product Engineer II", "type": "external", "publication_date": "2021-03-31T15:38:22Z",
+        "short_name": "product-engineer-ii-8b1aeb", "model_type": "jobs", "id": 5526781,
+        "locations": [{"name": "Flexible / Remote"}, {"name": "Los Angeles, CA"},
+        {"name": "Oakland, CA"}], "categories": [{"name": "Product"}, {"name": "Software
+        Engineer"}], "levels": [{"name": "Mid Level", "short_name": "mid"}, {"name":
+        "Senior Level", "short_name": "senior"}], "tags": [], "refs": {"landing_page":
+        "https://www.themuse.com/jobs/pilotly/product-engineer-ii-8b1aeb"}, "company":
+        {"id": 12271, "short_name": "pilotly", "name": "Pilotly"}}, {"contents": "<p>More
+        than 30 years ago, E<em>TRADE pioneered the online brokerage industry by executing
+        the first-ever electronic individual investor trade. While the landscape of
+        our industry has changed dramatically, our culture of innovation and drive
+        to make online trading accessible to everyone continues to drive us forward.
+        We believe in challenging the status quo, fostering an environment of curiosity
+        and learning, and, above all, putting our custom e rs first.<br><br>In 2020,
+        ETRADE joined Morgan Stanley, signaling a major industry shift that brought
+        Wall Street and Main Street together more than ever before. As ETRADE''s parent
+        company, Morgan Stanley plays an important role in expanding what we can offer
+        to investors, though E</em>TRADE still functions as an independent entity.<br><br><b>RESPONSIBILITIES</b><br><br>Morgan
+        Stanley mobilizes capital to help governments, corporations, institutions
+        and individuals around the world achieve their financial goals. For over 85
+        years, the firm''s reputation for using innovative thinking to solve complex
+        problems has been well earned and rarely matched. A consistent industry leader
+        throughout decades of dramatic change in modern finance, Morgan Stanley will
+        continue to break new ground in advising, serving and providing new opportunities
+        for its clients. Morgan Stanley is committed to maintaining the first-class
+        service and high standard of excellence that have always defined the firm.
+        At its foundation are five core values - putting clients first, doing the
+        right thing, leading with exceptional ideas, committing to diversity and inclusion,
+        and giving back - that guide its more than 60,000 employees in 1,200 offices
+        across 42 countries. <br><br>E<em>TRADE is a leading financial services company
+        that is acquired by Morgan Stanley and is pioneer in the online brokerage
+        industry. Founded on the principle of innovation, E</em>TRADE aims to enhance
+        the financial independence of traders and investors through a powerful digital
+        offering and professional guidance. E*TRADE operates a bank with the primary
+        purpose of maximizing the value of deposits generated through its brokerage
+        business. <br><br><strong> Job Description: </strong> <br> We are seeking
+        a Senior back-end engineer who is passionate for great software and motivated
+        to make a huge impact with our mobile development. This is a unique opportunity
+        to be instrumental in building our new mobile platform, so it''s essential
+        that you be attracted to invention and building things from the ground up.
+        We are excited about candidates who are creative, innovative and enjoy working
+        through problems which ultimately results to solid software designs that are
+        tailored completely for our users. To be a successful member of this team
+        you must prioritize quality and be driven by a self-motivation to succeed.<br><br><strong>Responsibilities:</strong>
+        <br> <ul> <li>Writing reusable, testable, and efficient code</li> <li> Design
+        and implementation of low-latency, high-availability, and performant applications
+        </li> <li> Implementation of security and data protection </li> <li> Integration
+        of data storage solutions like MySQL, CassandraDB, Firebase etc. </li></ul><strong>#LI-AJ1</strong>
+        <br><br>#LI-JW1 <br><br><b>REQUIREMENTS</b><br><br><strong>Qualifications:
+        </strong> <br> <ul> <li>5+ years of software engineering experience</li> <li>
+        Strong proficiency with Java, Java script </li> <li> Better knowledge of Spring
+        MVC, Spring Boot </li> <li> Better knowledge of JDBC, Hibernate </li> <li>
+        Strong experience in NODE JS </li> <li> Knowledge of node modules like Express,
+        Hapi, Typescript (a plus) </li> <li> Good experience in Promises </li> <li>
+        Understanding the nature of asynchronous programming </li></ul><strong>Preferred:</strong>
+        <br> <ul> <li> Understanding accessibility and security compliance </li> <li>
+        User authentication and authorization between multiple systems, servers, and
+        environments and knowledge of Oauth </li> <li> Creating database schemas that
+        represent and support business processes </li> <li> Implementing automated
+        testing platforms and unit tests with frameworks like Mocha and Chai </li>
+        <li> Proficient understanding of code versioning tools, such as Git and Bitbucket
+        </li> <li> Knowledge of building mobile applications (a plus) </li> <li> Mentor
+        and coach jr engineers </li> <li> Experience in high volume production scenario
+        </li></ul>Morgan Stanley is an equal opportunity employer committed to diversifying
+        its workforce (M/F/Disability/Vet).<br> #etrade <br><br><strong>#LI-AJ1</strong>
+        <br><br>#LI-JW1</p>", "name": "Mobile Application Developer (Backend)", "type":
+        "external", "publication_date": "2021-11-16T11:43:14Z", "short_name": "mobile-application-developer-backend",
+        "model_type": "jobs", "id": 6734944, "locations": [{"name": "Chicago, IL"}],
+        "categories": [{"name": "Software Engineer"}], "levels": [{"name": "Senior
+        Level", "short_name": "senior"}], "tags": [], "refs": {"landing_page": "https://www.themuse.com/jobs/etrade/mobile-application-developer-backend"},
+        "company": {"id": 1535, "short_name": "etrade", "name": "E*TRADE"}}, {"contents":
+        "<p>More than 30 years ago, E<em>TRADE pioneered the online brokerage industry
+        by executing the first-ever electronic individual investor trade. While the
+        landscape of our industry has changed dramatically, our culture of innovation
+        and drive to make online trading accessible to everyone continues to drive
+        us forward. We believe in challenging the status quo, fostering an environment
+        of curiosity and learning, and, above all, putting our custom e rs first.<br><br>In
+        2020, ETRADE joined Morgan Stanley, signaling a major industry shift that
+        brought Wall Street and Main Street together more than ever before. As ETRADE''s
+        parent company, Morgan Stanley plays an important role in expanding what we
+        can offer to investors, though E</em>TRADE still functions as an independent
+        entity.<br><br><b>RESPONSIBILITIES</b><br><br>Senior Software Engineer (Java)
+        (3171779)<br><br>Description<br>SUMMARY<br>The Senior Staff, Software Engineering
+        is viewed as a mid to senior developer in applications development who can
+        work on the complex projects requiring specialized technical knowledge. They
+        are able to work with the technical leads to solve<br>complex application
+        development tasks. They additionally coordinate with users to determine requirements
+        and ensure that system improvements are successfully implemented and monitored
+        to increase efficiency.<br><br>RESPONSIBILITIES<br>Design and develop Java
+        based applications.<br>Codes, tests, debugs, documents and implements complex
+        software applications.<br>Creates prototypes.<br>Interface with product team
+        to gather requirements.<br>Escalate and communicate issues to manager.<br>Resolve
+        issues that other junior team members are unable to solve.<br>Provide technical
+        solutions to problems encountered in the team.<br>Review the work done by
+        other team members to make sure it adheres to the standards.<br>Makes well-thought-out
+        decisions on complex or ambiguous application development issues.<br>Coordinates
+        with users to determine requirements.<br>Ensures that system improvements
+        are successfully implemented and monitored to increase efficiency.<br><br><b>REQUIREMENTS</b><br><br>REQUIREMENTS<br>Self-motivated,
+        highly organized, team player who thrives in a fast-paced environment with
+        the ability to learn quickly and<br>work independently<br>Strong experience
+        in Java, Spring, Spring Boot.<br>Experience in developing prototypes, third
+        party service integration.<br>Strong experience with multi-threading and networking
+        protocols (TCP/IP, Multicast)<br>Practical experience and understanding of
+        low latency messaging middleware<br>Experience working with streaming technologies
+        is highly desirable.<br>Experience in the financial markets with understanding
+        of Equities, Futures and Options is highly desirable<br>Practical experience
+        working within the Scrum Framework and Agile methodologies<br>Experience working
+        with Kafka and distributed caching solutions is a plus.<br>Strong communication
+        with exceptional written, verbal and presentation skills<br>Practical experience
+        with relational databases (Oracle, Sybase) is a plus<br><br>EDUCATION<br>BS
+        or MS in Computer Science or related field.<br><br>Morgan Stanley is an equal
+        opportunity employer committed to diversifying its workforce (M/F/Disability/Vet).<br><br>#etrade</p>",
+        "name": "Senior Software Engineer (Java)", "type": "external", "publication_date":
+        "2021-09-22T11:38:27Z", "short_name": "senior-software-engineer-java-fc8c8c",
+        "model_type": "jobs", "id": 6543125, "locations": [{"name": "Chicago, IL"}],
+        "categories": [{"name": "Software Engineer"}], "levels": [{"name": "Senior
+        Level", "short_name": "senior"}], "tags": [], "refs": {"landing_page": "https://www.themuse.com/jobs/etrade/senior-software-engineer-java-fc8c8c"},
+        "company": {"id": 1535, "short_name": "etrade", "name": "E*TRADE"}}, {"contents":
+        "<h3>The short version:</h3>\n\n<p>Early-stage venture-backed startup looking
+        for a software engineer to use Python, Javascript, and HTML/CSS to help build
+        out our web platform. Good fit if you like moving fast, having impact, and
+        working on a variety of different things.</p>\n\n<h3>Who we are</h3>\n\n<p>We\u2019re
+        a fast-moving startup with a vision to empower all professionals by helping
+        them build better relationships. Our vision is to fix the network gap: the
+        inequality of opportunity driven by not having the right connections. To solve
+        this problem, we\u2019re combining the best practices of the world\u2019s
+        top relationship builders with artificial intelligence.</p>\n\n<p>We\u2019re
+        building a mission-driven team that strives to live out our values every day:</p>\n\n<ul>\n    <li>Customer-centricity</li>\n    <li>Diversity
+        of perspective</li>\n    <li>Authenticity</li>\n    <li>Growth (individual
+        and collective)</li>\n    <li>Impact</li>\n</ul>\n\n<p>We\u2019re an ambitious,
+        driven team and we push ourselves to accomplish a lot quickly. In the past
+        couple of years we\u2019ve gone through one of the world\u2019s top accelerators,
+        raised two rounds of venture financing, launched our product, rapidly grown
+        our customer base, and architected a robust set of machine learning models
+        as a core source of competitive advantage. In the process, we\u2019ve been
+        named one of Chicago\u2019s top 19 startups to watch \u2013 and we plan on
+        giving the world even more to watch in the years to come!</p>\n\n<h3>What
+        your role will be</h3>\n\n<p>We\u2019re looking for an experienced full stack
+        engineer to help build the core 4Degrees platform. You\u2019ll build and use
+        a versatile set of skills: switching between tasks like rolling out major
+        new functionality, diagnosing and fixing bugs, and playing support for other
+        front-end or back-end engineers.</p>\n\n<p>You\u2019ll combine a bias to action
+        with a passion for having an impact to deliver new, innovative solutions to
+        our customers. We\u2019re building an industry-defining company that requires
+        entirely new approaches; you\u2019ll be a core part of that effort and will
+        be comfortable experimenting, learning, and expanding the scope of what\u2019s
+        possible.</p>\n\n<h3>About you</h3>\n\n<ul>\n    <li>Excited about the 4Degrees
+        mission and believes in our core values</li>\n    <li>Thrives in a fast-paced
+        environment, and is comfortable with experimentation and risk-taking</li>\n    <li>Driven
+        by the opportunity to create impact, and takes full ownership of achieving
+        personal and team objectives</li>\n    <li>Motivated to explore the potential
+        for technology to augment people\u2019s ability to form and strengthen professional
+        relationships</li>\n    <li>Challenges existing industry best practices and
+        takes inspiration from disparate sources to build a groundbreaking product</li>\n    <li>Collaborative
+        mindset \u2013 recognizing that most great outcomes are accomplished by teams,
+        not individuals</li>\n</ul>\n\n<h3>Skills you\u2019ll need</h3>\n\n<ul>\n    <li>Proficiency
+        with back-end programming (Python preferred, but we can train you if you\u2019re
+        good with Ruby, Node, PHP, etc.)</li>\n    <li>Proficiency with front-end
+        programming in vanilla languages (Javascript, HTML, CSS)</li>\n    <li>Comfort
+        with plain SQL and an ORM</li>\n</ul>\n\n<h3>We\u2019d be really excited if
+        you are</h3>\n\n<ul>\n    <li>Experienced with mobile development, particularly
+        using React Native</li>\n    <li>Experienced with the Flask web framework</li>\n    <li>Experienced
+        with machine learning and/or statistical analysis</li>\n</ul>\n\n<h3>Benefits</h3>\n\n<ul>\n    <li>Competitive
+        cash+equity compensation based on level of capability</li>\n    <li>Unlimited
+        PTO (min. 2 weeks, avg. 3-4)</li>\n    <li>Unlimited paid sick leave (mandatory
+        for infectuous diseases)</li>\n    <li>Employer group health insurance, subsidized
+        50% by company</li>\n    <li>Annual professional development stipend</li>\n    <li>Commuter
+        benefits</li>\n</ul>\n\n<h3>Want to join us?</h3>\n\n<p>Send over a quick
+        note with your resume, links to project examples, and thoughts on why this
+        role is exciting to you to <a href=\"mailto:talent@4degrees.ai\">talent@4degrees.ai</a>.
+        Our values are critical to us; in your email, please also talk a bit about
+        how these values resonate with you.</p>\n\n<p>This is an on-site position
+        in Chicago, IL.</p>\n\n<p>The only way we\u2019ll bridge the network gap is
+        if our team represents all of the backgrounds and perspectives of those it
+        impacts. We care deeply about adding people that contribute to our team from
+        across all races, ethnicities, religions, ages, sexual orientations, genders,
+        sexes, countries of origin, and more.</p>", "name": "Full Stack Engineer",
+        "type": "native", "publication_date": "2021-03-25T17:08:33Z", "short_name":
+        "full-stack-engineer-da18de", "model_type": "jobs", "id": 5495325, "locations":
+        [{"name": "Chicago, IL"}], "categories": [{"name": "Software Engineer"}, {"name":
+        "UX"}], "levels": [{"name": "Mid Level", "short_name": "mid"}], "tags": [],
+        "refs": {"landing_page": "https://www.themuse.com/jobs/4degrees/full-stack-engineer-da18de"},
+        "company": {"id": 12264, "short_name": "4degrees", "name": "4Degrees"}}, {"contents":
+        "<p>More than 30 years ago, E<em>TRADE pioneered the online brokerage industry
+        by executing the first-ever electronic individual investor trade. While the
+        landscape of our industry has changed dramatically, our culture of innovation
+        and drive to make online trading accessible to everyone continues to drive
+        us forward. We believe in challenging the status quo, fostering an environment
+        of curiosity and learning, and, above all, putting our custom e rs first.<br><br>In
+        2020, ETRADE joined Morgan Stanley, signaling a major industry shift that
+        brought Wall Street and Main Street together more than ever before. As ETRADE''s
+        parent company, Morgan Stanley plays an important role in expanding what we
+        can offer to investors, though E</em>TRADE still functions as an independent
+        entity.<br><br><b>RESPONSIBILITIES</b><br><br>The Lead iOS Mobile Engineering
+        is responsible for leading a team of mobile software engineers, focused on
+        modern iOS development of E*TRADE''s advanced platform for phones and tablets.
+        This position will report to the Director of Mobile Engineering and collaborate
+        with Product, PMO, QA, operational teams, and other engineering managers.
+        This role will be responsible for monitoring and managing team performance,
+        velocity and individual team member development. The successful candidate
+        will be deeply hands-on technical, working as a senior individual contributor
+        to the team''s efforts when needed, and will provide front-line engineering
+        and people management.<br><br>RESPONSIBILITIES<br><br>Drive technical development
+        and support of our mobile product<br> Develop and deliver a class leading
+        mobile product<br> Build/Manage/Grow a high performing team of iOS engineers<br>
+        Provide guidance to technology partners on complexity and delivery estimates<br>
+        Provide iOS team guidance on code reviews, branching strategy, and release
+        coordination<br><br><strong>#LI-AJ1</strong> <br><br><b>REQUIREMENTS</b><br><br>7-10
+        years'' strong technical experience in web and mobile app technologies<br><br>PREFERRED<br><br>Experience
+        in mobile programming languages (Swift and Objective-C) and an expert in iOS
+        development platforms<br> Must have strong experience in debugging, code coverage,
+        code analyzer / profiler and unit testing tools<br> Expertise in architecting,
+        designing and developing highly scalable large scale and available applications<br>
+        Ability to lead, inspire, and motivate teams through effective communication<br>
+        Strong focus on security of the channel and any customer data<br> Well versed
+        in real-time networking, mobile network issues, concurrency and threading<br><br>Morgan
+        Stanley is an equal opportunity employer committed to diversifying its workforce
+        (M/F/Disability/Vet).<br><br>#etrade<br><br><strong>#LI-AJ1</strong></p>",
+        "name": "Lead iOS Mobile Engineer", "type": "external", "publication_date":
+        "2021-09-26T11:25:04Z", "short_name": "lead-ios-mobile-engineer", "model_type":
+        "jobs", "id": 6405582, "locations": [{"name": "Menlo Park, CA"}], "categories":
+        [{"name": "Software Engineer"}], "levels": [{"name": "Senior Level", "short_name":
+        "senior"}], "tags": [], "refs": {"landing_page": "https://www.themuse.com/jobs/etrade/lead-ios-mobile-engineer"},
+        "company": {"id": 1535, "short_name": "etrade", "name": "E*TRADE"}}, {"contents":
+        "<p>Like most people, you\u2019ve likely been on Zoom or Google Meets every
+        day for the past year and have found it to be a subpar replacement for real
+        life conversation. Interested in building the future of virtual interaction?</p>\n\n<p>Join
+        the Pilotly team, the first market research platform built for creative content.
+        By allowing viewers to give feedback in real-time on unreleased content, we
+        help the largest content creators around the world make better decisions through
+        data.\u00a0<strong>Our latest product offering is the most advanced virtual
+        focus group platform available, and we want to expand our team with great
+        web developers who have experience in video chat.</strong></p>\n\n<p>There
+        are many nuances of human interaction that have yet to be considered when
+        it comes to virtual conversation, and we\u2019re exploring every detail of
+        the space with the intent of reducing user fatigue while creating a more natural
+        conversation experience. Furthermore, we are going beyond what is possible
+        in person, diving deep into the data generated by group conversation, analyzing
+        vocal tone, physical cues, sentiment, and much more. In the same way we provide
+        deep insights into how viewers feel about creative content, we\u2019ll provide
+        amazing insights into user interactions during conversation.</p>\n\n<p>When
+        you join Pilotly, you''ll work with a team of highly talented engineers and
+        product visionaries who push powerful features / services every week in a
+        rapid paced development environment.</p>\n\n<p>What is Pilotly special ?\u00a0<a
+        href=\"https://www.youtube.com/watch?v=zrQzpyLek-4\">https://www.youtube.com/watch?v=zrQzpyLek-4</a></p>\n\n<p>Let\u2019s
+        build game changing technology that will play a role in the future of human
+        interaction and content consumption.</p>\n\n<p><strong>//// Requirements ////</strong></p>\n\n<p>+Strong
+        track record building scalable web applications that have design parity with
+        provided graphics and user flow</p>\n\n<p>+Experience working on an agile
+        development team and using all the tools needed to deploy into dev, staging
+        and production environments (GIT, AWS, etc)</p>\n\n<p>+Extensive experience
+        with ReactJS and similar virtual dom coding languages</p>\n\n<p>+Experience
+        with client side video and audio using Web RTC. Ideally you have experience
+        not just using the api''s but developing video and audio processing pipelines</p>\n\n<p>+The
+        ability to research and solve problems, develop quick prototypes, communicate
+        across the organization, and drive action with data</p>\n\n<ul>\n    <li>\n        <p>Comfortable
+        with start-up style work environment: versatile, detail oriented, collaborative,
+        can-do attitude with strong commitment</p>\n    </li>\n    <li>\n        <p>Prior
+        experience in performance/memory is a plus</p>\n    </li>\n    <li>\n        <p>Bonus
+        points if you\u2019re a real audiophile or videophile</p>\n    </li>\n</ul>\n\n<p><strong>////
+        Some Things You\u2019ll Be Doing ////</strong></p>\n\n<ul>\n    <li>\n        <p>In
+        sum, you\u2019ll be a part of the team that changes how conversation happens
+        virtually</p>\n    </li>\n    <li>\n        <p>You will have the opportunity
+        to go to the depths of open source technologies such as Electron, Chromium,
+        GraphQL, and React; and participate in the open source community</p>\n    </li>\n    <li>\n        <p>Working
+        extensively with audio / video within html5 and server side</p>\n    </li>\n    <li>\n        <p>Integrating
+        3rd party partner technology to expand feature set for conference product</p>\n    </li>\n    <li>\n        <p>Working
+        on features as a team, from inception to launch, in the entire platform code
+        base from the backend to the desktop and web UI\u2019s in technologies ranging
+        from Node to React / Javascript</p>\n    </li>\n    <li>\n        <p>Creating
+        and contributing in a highly collaborative and diverse environment</p>\n    </li>\n    <li>\n        <p>Improving
+        and refining internal systems, processes, and practices to increase organizational
+        performance and enable the team to deliver more delightful products to our
+        customers more rapidly</p>\n    </li>\n</ul>", "name": "Senior Video Chat
+        Platform Engineer", "type": "external", "publication_date": "2021-03-31T15:43:03Z",
+        "short_name": "senior-video-chat-platform-engineer-a6610c", "model_type":
+        "jobs", "id": 5526782, "locations": [{"name": "Flexible / Remote"}, {"name":
+        "Los Angeles, CA"}, {"name": "Oakland, CA"}], "categories": [{"name": "Product"},
+        {"name": "Software Engineer"}], "levels": [{"name": "Senior Level", "short_name":
+        "senior"}], "tags": [], "refs": {"landing_page": "https://www.themuse.com/jobs/pilotly/senior-video-chat-platform-engineer-a6610c"},
+        "company": {"id": 12271, "short_name": "pilotly", "name": "Pilotly"}}, {"contents":
+        "<p>\n    <span>We are looking for a Mulesoft Architect to build and scale
+        the b atomic API development team.</span></p>\n\n<p>\n\n</p>\n\n<p>In this
+        role you''ll get ...</p>\n\n<ul>\n    <li>\n        <p>Collaborate with enterprise
+        architects and IT program managers inside b atomic, partners, and customers
+        to create brand new, creative API infrastructures</p>\n    </li>\n    <li>\n        <p>Assist
+        in architecting technical solutions for enterprise systems using the MuleSoft
+        product suite and adapt to a rapidly changing business environment Knowledge
+        of SOA</p>\n    </li>\n    <li>\n        <p>Design patterns for building middleware
+        systems ground up using Message Routing, Content Enrichment, Message Filtering,
+        Message Transformation, Guaranteed delivery, Message sequencing, Batch message
+        processing, error handling and reconciliation mechanisms.</p>\n    </li>\n    <li>\n        <p>Knowledge
+        of Web Services Interoperability, WS-* standards and ability to suggest, criticize
+        and formulate solutions in a multi-vendor and architecture committee meetings.</p>\n    </li>\n    <li>\n        <p>Identify,
+        analyze and design integration flows using Mule ESB Anypoint Studio and technically
+        own and manage the process of ensuring on time and on budget build and integration
+        of the various elements of the solution</p>\n    </li>\n    <li>\n        <p>Good
+        understanding of integration design patterns &amp; best practices</p>\n    </li>\n    <li>\n        <p>In
+        depth experience using Agile, Scrum and iterative development practices</p>\n    </li>\n    <li>\n        <p>Assist
+        on technical POC''s to prove out technology and ultimately leading into selection.</p>\n    </li>\n</ul>\n\n<p>\n\n</p>\n\n<p>On
+        day one we''ll expect you to have...</p>\n\n<p>Solution Architects assess
+        a project\u2019s technical feasibility, as well as implementation risks. They
+        are responsible for designing and implementing a project\u2019s technical
+        architecture. They define the structure of a system, its interfaces, and the
+        principles that guide its organization, software design and implementation.
+        The scope of the Solution Architect\u2019s role is bounded by the business
+        issue at hand. A Solution Architect needs to have knowledge of all the different
+        aspects of the technical solution as well as robust business knowledge. This
+        includes the Software Architect.</p>\n\n<ul>\n    <li>\n        <p>3+ years
+        of experience working as an Integration Solution Architect and 1+ with <strong>Mulesoft
+        product Suite</strong>.</p>\n    </li>\n    <li>\n        <p>5+ years of software
+        development experience. Experience with large Full Life Cycle (FLC) project
+        implementations, with hands on delivery.</p>\n    </li>\n    <li>\n        <p>Experience
+        with all aspects of the system implementation process of system design, configuration,
+        customization, integration, testing and support.</p>\n    </li>\n    <li>\n        <p>Experience
+        with design, development and deployment of SOA based architecture for a large
+        organization leveraging multiple COTS Business applications is preferred Experience
+        with Tomcat, XML, JMS, XSLT, WS-*, SOA/Integration, and API Management technologies
+        and standards Experience with using a JAVA IDE (Eclipse, Intelli J, Netbeans)</p>\n    </li>\n    <li>\n        <p>Designed
+        and developed micro-service solutions, Service Oriented Architecture (SOA)
+        concepts including REST-ful and SOAP-based services Designed and developed
+        enterprise services using RAML and REST based APIs Experienced in both Agile
+        and waterfall methodologies</p>\n    </li>\n    <li>\n        <p>Have excellent
+        interpersonal, verbal and written skills and the ability to interact with
+        all level of stakeholders, support personnel, and clients Strong documentation,
+        analytical and problem-solving skills Bachelor\u2019s degree in Computer Science
+        or any related field and a minimum of 5 years relevant experience providing
+        IT enablement solutions</p>\n    </li>\n    <li>\n        <p>Mule certification
+        highly preferred</p>\n    </li>\n</ul>\n\n<p>\n\n</p>\n\n<p>Added bonuses
+        you have...</p>\n\n<p>You are responsible for the end-to-end architecture
+        of a solution, including its assembly and integration into the IT architecture
+        principles defined with the client. You define the structure of the system,
+        its interfaces, and the principles that guide its organization, software design
+        and implementation. You are responsible for the management and mitigation
+        of technical risks, ensuring that the solution services can be realistically
+        delivered by the underlying technology components</p>\n\n<ul>\n    <li>\n        <p>Certification:
+        Technical certification e.g. Cisco, VMWare; or achieved professional certification
+        TOGAF 9 level 1; or has / seeking IAF level 1.</p>\n    </li>\n    <li>\n        <p>Should
+        have experience in Functional Architecture Design and Architecture Knowledge,
+        Negotiating, Financial Analysis and Continuous (Service) Improvement.</p>\n    </li>\n    <li>\n        <p>Should
+        be proficient in Business Knowledge, Software Engineering Leadership, Technical
+        Solution Design and Change Management.</p>\n    </li>\n    <li>\n        <p>Should
+        have progressing knowledge in Business Analysis</p>\n    </li>\n</ul>\n\n<p><br></p>\n\n<p><br></p>",
+        "name": "Senior Mulesoft Architect", "type": "native", "publication_date":
+        "2021-02-25T17:17:45Z", "short_name": "senior-mulesoft-architect-e5aa96",
+        "model_type": "jobs", "id": 5314423, "locations": [{"name": "Flexible / Remote"}],
+        "categories": [{"name": "Data Science"}, {"name": "Software Engineer"}], "levels":
+        [{"name": "Senior Level", "short_name": "senior"}], "tags": [], "refs": {"landing_page":
+        "https://www.themuse.com/jobs/batomic/senior-mulesoft-architect-e5aa96"},
+        "company": {"id": 12241, "short_name": "batomic", "name": "b atomic"}}, {"contents":
+        "<p>More than 30 years ago, E<em>TRADE pioneered the online brokerage industry
+        by executing the first-ever electronic individual investor trade. While the
+        landscape of our industry has changed dramatically, our culture of innovation
+        and drive to make online trading accessible to everyone continues to drive
+        us forward. We believe in challenging the status quo, fostering an environment
+        of curiosity and learning, and, above all, putting our custom e rs first.<br><br>In
+        2020, ETRADE joined Morgan Stanley, signaling a major industry shift that
+        brought Wall Street and Main Street together more than ever before. As ETRADE''s
+        parent company, Morgan Stanley plays an important role in expanding what we
+        can offer to investors, though E</em>TRADE still functions as an independent
+        entity.<br><br><b>RESPONSIBILITIES</b><br><br>Replacement Taleo for 3171662<br><br>Senior
+        Software Engineer (Java, C/C++)<br><br>DESCRIPTION<br>SUMMARY<br><br>We are
+        looking for an experienced hands-on Software Engineer who will lead the technical
+        aspects of designing, implementing, testing of various initiatives in the
+        Core Brokerage Services Group. The role expects significant engineering knowledge
+        in complex server side applications, including new feature work, improvements
+        on existing code, and active participation in designing and shipping the product.<br><br>RESPONSIBILITIES<br><br>Analyze,
+        design and develop software solutions to meet business needs.<br><br>Collaborate
+        with internal and external technical personnel/vendors to facilitate enterprise
+        software integration.<br><br>Work on different software development life cycle
+        phases and serve as a technology resource and representative for the department.<br><br>Create
+        technical documentation for software (design documents, handbooks, etc.).<br><br>Perform
+        code review and design review to ensure compliance with development standards.<br><br>Assist
+        with developing automated test cases and test plans for software.<br><br>Review
+        software requirements documentation for projects and enhancements<br><br>Ensures
+        that system improvements are successfully implemented and monitored to increase
+        efficiency.<br><br><b>REQUIREMENTS</b><br><br>QUALIFICATIONS<br><br>Basic<br>
+        Bachelors Degree in appropriate field of study or equivalent work experience<br><br>5
+        to 8 years of working experience in C/C++,GO, Java, J2EE, Spring, Spring Boot,
+        JPA/Hibernate, scripting language <br><br>Preferred<br><br>Good understanding
+        of Web Services protocols such as REST, SOAP, IDL, gRPC and API design for
+        extensibility and portability<br><br>Experience writing SQL queries for Sybase
+        / Oracle or another Relational Database is required<br><br>Working experience
+        in C/C++, Go Lang, Perl &amp; Shell Script are preferred and/or willing to
+        learn<br><br>Working knowledge of cloud, service mesh and containers is a
+        plus<br><br>Working knowledge of object-oriented design and development skills<br><br>Ability
+        to use version control software such as GIT<br><br>Experience with Scrum/Agile
+        development methodologies<br><br>Must possess excellent organizational and
+        time management skills.<br><br>Creative thinker, self-starter, able to work
+        on multiple projects simultaneously<br><br>Strong problem solving and analytical
+        skills.<br><br>Excellent customer service skills and team orientation.<br><br>Ability
+        to carry out all of the duties of the position efficiently and effectively<br><br>Morgan
+        Stanley is an equal opportunity employer committed to diversifying its workforce
+        (M/F/Disability/Vet).<br><br>#etrade</p>", "name": "Senior Software Engineer
+        (Java, C/C++)", "type": "external", "publication_date": "2021-11-16T11:43:14Z",
+        "short_name": "senior-software-engineer-java-cc-03843e", "model_type": "jobs",
+        "id": 6394633, "locations": [{"name": "Chicago, IL"}], "categories": [{"name":
+        "Software Engineer"}], "levels": [{"name": "Senior Level", "short_name": "senior"}],
+        "tags": [], "refs": {"landing_page": "https://www.themuse.com/jobs/etrade/senior-software-engineer-java-cc-03843e"},
+        "company": {"id": 1535, "short_name": "etrade", "name": "E*TRADE"}}, {"contents":
+        "<p>\n\n</p>\n\n<p><span>We are looking for a Senior Software Engineer interested
+        in building performant and reliable APIs. You will be responsible for architecting
+        and building new APIs that power our core web and mobile applications. Additionally,
+        you will coordinate with teams responsible for other layers of the product
+        infrastructure. Building a product is a highly collaborative effort, and as
+        such, a strong team player with a commitment to perfection is required. As
+        a developer at Players'' Lounge, you''ll need to actively communicate with
+        your teammates to ensure that your work is contributing to the team''s collective
+        goal</span><span>.\u00a0</span><span>As a senior developer, you will also
+        be responsible for being a vocal mentor to junior members of the development
+        team.</span></p>\n\n<div><br></div>\n\n<p><span>Our ideal candidate uses our
+        product, has a passion for gaming and our company mission, and works hard
+        to ensure every gamer knows about Players\u2019 Lounge. We want our team members
+        to take initiative to improve our product through a deep concern for the user
+        experience and the maintainability of our codebase, while effectively managing
+        the tradeoffs between feature development and refactoring.</span></p>\n\n<h2><span>Responsibilities</span></h2>\n\n<ul>\n    <li><span>Build
+        robust and scalable APIs in Node.js\u00a0</span></li>\n    <li><span>Ensure
+        our APIs are optimized for performance and reliability</span></li>\n    <li><span>Expand
+        our core GraphQL API that powers our web and mobile applications</span></li>\n    <li><span>Write
+        maintainable code that can be understood by engineers of all levels</span></li>\n    <li><span>Build
+        robust automated tests to test edge cases and ensure consistency in our products</span></li>\n    <li><span>Contribute
+        to the design and architecture of distributed systems and services\u00a0</span></li>\n    <li><span>Regularly
+        communicate with frontend teams to ensure our APIs are fit for purpose</span></li>\n</ul>\n\n<h2><span>Skills</span></h2>\n\n<ul>\n    <li><span>Experience
+        working in an Agile environment</span></li>\n    <li><span>Firm grasp of JavaScript
+        (Node.js) and its nuances, including ES6+ syntax</span></li>\n    <li><span>Experience
+        working with AWS (Lambda, EC2, Serverless)\u00a0</span></li>\n    <li><span>Experience
+        with various database systems including both SQL and NoSQL solutions</span></li>\n    <li><span>Ability
+        to write well-documented, clean code</span></li>\n    <li><span>Comfortable
+        working with version control systems such as Git</span></li>\n    <li><span>Understanding
+        of GraphQL APIs and GraphQL concepts</span></li>\n    <li><span>Experience
+        with Test Driven Development using tools like Jest</span></li>\n    <li><span>Comfortable
+        mentoring other members of the team\u00a0</span></li>\n    <li><span>Experience
+        architecting distributed systems on AWS or equivalent cloud provider</span></li>\n    <li><span>Experience
+        architecting scalable backend solutions</span></li>\n</ul>\n\n<div><br></div>\n\n<p><span>We
+        are an equal opportunities employer and welcome applications from all suitably
+        qualified persons regardless of their race, sex, disability, religion/belief,
+        sexual orientation or age.</span></p>", "name": "Senior Software Engineer
+        (Backend)", "type": "external", "publication_date": "2021-03-05T19:22:25Z",
+        "short_name": "senior-software-engineer-backend-678ebb", "model_type": "jobs",
+        "id": 5360945, "locations": [{"name": "Flexible / Remote"}, {"name": "Manchester,
+        United Kingdom"}, {"name": "New Orleans, LA"}, {"name": "New York, NY"}],
+        "categories": [{"name": "Software Engineer"}], "levels": [{"name": "Senior
+        Level", "short_name": "senior"}], "tags": [], "refs": {"landing_page": "https://www.themuse.com/jobs/playerslounge/senior-software-engineer-backend-678ebb"},
+        "company": {"id": 12246, "short_name": "playerslounge", "name": "Players''
+        Lounge"}}, {"contents": "<p>More than 30 years ago, E<em>TRADE pioneered the
+        online brokerage industry by executing the first-ever electronic individual
+        investor trade. While the landscape of our industry has changed dramatically,
+        our culture of innovation and drive to make online trading accessible to everyone
+        continues to drive us forward. We believe in challenging the status quo, fostering
+        an environment of curiosity and learning, and, above all, putting our custom
+        e rs first.<br><br>In 2020, ETRADE joined Morgan Stanley, signaling a major
+        industry shift that brought Wall Street and Main Street together more than
+        ever before. As ETRADE''s parent company, Morgan Stanley plays an important
+        role in expanding what we can offer to investors, though E</em>TRADE still
+        functions as an independent entity.<br><br><b>RESPONSIBILITIES</b><br><br>As
+        a Data Engineer, you will work on high-quality data solutions, partnering
+        with various engineering and business teams within the enterprise to design
+        and develop data driven insights that inform business and product decisions.
+        Additionally, you will be responsible for identifying, researching, and resolving
+        complex technical problems that enhance the combined business decision making
+        capabilities.<br> Your technical skills, business acumen, and creativity will
+        be essential as you build tools to automate reporting and generate timely
+        business insights.<br><br><strong>Responsibilities:</strong><br> <ul> <li>Define
+        best practices, develop frameworks and architectural solutions for data movement
+        and analytics at scale.</li> <li>Train and mentor members within the data
+        engineering team on technology platforms and tools used to develop data solutions.</li>
+        <li>Prepare documentation - runbooks, training documents and user guides -
+        for frameworks and ETL jobs.</li> <li>Partner with engineering teams to operationalize/scale
+        the deployment of solutions to achieve optimum performance and efficiency.</li>
+        <li>Partner with business teams across the enterprise to help understand their
+        data and analytic needs, identify the best data sources and design robust
+        and maintainable solutions.</li></ul><b>REQUIREMENTS</b><br><br><strong>Required
+        Skills:</strong><br> <ul> <li>BA/BS degree in a technical or quantitative/business-oriented
+        field or equivalent practical experience.</li> <li>5+ years of relevant experience.Excellent
+        communication, documentation, and planning skills.</li> <li>Expert-level analytical
+        skills - specifically using SQL.</li> <li>Independent-working, fast-learning
+        and problem-solving.</li> <li>Experience working with any big data platform
+        developing ETL and analytic solutions using the tools provided.</li> <li>Leverage
+        SQL, and other analytic platforms to gather, clean, and prepare data; create
+        dashboards/reports; develop KPIs; analyze trends; provide insights.</li></ul><strong>Preferred
+        Skills:</strong><br> <ul> <li>Experience working on Hadoop with hands-on knowledge
+        of services within the ecosystem.</li> <li>Experience with data integration
+        and ETL tools and platforms like IBM DataStage, Streamsets.</li> <li>Experience
+        working with atleast one interpreted programming language such as Perl or
+        Python.</li> <li>Exposure to business intelligence tools and creation of reports
+        &amp; analytics.</li> <li>Understanding of cloud-based technologies.</li>
+        <li>Understanding of distributed data processing frameworks like Spark.</li>
+        <li>Familiar with automation, workflow and data flow concepts.</li> <li>Experience
+        working in the Financial industry.</li></ul>#etrade</p>", "name": "Data Engineer
+        (Engineering)", "type": "external", "publication_date": "2021-11-23T11:44:50Z",
+        "short_name": "data-engineer-engineering", "model_type": "jobs", "id": 6464107,
+        "locations": [{"name": "Alpharetta, GA"}], "categories": [{"name": "Software
+        Engineer"}], "levels": [{"name": "Senior Level", "short_name": "senior"}],
+        "tags": [], "refs": {"landing_page": "https://www.themuse.com/jobs/etrade/data-engineer-engineering"},
+        "company": {"id": 1535, "short_name": "etrade", "name": "E*TRADE"}}, {"contents":
+        "<p><b>Job Description</b><br><br><strong>Are you ready to explore a world
+        of possibilities?</strong><br><br>Join our DTCC family, and you''ll grow your
+        expertise and become the best version of you. As you embark on a new journey,
+        you''ll tackle challenges with flexibility and grace, learning new skills
+        and advancing your career while having the time of your life.<br><br><strong>Why
+        You Would Love This Job:</strong><br><br>Being a member of the Risk Analytics
+        IT team means you will be a part of a technology team with a rich diverse
+        skill sets and a great enthusiastic committed team. Whether it''s Java, JavaScript,
+        AngularJS, Unix or Database skillset required for the project initiatives,
+        we are there for each other collaborating and helping each other to achieve
+        the common goal. You will also have an opportunity to work with SaaS Cloud
+        Datawarehouse Platform involving Snowflake Database.<br><br>In this role would
+        be responsible to contribute towards new project implementations as well as
+        enhancements to existing applications within Risk and Data Services domain
+        catering to the requirement of Risk Analysts. There is also significant opportunity
+        for advancement and growth in this role based on your performance and contribution
+        towards the organization goals.<br><br><strong>Your Responsibilities</strong>:<br><br><ul>
+        <li>Participate in requirements gathering with Product owners, business users
+        and subject matter experts and come up with an elegant solution design adhering
+        to best design patterns.</li> <li>Write clean, self-documenting code following
+        best practices on coding incorporating unit testing.</li> <li>Collaborate
+        with the Senior Application Architects and other technical contributors at
+        all levels during the application development and resolve application defects
+        identified during System Integration and User Acceptance Testing Phases</li>
+        <li>Participate in code reviews, Sprint meetings and retrospectives.</li>
+        <li>Provide on-going maintenance support for the applications during Post-deployment
+        support phase.</li> <li>Be a self-starter providing creative and innovative
+        ideas or solutions continuously improving the technological offering.</li>
+        </ul><br><br><strong>NOTE: Responsibilities of this role are not limited to
+        the details above. </strong><br><br><strong>Talents Needed For Success:</strong><br><br><ul>
+        <li>Solid Core Java including Collections, multi-threading concepts with a
+        working experience on J2EE (Servlets, JSP) along with Framework knowledge
+        - Spring/Sprint MVC</li> <li>Strong knowledge in core JavaScript is a must.</li>
+        <li>Basic Database skillsets (SQL) and Unix commands is a must.</li> <li>Should
+        be a self-motivated individual with good problem solving and analytical skills</li>
+        <li>Knowledge of any JavaScript framework - like Angular or React will be
+        a plus</li> <li>Experience in Agile, CI/CD, DevOps practices and tools</li>
+        <li>Experience with source code management in GIT, Maven or Gradle is must</li>
+        <li>Working experience with Junit or any other test framework is desirable</li>
+        </ul><br><br><b>About Us</b><br><br>With over 50 years of experience, DTCC
+        is the premier post-trade market infrastructure for the global financial services
+        industry. From 20 locations around the world, DTCC, through its subsidiaries,
+        automates, centralizes, and standardizes the processing of financial transactions,
+        mitigating risk, increasing transparency, enhancing performance and driving
+        efficiency for thousands of broker/dealers, custodian banks and asset managers.
+        Industry owned and governed, the firm innovates purposefully, simplifying
+        the complexities of clearing, settlement, asset servicing, transaction processing,
+        trade reporting and data services across asset classes, bringing enhanced
+        resilience and soundness to existing financial markets while advancing the
+        digital asset ecosystem. In 2024, DTCC''s subsidiaries processed securities
+        transactions valued at U.S. $3.7 quadrillion and its depository subsidiary
+        provided custody and asset servicing for securities issues from over 150 countries
+        and territories valued at U.S. $99 trillion. DTCC''s Global Trade Repository
+        service, through locally registered, licensed, or approved trade repositories,
+        processes more than 25 billion messages annually. To learn more, please visit
+        us at www.dtcc.com or connect with us on LinkedIn , X , YouTube , Facebook
+        and Instagram .<br><br>DTCC proudly supports Flexible Work Arrangements favoring
+        openness and gives people freedom to do their jobs well, by encouraging diverse
+        opinions and emphasizing teamwork. When you join our team, you''ll have an
+        opportunity to make meaningful contributions at a company that is recognized
+        as a thought leader in both the financial services and technology industries.
+        A DTCC career is more than a good way to earn a living. It''s the chance to
+        make a difference at a company that''s truly one of a kind.<br><br>Learn more
+        about Clearance and Settlement by clicking here .</p>", "name": "Senior Software
+        Engineer (Full Stack)", "type": "external", "publication_date": "2025-11-11T19:47:48Z",
+        "short_name": "senior-software-engineer-full-stack-f486a5", "model_type":
+        "jobs", "id": 20661471, "locations": [{"name": "Chennai, India"}], "categories":
+        [{"name": "Software Engineer"}], "levels": [{"name": "Senior Level", "short_name":
+        "senior"}], "tags": [], "refs": {"landing_page": "https://www.themuse.com/jobs/dtcc/senior-software-engineer-full-stack-f486a5"},
+        "company": {"id": 11868, "short_name": "dtcc", "name": "DTCC"}}, {"contents":
+        "<p>More than 30 years ago, E<em>TRADE pioneered the online brokerage industry
+        by executing the first-ever electronic individual investor trade. While the
+        landscape of our industry has changed dramatically, our culture of innovation
+        and drive to make online trading accessible to everyone continues to drive
+        us forward. We believe in challenging the status quo, fostering an environment
+        of curiosity and learning, and, above all, putting our custom e rs first.<br><br>In
+        2020, ETRADE joined Morgan Stanley, signaling a major industry shift that
+        brought Wall Street and Main Street together more than ever before. As ETRADE''s
+        parent company, Morgan Stanley plays an important role in expanding what we
+        can offer to investors, though E</em>TRADE still functions as an independent
+        entity.<br><br><b>RESPONSIBILITIES</b><br><br>VP, Application Development
+        (Market Data) (3171738)<br><br>Description<br> SUMMARY<br> We are a seeking
+        highly driven technologist, possessing strong technical and analytic skills
+        with the ability to work in a fast-paced collaborative environment. This is
+        an excellent opportunity to work in a real-time environment where one can
+        make immediate contributions. This individual will lead the development and
+        technical analysis of strategic initiatives as well as the existing software
+        stack. Projects will be highly technical in nature and will focus in the area
+        of Market Data.<br><br>RESPONSIBILITIES<br> Effectively work with the leadership
+        in the PMO, Development, Product Management, Business and Technical Operations,
+        Systems Engineering, Infrastructure, Networks and Architecture teams Assume
+        full end-to-end responsibility for tasks from analyzing requirements with
+        business design and implementation.<br> Acquire a robust understanding of
+        E*TRADE products, services, processes, and organizational structure in order
+        to find optimal solutions and achieve rapid execution of key initiatives.<br>
+        Maintain awareness of industry trends, compliance concerns, risk control processes,
+        and regulatory landscape.<br> Draft and review architectural diagrams, specifications,
+        business requirements as well as various design documents.<br> Work with our
+        existing technology stack (Java, C++, Linux, Unix, Open Source Platforms,
+        and SOA) as well as new technologies for our next generation solutions.<br>
+        Create project documents and requirements (presentations, user stories, migration
+        plans, communication plans).<br><br>#LI-CG2 <br><br><b>REQUIREMENTS</b><br><br>REQUIREMENTS<br>
+        Self-motivated, highly organized, team player who thrives in a fast-paced
+        environment with the ability to learn quickly and work independently.<br>
+        High proficiency in C++ in a Linux environment.<br> Experience in Java server-side
+        development is desirable.<br> Practical experience with scripting technologies
+        such as Shell, Python, Perl.<br> Strong experience with multi-threading and
+        networking protocols (TCP/IP, Multicast).<br> Practical experience and understanding
+        of low latency messaging middleware.<br> Experience in market data products
+        such as Refinitiv TREP is a must.<br> Experience in the financial markets
+        with understanding of Equities, Futures and Options is highly desirable.<br>
+        Practical experience working within the Scrum Framework and Agile methodologies.<br>
+        Experience with common tools including Git, maven, Jenkins, Slack, JIRA.<br>
+        Must possess strong analytical, troubleshooting and problem-solving skills.<br>
+        Strong communication with exceptional written, verbal and presentation skills.<br>
+        Practical experience with relational databases (Oracle, Sybase) is a plus.<br><br>EDUCATION<br>
+        BS or MS in Computer Science or related field.<br><br>Morgan Stanley is an
+        equal opportunity employer committed to diversifying its workforce (M/F/Disability/Vet).<br><br>#etrade<br><br>#LI-CG2</p>",
+        "name": "VP, Application Development (Market Data)", "type": "external", "publication_date":
+        "2021-09-22T11:38:27Z", "short_name": "vp-application-development-market-data-1d47a0",
+        "model_type": "jobs", "id": 6543126, "locations": [{"name": "Jersey City,
+        NJ"}], "categories": [{"name": "Software Engineer"}], "levels": [{"name":
+        "Senior Level", "short_name": "senior"}], "tags": [], "refs": {"landing_page":
+        "https://www.themuse.com/jobs/etrade/vp-application-development-market-data-1d47a0"},
+        "company": {"id": 1535, "short_name": "etrade", "name": "E*TRADE"}}, {"contents":
+        "<p>\n    <span>We are looking for an integration developer to build and scale
+        the b atomic API development team.</span></p>\n\n<p><br></p>\n\n<p>\n\n</p>\n\n<p>In
+        this role you''ll get ...</p>\n\n<ul>\n    <li>\n        <p>\u00a0In this
+        position, you will work on a variety of MuleSoft projects requiring system
+        integrations to set up API gateways and other solutions. You will be creating
+        the first fully built micro-services solution for the insurance industry,
+        connecting insurance carrier platforms to insurance agency platforms.</p>\n    </li>\n</ul>\n\n<p><br></p>\n\n<p>\n</p>\n\n<p>On
+        day one we''ll expect you to have...</p>\n\n<ul>\n    <li>\n        <p>3+
+        years overall experience in API and integration development, 1+ years overall
+        experience utilizing mulesoft or willing to complete self driven training
+        prior to start date.</p>\n    </li>\n</ul>\n\n<p>At least 3 years in technical
+        development with some experience with these types of activities:</p>\n\n<ul>\n    <li>\n        <p>Designing
+        and developing APIs from specification to implementation in MuleSoft Anypoint
+        Platform</p>\n    </li>\n    <li>\n        <p>RAML</p>\n    </li>\n    <li>\n        <p>Anypoint
+        API Designer</p>\n    </li>\n    <li>\n        <p>Anypoint Exchange</p>\n    </li>\n    <li>\n        <p>Anypoint
+        API Portal</p>\n    </li>\n    <li>\n        <p>Anypoint Studio</p>\n    </li>\n    <li>\n        <p>Experience
+        with securing APIs</p>\n    </li>\n    <li>\n        <p>SSL Certificates</p>\n    </li>\n</ul>\n\n<p>Authentication
+        Methods</p>\n\n<ul>\n    <li>\n        <p>Basic</p>\n    </li>\n    <li>\n        <p>OAuth</p>\n    </li>\n    <li>\n        <p>SAML</p>\n    </li>\n    <li>\n        <p>OpenID
+        Connect</p>\n    </li>\n    <li>\n        <p>Experience in working in a CI/CD
+        environment and familiar with DevOps principles</p>\n    </li>\n    <li>\n        <p>Microsoft
+        VSTS (Git)</p>\n    </li>\n    <li>\n        <p>Maven</p>\n    </li>\n    <li>\n        <p>MUnit</p>\n    </li>\n</ul>\n\n<p>\n\n</p>\n\n<p>Added
+        bonuses you have...</p>\n\n<ul>\n    <li>\n        <p>Must be a self-starter
+        with great initiative and drive.</p>\n    </li>\n    <li>\n        <p>Must
+        be a creative and innovative thinker</p>\n    </li>\n    <li>\n        <p>Must
+        be open to feedback including design and code reviews</p>\n    </li>\n    <li>\n        <p>Experience
+        working in a distributed environment with teammates across the globe</p>\n    </li>\n    <li>\n        <p>Experience
+        creating and maintain development related deliverables</p>\n    </li>\n    <li>\n        <p>Design
+        Specs</p>\n    </li>\n    <li>\n        <p>Test Specs</p>\n    </li>\n    <li>\n        <p>Excellent
+        written and verbal communication skills</p>\n    </li>\n    <li>\n        <p>Ability
+        to communicate with Solution Architects, Technical Leads, Project Managers.</p>\n    </li>\n</ul>\n\n<p><br></p>\n\n<p><br></p>\n\n<p><br></p>\n\n<p><br></p>\n\n<p><br></p>",
+        "name": "Mulesoft Developer", "type": "native", "publication_date": "2021-02-25T17:29:52Z",
+        "short_name": "mulesoft-developer-5c0eb3", "model_type": "jobs", "id": 5314422,
+        "locations": [{"name": "Flexible / Remote"}], "categories": [{"name": "Software
+        Engineer"}], "levels": [{"name": "Mid Level", "short_name": "mid"}, {"name":
+        "Senior Level", "short_name": "senior"}], "tags": [], "refs": {"landing_page":
+        "https://www.themuse.com/jobs/batomic/mulesoft-developer-5c0eb3"}, "company":
+        {"id": 12241, "short_name": "batomic", "name": "b atomic"}}], "aggregations":
+        {}}'
+    headers:
+      CF-RAY:
+      - 9f10de84ad1a743a-MIA
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '16360'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Fri, 24 Apr 2026 00:07:41 GMT
+      Server:
+      - cloudflare
+      access-control-allow-origin:
+      - '*'
+      cf-cache-status:
+      - DYNAMIC
+      etag:
+      - '"fb40abea1f16aa65972b8709e1beb709bb59f652"'
+      strict-transport-security:
+      - max-age=2592000; includeSubDomains
+      vary:
+      - Accept-Encoding
+      x-ratelimit-limit:
+      - '500'
+      x-ratelimit-remaining:
+      - '499'
+      x-ratelimit-reset:
+      - '3600'
+    status:
+      code: 200
+      message: OK
+version: 1
