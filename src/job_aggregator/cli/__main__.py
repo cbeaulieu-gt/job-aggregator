@@ -1,30 +1,73 @@
 """Entry point for the job-aggregator console script.
 
-This module is intentionally minimal for Issue A (skeleton).  It exists
-so that the ``job-aggregator`` console script declared in
-``pyproject.toml`` can be installed and invoked without error.
+Wires up argparse sub-commands.  Sub-commands are implemented as
+self-contained modules under ``job_aggregator/cli/`` and registered
+here with a single ``register(subparsers)`` call per module — making
+parallel-PR integration a 2-line diff per new command.
 
-Real argparse sub-commands (``jobs``, ``hydrate``, ``sources``) are
-wired up in Issues D, E, and F of the v1 execution plan.
+Current sub-commands:
+    ``sources`` — list registered plugins as JSON (Issue F / #18).
+
+Planned sub-commands (Issues D, E):
+    ``jobs``    — fetch and normalise job listings.
+    ``hydrate`` — fetch full descriptions for job records.
 """
 
+from __future__ import annotations
+
+import argparse
 import sys
 
 from job_aggregator import __version__
+from job_aggregator.cli import sources as _sources_cmd
+
+
+def _build_parser() -> argparse.ArgumentParser:
+    """Build and return the top-level argument parser.
+
+    Returns:
+        A configured :class:`argparse.ArgumentParser` with all registered
+        sub-commands attached.
+    """
+    parser = argparse.ArgumentParser(
+        prog="job-aggregator",
+        description="Aggregate job listings from multiple sources.",
+    )
+    parser.add_argument(
+        "--version",
+        action="version",
+        version=f"%(prog)s {__version__}",
+    )
+
+    subparsers = parser.add_subparsers(
+        dest="command",
+        metavar="COMMAND",
+    )
+
+    # Register each sub-command module here — one line per module.
+    _sources_cmd.register(subparsers)
+
+    return parser
 
 
 def main() -> None:
-    """Print a placeholder banner and exit 0.
+    """Parse arguments and dispatch to the appropriate sub-command handler.
 
-    Args:
-        None — argument parsing is not implemented in this skeleton.
-            Real sub-commands land in Issues D, E, and F.
+    Exits with code 2 (argparse default) on bad arguments.  Sub-commands
+    set ``args.func`` via :meth:`argparse.ArgumentParser.set_defaults`; if
+    no sub-command is given, print help and exit 0.
 
     Returns:
-        None.  Exits the process with code 0.
+        None.
     """
-    print(f"job-aggregator v{__version__} (no commands implemented yet; see issue #3 and onward)")
-    sys.exit(0)
+    parser = _build_parser()
+    args = parser.parse_args()
+
+    if not hasattr(args, "func") or args.func is None:
+        parser.print_help()
+        sys.exit(0)
+
+    args.func(args)
 
 
 if __name__ == "__main__":
