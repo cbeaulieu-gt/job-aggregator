@@ -39,9 +39,8 @@ Documentation = "https://github.com/cbeaulieu-gt/job-aggregator"
 job-aggregator = "job_aggregator.cli.__main__:main"
 
 [project.entry-points."job_aggregator.plugins"]
-# Plugin entry-points are registered here by subsequent issues (B1-B10).
+arbeitnow = "job_aggregator.plugins.arbeitnow:Plugin"
 # Third-party plugins may also register here via their own pyproject.toml.
-# Example: adzuna = "job_aggregator.plugins.adzuna:AdzunaSource"
 
 # ---------------------------------------------------------------------------
 # Dependency groups (PEP 735 — read natively by uv)
@@ -113,11 +112,20 @@ ignore_missing_imports = true
 # [project].dependencies or the Python stdlib — enforcing the
 # no-DB / no-framework / no-LLM constraint from the design spec.
 #
-# DEP002 (declared but not yet used): requests and beautifulsoup4 are
-# declared as runtime deps per the design spec but are not yet imported
-# in this skeleton.  They will be consumed by Issues B1-B10 (plugins)
-# and Issue E (scraping).  Remove this ignore once those issues land.
-ignore = ["DEP002"]
+# DEP002 removed: requests and beautifulsoup4 are now consumed by the
+# arbeitnow plugin (and future B-phase plugins).
+#
+# DEP003 (transitive): deptry flags job_aggregator's own internal imports
+# as transitive because the editable install is seen as a dependency.
+# This is a known false-positive for in-tree src-layout packages.
+#
+# DEP004 (dev in non-dev): pytest and dotenv are used in tests/ and
+# scripts/ — correct usage of dev deps, not a real issue.
+#
+# DEP001 (missing): preflight_smoke is a local script loaded via
+# sys.path manipulation in tests/test_preflight_smoke.py — not a real
+# missing dependency.
+ignore = ["DEP001", "DEP003", "DEP004"]
 
 # ---------------------------------------------------------------------------
 # pytest
