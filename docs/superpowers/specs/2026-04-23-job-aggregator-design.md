@@ -712,7 +712,7 @@ are decisions the migrator makes based on that reading.
 | himalayas | Himalayas | remote-only | never | false | false | "Public API; no published limit. Observed soft limit ~1 req/sec." | () |
 | jobicy | Jobicy | remote-only | partial | false | false | "No published rate limit; single request per run." | () |
 | jooble | Jooble | global | always | true | false | "No published hard limit; free-tier key, use responsibly." | () |
-| jsearch | ? | global | always | ? | ? | "RapidAPI quota varies by plan" | ? |
+| jsearch | JSearch (RapidAPI) | global | always | true | false | "RapidAPI quota varies by plan; free tier 200 requests/month" | ("query",) |
 | remoteok | RemoteOK | remote-only | never | false | false | "Public, soft rate limits" | () |
 | remotive | ? | remote-only (likely) | ? | ? | ? | ? | ? |
 | the_muse | ? | TBD | ? | ? | ? | ? | ? |

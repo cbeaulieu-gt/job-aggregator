@@ -44,6 +44,7 @@ arbeitnow = "job_aggregator.plugins.arbeitnow:Plugin"
 himalayas = "job_aggregator.plugins.himalayas:Plugin"
 jobicy = "job_aggregator.plugins.jobicy:Plugin"
 jooble = "job_aggregator.plugins.jooble:Plugin"
+jsearch = "job_aggregator.plugins.jsearch:Plugin"
 # Third-party plugins may also register here via their own pyproject.toml.
 
 # ---------------------------------------------------------------------------
