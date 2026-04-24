@@ -19,7 +19,7 @@ pip install job-aggregator
 # List available plugins and whether credentials are configured
 job-aggregator sources
 
-# Fetch listings and enrich with full descriptions in a pipeline
+# Fetch listings from no-auth sources and enrich with full descriptions
 job-aggregator jobs --query "python developer" --hours 24 \
   | job-aggregator hydrate > full.jsonl
 ```
@@ -28,11 +28,9 @@ Each line of `full.jsonl` after the first is a normalized job record. The
 first line is the output envelope (see [docs/output_schema.md](docs/output_schema.md)
 for the full field reference).
 
-To use sources that require API credentials, pass a credentials file:
-
 ```bash
-job-aggregator jobs --query "python developer" \
-  --credentials ~/.job-aggregator/creds.json \
+# With credentials for paid/keyed sources
+job-aggregator jobs --credentials providers.json --sources adzuna,jooble --hours 24 \
   | job-aggregator hydrate > full.jsonl
 ```
 

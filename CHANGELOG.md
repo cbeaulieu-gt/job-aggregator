@@ -35,4 +35,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- `jobs` subcommand no longer requires `--credentials` when all selected sources are no-auth. When some selected sources do require credentials, the error names them explicitly instead of the generic argparse message. (#50)
+
 ### Security
