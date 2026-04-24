@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Plugin: `jobicy` source migrated from legacy repo (#8)
 - Plugin: `jooble` source migrated from legacy repo (#9)
 - Plugin: `jsearch` source migrated from legacy repo (#10)
+- Plugin: `remoteok` source migrated from legacy repo (#11)
 
 ### Changed
 
