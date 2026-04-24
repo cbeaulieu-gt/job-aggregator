@@ -709,7 +709,7 @@ are decisions the migrator makes based on that reading.
 |---|---|---|---|---|---|---|---|
 | adzuna | Adzuna | global-by-country | always | true | true | "1 req/sec, 250/day on free tier" | ("country","what","where") (current) |
 | arbeitnow | ? | TBD | ? | ? | ? | ? | ? |
-| himalayas | ? | remote-only (likely) | ? | ? | ? | ? | ? |
+| himalayas | Himalayas | remote-only | never | false | false | "Public API; no published limit. Observed soft limit ~1 req/sec." | () |
 | jobicy | ? | remote-only (likely) | ? | ? | ? | ? | ? |
 | jooble | ? | global | ? | ? | ? | ? | ? |
 | jsearch | ? | global | always | ? | ? | "RapidAPI quota varies by plan" | ? |
