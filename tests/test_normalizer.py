@@ -347,36 +347,32 @@ class TestClassifyDescriptionSource:
             (True, True, LONG_DESCRIPTION, "full"),
             # Row 2: skip_scrape=T, is_full=T, short → "snippet"
             (True, True, SHORT_DESCRIPTION, "snippet"),
-            # Row 3: skip_scrape=T, is_full=F → "snippet" regardless of length
+            # Row 3: skip_scrape=T, is_full=F → "snippet" (non-empty)
             (True, False, LONG_DESCRIPTION, "snippet"),
             (True, False, SHORT_DESCRIPTION, "snippet"),
-            (True, False, "", "snippet"),
-            # Row 4: skip_scrape=F → "snippet" regardless of others
+            # Row 4: skip_scrape=F → "snippet" (non-empty)
             (False, True, LONG_DESCRIPTION, "snippet"),
             (False, False, LONG_DESCRIPTION, "snippet"),
             (False, True, SHORT_DESCRIPTION, "snippet"),
-            # Row 5: empty description → "none" (takes priority over all)
+            # Row 5: empty description → "none" regardless of all other flags.
+            # This is a terminal override that must fire before rows 3 and 4.
             (True, True, "", "none"),
-            (True, False, "", "snippet"),  # Row 3 — empty but skip_scrape=T,
-            # is_full=F means "snippet" not "none"
-            # The spec states "description is empty → none" as an override
-            # only when skip_scrape=True, is_full=True, but actually:
-            # re-reading §9.6: empty description → "none" is a catch-all
-            # row that applies regardless (it's last in the table but
-            # the spec says "description is empty → none").
-            # We re-read the exact table in the spec carefully below.
+            (True, False, "", "none"),
+            (False, True, "", "none"),
+            (False, False, "", "none"),
         ],
         ids=[
             "skip_full_long→full",
             "skip_full_short→snippet",
             "skip_notfull_long→snippet",
             "skip_notfull_short→snippet",
-            "skip_notfull_empty→snippet",
             "noscrape_full_long→snippet",
             "noscrape_notfull_long→snippet",
             "noscrape_full_short→snippet",
             "empty_skip_full→none",
-            "empty_skip_notfull→snippet",
+            "empty_skip_notfull→none",
+            "empty_noscrape_full→none",
+            "empty_noscrape_notfull→none",
         ],
     )
     def test_classify_description_source(
@@ -394,18 +390,23 @@ class TestClassifyDescriptionSource:
         )
         assert result == expected
 
-    def test_empty_description_skip_true_full_true_yields_none(self) -> None:
-        """Empty description with skip_scrape=True, is_full=True → 'none'.
+    def test_empty_description_any_flags_yields_none(self) -> None:
+        """Empty description is a terminal override — always yields 'none'.
 
-        The empty-description sentinel row in §9.6 fires regardless of
-        skip_scrape / description_is_full when description == ''.
+        Row 5 of §9.6 fires unconditionally before rows 1-4 when
+        description == '', regardless of skip_scrape and description_is_full.
         """
-        result = classify_description_source(
-            skip_scrape=True,
-            description_is_full=True,
-            description="",
-        )
-        assert result == "none"
+        for skip_scrape in (True, False):
+            for description_is_full in (True, False):
+                result = classify_description_source(
+                    skip_scrape=skip_scrape,
+                    description_is_full=description_is_full,
+                    description="",
+                )
+                assert result == "none", (
+                    f"Expected 'none' for skip_scrape={skip_scrape}, "
+                    f"description_is_full={description_is_full}, description=''"
+                )
 
 
 # ---------------------------------------------------------------------------
@@ -438,12 +439,38 @@ class TestNormalizeDescriptionSource:
         )
         assert record["description_source"] == "full"
 
-    def test_description_source_none_when_empty_description(self) -> None:
+    def test_description_source_none_when_empty_description_skip_full(self) -> None:
         """Empty description with skip_scrape=True, is_full=True → 'none'."""
         record = normalize(
             _minimal_plugin_output(
                 skip_scrape=True,
                 description_is_full=True,
+                description="",
+            )
+        )
+        assert record["description_source"] == "none"
+
+    def test_description_source_none_when_empty_description_no_skip(self) -> None:
+        """Empty description with skip_scrape=False → 'none' (row-5 override).
+
+        Previously returned 'snippet' because row 4 fired first. Row 5 must
+        be checked before rows 1-4 per the corrected spec interpretation.
+        """
+        record = normalize(
+            _minimal_plugin_output(
+                skip_scrape=False,
+                description_is_full=False,
+                description="",
+            )
+        )
+        assert record["description_source"] == "none"
+
+    def test_description_source_none_when_empty_description_skip_notfull(self) -> None:
+        """Empty description with skip_scrape=True, is_full=False → 'none'."""
+        record = normalize(
+            _minimal_plugin_output(
+                skip_scrape=True,
+                description_is_full=False,
                 description="",
             )
         )

@@ -51,11 +51,14 @@ def classify_description_source(
 ) -> DescriptionSource:
     """Classify the ``description_source`` field for the *jobs* orchestrator.
 
-    Implements the jobs-orchestrator portion of the §9.6 truth table exactly:
+    Implements the jobs-orchestrator portion of the §9.6 truth table exactly.
+    Row 5 is evaluated **first** as a terminal override:
 
     +-------------+--------------------+-----------+---------+
     | skip_scrape | description_is_full| len>=MIN  | Result  |
     +=============+====================+===========+=========+
+    | n/a         | n/a                | empty     | "none"  |  ← checked first
+    +-------------+--------------------+-----------+---------+
     | True        | True               | True      | "full"  |
     +-------------+--------------------+-----------+---------+
     | True        | True               | False     | "snippet"|
@@ -64,16 +67,10 @@ def classify_description_source(
     +-------------+--------------------+-----------+---------+
     | False       | n/a                | n/a       | "snippet"|
     +-------------+--------------------+-----------+---------+
-    | n/a         | n/a                | empty     | "none"  |
-    +-------------+--------------------+-----------+---------+
 
-    The empty-description sentinel row is evaluated *first* only when
-    all other conditions for "full" are met (skip_scrape=True,
-    description_is_full=True) — consistent with the table ordering in the
-    spec where "description is empty → none" appears as the last row and
-    acts as an override for that specific combination.  When skip_scrape=True
-    and description_is_full=False, an empty description still yields
-    "snippet" (row 3 takes precedence).
+    Row 5 is a **terminal override**: if the description is empty the result
+    is ``"none"`` unconditionally, regardless of ``skip_scrape`` or
+    ``description_is_full``.  This check runs first, before rows 1-4.
 
     Args:
         skip_scrape: ``True`` if the plugin signals that scraping should
@@ -85,6 +82,12 @@ def classify_description_source(
     Returns:
         One of ``"full"``, ``"snippet"``, or ``"none"``.
     """
+    # Row 5 (terminal override): empty description → "none" unconditionally.
+    # Checked first so that rows 3 and 4 cannot accidentally return "snippet"
+    # when there is literally no text to snippet.
+    if not description.strip():
+        return "none"
+
     # Row 4: skip_scrape=False → always "snippet" regardless of other flags.
     if not skip_scrape:
         return "snippet"
@@ -96,10 +99,6 @@ def classify_description_source(
         return "snippet"
 
     # skip_scrape=True, description_is_full=True from here onward.
-
-    # Row 5 (empty sentinel): empty description → "none".
-    if not description:
-        return "none"
 
     # Row 1 vs Row 2: length gate.
     if len(description) >= SCRAPE_MIN_LENGTH:
