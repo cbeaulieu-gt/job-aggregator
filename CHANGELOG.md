@@ -14,6 +14,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Plugin: `remotive` source migrated from legacy repo (#12)
+
 ### Changed
 
 ### Deprecated

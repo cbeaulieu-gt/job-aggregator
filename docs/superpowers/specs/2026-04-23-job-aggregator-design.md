@@ -714,7 +714,7 @@ are decisions the migrator makes based on that reading.
 | jooble | ? | global | ? | ? | ? | ? | ? |
 | jsearch | ? | global | always | ? | ? | "RapidAPI quota varies by plan" | ? |
 | remoteok | RemoteOK | remote-only | never | false | false | "Public, soft rate limits" | () |
-| remotive | ? | remote-only (likely) | ? | ? | ? | ? | ? |
+| remotive | Remotive | remote-only | always | false | false | "No published rate limit; public API, use conservatively." | () |
 | the_muse | ? | TBD | ? | ? | ? | ? | ? |
 | usajobs | USAJobs | federal-us | partial | ? | false (US-only) | "Email-tagged user-agent required" | ? |
 
