@@ -18,12 +18,12 @@ from job_aggregator.plugins.himalayas import Plugin
 
 @pytest.fixture()
 def plugin() -> Plugin:
-    """Return a Plugin instance with page_size=1 to keep cassettes small.
+    """Return a Plugin instance for a minimal cassette replay.
 
     Returns:
-        A :class:`Plugin` configured for a single-listing first page.
+        A :class:`Plugin` with default settings.
     """
-    return Plugin(page_size=1)
+    return Plugin()
 
 
 @pytest.mark.vcr()

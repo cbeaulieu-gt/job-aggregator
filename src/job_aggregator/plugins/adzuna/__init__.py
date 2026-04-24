@@ -20,6 +20,7 @@ import requests
 
 from job_aggregator.base import JobSource
 from job_aggregator.errors import CredentialsError, ScrapeError
+from job_aggregator.schema import SearchParams
 
 logger = logging.getLogger(__name__)
 
@@ -42,25 +43,12 @@ class Plugin(JobSource):
     code is a required URL path segment, so this plugin is
     ``GEO_SCOPE = "global-by-country"``.
 
-    Credentials are passed via the ``credentials`` dict at construction
-    time.  Missing or empty ``app_id`` / ``app_key`` raises
+    Credentials are passed via the ``credentials`` keyword argument at
+    construction time.  Missing or empty ``app_id`` / ``app_key`` raises
     :exc:`~job_aggregator.errors.CredentialsError` immediately.
 
-    Args:
-        query: Free-text search query (maps to the Adzuna ``what``
-            parameter).
-        country: ISO 3166-1 alpha-2 country code, lower-case
-            (e.g. ``"gb"``, ``"us"``).  Embedded directly in the URL
-            path.
-        credentials: Dict with ``app_id`` and ``app_key`` keys.
-        location: Optional location hint (maps to Adzuna ``where``).
-        max_pages: Maximum number of pages to fetch.  Defaults to
-            :data:`_DEFAULT_MAX_PAGES`.
-        results_per_page: Number of results per page.  Defaults to
-            :data:`_DEFAULT_RESULTS_PER_PAGE`.
-        salary_min: Optional minimum salary filter.
-        distance: Optional distance filter in km.
-        max_days_old: Optional age filter in days.
+    Search parameters (``query``, ``country``, ``location``,
+    ``max_pages``) are read from the ``search`` keyword argument.
 
     Raises:
         CredentialsError: If ``app_id`` or ``app_key`` is absent or
@@ -92,54 +80,46 @@ class Plugin(JobSource):
 
     def __init__(
         self,
-        query: str,
-        country: str,
-        credentials: dict[str, Any],
         *,
-        location: str | None = None,
-        max_pages: int = _DEFAULT_MAX_PAGES,
-        results_per_page: int = _DEFAULT_RESULTS_PER_PAGE,
-        salary_min: int | None = None,
-        distance: int | None = None,
-        max_days_old: int | None = None,
+        credentials: dict[str, Any] | None = None,
+        search: SearchParams | None = None,
     ) -> None:
         """Validate credentials and store search parameters.
 
         Args:
-            query: Free-text search query.
-            country: ISO 3166-1 alpha-2 country code (lower-case).
             credentials: Dict containing ``app_id`` and ``app_key``.
-            location: Optional location hint (Adzuna ``where``).
-            max_pages: Maximum pages to fetch per run.
-            results_per_page: Results requested per page.
-            salary_min: Optional minimum salary filter.
-            distance: Optional distance radius in km.
-            max_days_old: Optional maximum listing age in days.
+                Both fields are required.
+            search: :class:`~job_aggregator.schema.SearchParams` carrying
+                ``query``, ``country``, ``location``, and ``max_pages``.
 
         Raises:
             CredentialsError: If ``app_id`` or ``app_key`` is missing
-                or empty.
+                or empty in *credentials*.
         """
-        missing = [field for field in ("app_id", "app_key") if not credentials.get(field)]
+        super().__init__(credentials=credentials, search=search)
+        creds: dict[str, Any] = credentials or {}
+        missing = [field for field in ("app_id", "app_key") if not creds.get(field)]
         if missing:
             raise CredentialsError(self.SOURCE, missing)
 
-        self._app_id: str = str(credentials["app_id"])
-        self._app_key: str = str(credentials["app_key"])
-        self._query = query
-        self._country = country
-        self._location = location
-        self._max_pages = max_pages
-        self._results_per_page = results_per_page
-        self._salary_min = salary_min
-        self._distance = distance
-        self._max_days_old = max_days_old
+        s = search or SearchParams()
+        self._app_id: str = str(creds["app_id"])
+        self._app_key: str = str(creds["app_key"])
+        self._query: str = s.query or ""
+        self._country: str = s.country or ""
+        self._location: str | None = s.location
+        self._max_pages: int = s.max_pages if s.max_pages is not None else _DEFAULT_MAX_PAGES
+        self._results_per_page: int = _DEFAULT_RESULTS_PER_PAGE
+        self._salary_min: int | None = None
+        self._distance: int | None = None
+        self._max_days_old: int | None = None
 
     # ------------------------------------------------------------------
     # JobSource interface
     # ------------------------------------------------------------------
 
-    def settings_schema(self) -> dict[str, Any]:
+    @classmethod
+    def settings_schema(cls) -> dict[str, Any]:
         """Return the credential field definitions for Adzuna.
 
         Returns:

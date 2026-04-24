@@ -16,6 +16,7 @@ import pytest
 
 from job_aggregator.errors import CredentialsError
 from job_aggregator.plugins.usajobs import Plugin
+from job_aggregator.schema import SearchParams
 
 # ---------------------------------------------------------------------------
 # Fixtures
@@ -31,7 +32,7 @@ def _make_plugin(
     """Construct a Plugin instance with test credentials."""
     return Plugin(
         credentials={"api_key": api_key, "email": email},
-        params={"query": query, "max_pages": max_pages},
+        search=SearchParams(query=query, max_pages=max_pages),
     )
 
 
@@ -149,33 +150,24 @@ class TestConstructor:
     def test_raises_credentials_error_when_api_key_missing(self) -> None:
         """CredentialsError must be raised when api_key is absent."""
         with pytest.raises(CredentialsError) as exc_info:
-            Plugin(
-                credentials={"email": "test@example.com"},
-                params={},
-            )
+            Plugin(credentials={"email": "test@example.com"})
         assert "api_key" in str(exc_info.value)
 
     def test_raises_credentials_error_when_email_missing(self) -> None:
         """CredentialsError must be raised when email is absent."""
         with pytest.raises(CredentialsError) as exc_info:
-            Plugin(
-                credentials={"api_key": "key123"},
-                params={},
-            )
+            Plugin(credentials={"api_key": "key123"})
         assert "email" in str(exc_info.value)
 
     def test_raises_credentials_error_when_both_missing(self) -> None:
         """CredentialsError must be raised when both credentials are absent."""
         with pytest.raises(CredentialsError):
-            Plugin(credentials={}, params={})
+            Plugin(credentials={})
 
     def test_raises_credentials_error_on_empty_strings(self) -> None:
         """CredentialsError must be raised when credentials are empty strings."""
         with pytest.raises(CredentialsError):
-            Plugin(
-                credentials={"api_key": "", "email": ""},
-                params={},
-            )
+            Plugin(credentials={"api_key": "", "email": ""})
 
     def test_valid_credentials_succeed(self) -> None:
         """Construction must succeed with both required credentials present."""
@@ -193,37 +185,36 @@ class TestSettingsSchema:
 
     def test_returns_dict(self) -> None:
         """settings_schema() must return a dict."""
-        plugin = _make_plugin()
-        assert isinstance(plugin.settings_schema(), dict)
+        assert isinstance(Plugin.settings_schema(), dict)
 
     def test_api_key_field_present(self) -> None:
         """settings_schema() must include an api_key field."""
-        schema = _make_plugin().settings_schema()
+        schema = Plugin.settings_schema()
         assert "api_key" in schema
 
     def test_email_field_present(self) -> None:
         """settings_schema() must include an email field."""
-        schema = _make_plugin().settings_schema()
+        schema = Plugin.settings_schema()
         assert "email" in schema
 
     def test_api_key_is_required(self) -> None:
         """api_key field must be marked required=True."""
-        schema = _make_plugin().settings_schema()
+        schema = Plugin.settings_schema()
         assert schema["api_key"].get("required") is True
 
     def test_email_is_required(self) -> None:
         """email field must be marked required=True."""
-        schema = _make_plugin().settings_schema()
+        schema = Plugin.settings_schema()
         assert schema["email"].get("required") is True
 
     def test_api_key_type_is_password(self) -> None:
         """api_key must use the password input type."""
-        schema = _make_plugin().settings_schema()
+        schema = Plugin.settings_schema()
         assert schema["api_key"]["type"] == "password"
 
     def test_email_type_is_email(self) -> None:
         """email must use the email input type (used as User-Agent header)."""
-        schema = _make_plugin().settings_schema()
+        schema = Plugin.settings_schema()
         assert schema["email"]["type"] == "email"
 
 

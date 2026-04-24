@@ -19,6 +19,7 @@ from typing import Any
 import pytest
 
 from job_aggregator.plugins.jooble import Plugin
+from job_aggregator.schema import SearchParams
 
 # ---------------------------------------------------------------------------
 # API key strategy
@@ -71,9 +72,7 @@ def _make_plugin() -> Plugin:
     """
     return Plugin(
         credentials={"api_key": _API_KEY},
-        query="software engineer",
-        location="",
-        max_pages=1,
+        search=SearchParams(query="software engineer", max_pages=1),
     )
 
 

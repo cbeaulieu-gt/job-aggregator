@@ -19,6 +19,7 @@ from bs4 import BeautifulSoup
 
 from job_aggregator.base import JobSource
 from job_aggregator.errors import ScrapeError
+from job_aggregator.schema import SearchParams
 
 logger = logging.getLogger(__name__)
 
@@ -107,21 +108,34 @@ class Plugin(JobSource):
     RATE_LIMIT_NOTES = "Public API; no documented rate limit. Practical cap: ~1 req/s."
     REQUIRED_SEARCH_FIELDS: ClassVar[tuple[str, ...]] = ()
 
-    def __init__(self, max_pages: int | None = None) -> None:
+    def __init__(
+        self,
+        *,
+        credentials: dict[str, Any] | None = None,
+        search: SearchParams | None = None,
+    ) -> None:
         """Initialise the Arbeitnow plugin.
 
+        Arbeitnow requires no authentication; the ``credentials``
+        argument is accepted for API uniformity but is silently ignored.
+
         Args:
-            max_pages: Maximum number of pages to fetch per run.
-                ``None`` fetches all pages up to ``meta.last_page``.
+            credentials: Accepted for interface uniformity; not used.
+            search: :class:`~job_aggregator.schema.SearchParams` carrying
+                ``max_pages``.  All other search fields are ignored
+                because the Arbeitnow API has no query, location, or
+                country filter.
         """
-        self._max_pages = max_pages
+        super().__init__(credentials=credentials, search=search)
+        self._max_pages: int | None = search.max_pages if search is not None else None
         self._cached_total_pages: int | None = None
 
     # ------------------------------------------------------------------
     # JobSource interface
     # ------------------------------------------------------------------
 
-    def settings_schema(self) -> dict[str, Any]:
+    @classmethod
+    def settings_schema(cls) -> dict[str, Any]:
         """Return an empty settings schema.
 
         Arbeitnow requires no credentials.

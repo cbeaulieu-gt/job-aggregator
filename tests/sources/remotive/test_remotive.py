@@ -17,6 +17,7 @@ from unittest.mock import MagicMock, patch
 import pytest
 
 from job_aggregator.plugins.remotive import Plugin
+from job_aggregator.schema import SearchParams
 
 # ---------------------------------------------------------------------------
 # Helpers
@@ -97,8 +98,7 @@ class TestSettingsSchema:
     """Remotive requires no credentials."""
 
     def test_returns_empty_dict(self) -> None:
-        plugin = Plugin()
-        assert plugin.settings_schema() == {}
+        assert Plugin.settings_schema() == {}
 
 
 # ---------------------------------------------------------------------------
@@ -311,9 +311,10 @@ class TestConstructor:
         assert plugin is not None
 
     def test_query_param_accepted(self) -> None:
-        plugin = Plugin(query="data engineer")
+        plugin = Plugin(search=SearchParams(query="data engineer"))
         assert plugin is not None
 
     def test_category_param_accepted(self) -> None:
-        plugin = Plugin(category="software-dev")
+        # category is no longer a constructor arg; hardcoded to None internally
+        plugin = Plugin()
         assert plugin is not None

@@ -661,15 +661,31 @@ Each plugin is a Python class that:
 2. Declares class-level metadata: `SOURCE` (key), `DISPLAY_NAME`,
    `DESCRIPTION`, `HOME_URL`, `GEO_SCOPE`, `ACCEPTS_QUERY`,
    `ACCEPTS_LOCATION`, `ACCEPTS_COUNTRY`, `RATE_LIMIT_NOTES`
-3. Implements `settings_schema() -> dict` returning the field definitions
-   used to populate `PluginInfo.fields`
-4. Implements `pages() -> Iterator[list[dict]]` yielding pages of normalized
+3. Implements `@classmethod settings_schema(cls) -> dict` returning the
+   field definitions used to populate `PluginInfo.fields`.  The classmethod
+   decoration is required so callers can introspect the schema without
+   constructing an instance.
+4. Implements a keyword-only constructor with the canonical signature:
+   ```python
+   def __init__(
+       self,
+       *,
+       credentials: dict[str, Any] | None = None,
+       search: SearchParams | None = None,
+   ) -> None:
+       super().__init__(credentials=credentials, search=search)
+       # validate credentials and unpack search here …
+   ```
+   No-auth plugins accept but ignore `credentials`.  Plugins that require
+   credentials raise `CredentialsError` from `__init__` if required fields
+   are absent or empty.
+5. Implements `pages() -> Iterator[list[dict]]` yielding pages of normalized
    listings
-5. Implements `normalise(raw: dict) -> dict` mapping source-API responses to
+6. Implements `normalise(raw: dict) -> dict` mapping source-API responses to
    the package's expected output shape
 
 `PluginInfo` is built by reading these declarations + the `settings_schema()`
-return value. `requires_credentials` is derived at runtime from
+classmethod return value. `requires_credentials` is derived at runtime from
 `fields[].required`.
 
 **`required_search_fields` moves to `PluginInfo`** (drift mitigation per

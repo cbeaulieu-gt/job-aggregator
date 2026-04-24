@@ -29,6 +29,7 @@ from bs4 import BeautifulSoup
 
 from job_aggregator.base import JobSource
 from job_aggregator.errors import ScrapeError
+from job_aggregator.schema import SearchParams
 
 logger = logging.getLogger(__name__)
 
@@ -75,22 +76,32 @@ class Plugin(JobSource):
     )
     REQUIRED_SEARCH_FIELDS: ClassVar[tuple[str, ...]] = ()
 
-    def __init__(self, *, user_agent: str = _DEFAULT_USER_AGENT) -> None:
+    def __init__(
+        self,
+        *,
+        credentials: dict[str, Any] | None = None,
+        search: SearchParams | None = None,
+    ) -> None:
         """Initialise the RemoteOK plugin.
 
+        RemoteOK requires no authentication; the ``credentials``
+        argument is accepted for API uniformity but is silently ignored.
+
         Args:
-            user_agent: HTTP ``User-Agent`` header value sent with every
-                request.  The RemoteOK server blocks requests that omit
-                this header; override only if you have a custom agent
-                string agreed with the provider.
+            credentials: Accepted for interface uniformity; not used.
+            search: :class:`~job_aggregator.schema.SearchParams` instance.
+                All search fields are ignored because RemoteOK has no
+                query, location, or country filter.
         """
-        self._user_agent = user_agent
+        super().__init__(credentials=credentials, search=search)
+        self._user_agent: str = _DEFAULT_USER_AGENT
 
     # ------------------------------------------------------------------
     # JobSource abstract method implementations
     # ------------------------------------------------------------------
 
-    def settings_schema(self) -> dict[str, Any]:
+    @classmethod
+    def settings_schema(cls) -> dict[str, Any]:
         """Return an empty settings schema — RemoteOK needs no credentials.
 
         Returns:

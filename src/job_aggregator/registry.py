@@ -44,14 +44,12 @@ def _build_plugin_info(cls: type[JobSource]) -> PluginInfo:
     Returns:
         A fully populated :class:`PluginInfo` dataclass.
     """
-    # settings_schema() is an instance method but carries no per-instance
-    # state on most plugins.  We call it via __func__ on a bare instance to
-    # avoid triggering constructor-level credential validation.
+    # settings_schema() is a classmethod — call it directly on the class
+    # without constructing an instance, avoiding credential validation.
     try:
-        schema: dict[str, Any] = cls.settings_schema(object.__new__(cls))
+        schema: dict[str, Any] = cls.settings_schema()
     except Exception:
-        # If the class has a custom __new__ or the bare call fails, fall
-        # back to an empty schema rather than crashing the whole registry.
+        # Fallback to an empty schema if the classmethod raises unexpectedly.
         logger.debug(
             "Could not call settings_schema() on %s; using empty schema.",
             cls.__name__,

@@ -24,6 +24,7 @@ import requests
 
 from job_aggregator.base import JobSource
 from job_aggregator.errors import CredentialsError
+from job_aggregator.schema import SearchParams
 
 logger = logging.getLogger(__name__)
 
@@ -155,39 +156,34 @@ class Plugin(JobSource):
 
     def __init__(
         self,
-        credentials: dict[str, Any],
-        params: dict[str, Any],
+        *,
+        credentials: dict[str, Any] | None = None,
+        search: SearchParams | None = None,
     ) -> None:
         """Construct the plugin from credentials and search parameters.
 
         Args:
             credentials: Dict containing ``api_key`` (the RapidAPI key).
-            params: Search parameters.  Recognised keys:
-
-                - ``query`` (:class:`str`) — required; free-text job query.
-                - ``location`` (:class:`str`, optional) — location hint
-                  embedded in the geo query (e.g. ``"Atlanta, GA"``).
-                - ``max_pages`` (:class:`int`, optional) — upper bound on
-                  pages fetched; defaults to ``5``.
-                - ``distance`` (:class:`int`, optional) — radius in km for
-                  the geo query; omitted when ``0``.
-                - ``max_days_old`` (:class:`int`, optional) — passed to the
-                  ``date_posted`` JSearch parameter; ``0`` means no filter.
+            search: :class:`~job_aggregator.schema.SearchParams` carrying
+                ``query``, ``location``, and ``max_pages``.
 
         Raises:
             CredentialsError: If ``api_key`` is absent or empty in
                 *credentials*.
         """
-        api_key: str = str(credentials.get("api_key") or "").strip()
+        super().__init__(credentials=credentials, search=search)
+        creds: dict[str, Any] = credentials or {}
+        api_key: str = str(creds.get("api_key") or "").strip()
         if not api_key:
             raise CredentialsError(self.SOURCE, ["api_key"])
 
+        s = search or SearchParams()
         self._api_key: str = api_key
-        self._query: str = str(params.get("query") or "")
-        self._location: str = str(params.get("location") or "")
-        self._max_pages: int = int(params.get("max_pages") or 5)
-        self._distance: int = int(params.get("distance") or 0)
-        self._max_days_old: int = int(params.get("max_days_old") or 0)
+        self._query: str = s.query or ""
+        self._location: str = s.location or ""
+        self._max_pages: int = s.max_pages if s.max_pages is not None else 5
+        self._distance: int = 0
+        self._max_days_old: int = 0
 
     # ------------------------------------------------------------------
     # JobSource interface

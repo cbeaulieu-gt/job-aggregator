@@ -36,7 +36,8 @@ class _ValidSource(JobSource):
     RATE_LIMIT_NOTES = "No known limits."
     REQUIRED_SEARCH_FIELDS = ()
 
-    def settings_schema(self) -> dict[str, Any]:
+    @classmethod
+    def settings_schema(cls) -> dict[str, Any]:
         """Return empty settings schema."""
         return {}
 
@@ -126,7 +127,7 @@ class TestMissingRequiredAttributes:
             "ACCEPTS_COUNTRY": True,
             "RATE_LIMIT_NOTES": "None.",
             "REQUIRED_SEARCH_FIELDS": (),
-            "settings_schema": lambda self: {},
+            "settings_schema": classmethod(lambda cls: {}),
             "pages": lambda self: iter([]),
             "normalise": lambda self, raw: raw,
         }
@@ -164,7 +165,8 @@ class TestAbstractMethodEnforcement:
             RATE_LIMIT_NOTES = "N/A"
             REQUIRED_SEARCH_FIELDS = ()
 
-            def settings_schema(self) -> dict[str, Any]:
+            @classmethod
+            def settings_schema(cls) -> dict[str, Any]:
                 return {}
 
             def normalise(self, raw: dict[str, Any]) -> dict[str, Any]:
@@ -190,7 +192,8 @@ class TestAbstractMethodEnforcement:
             RATE_LIMIT_NOTES = "N/A"
             REQUIRED_SEARCH_FIELDS = ()
 
-            def settings_schema(self) -> dict[str, Any]:
+            @classmethod
+            def settings_schema(cls) -> dict[str, Any]:
                 return {}
 
             def pages(self) -> Iterator[list[dict[str, Any]]]:

@@ -22,6 +22,7 @@ from bs4 import BeautifulSoup
 
 from job_aggregator.base import JobSource
 from job_aggregator.errors import ScrapeError
+from job_aggregator.schema import SearchParams
 
 logger = logging.getLogger(__name__)
 
@@ -163,22 +164,32 @@ class Plugin(JobSource):
 
     def __init__(
         self,
-        page_size: int = _DEFAULT_PAGE_SIZE,
+        *,
+        credentials: dict[str, Any] | None = None,
+        search: SearchParams | None = None,
     ) -> None:
-        """Initialise the plugin with an optional page size.
+        """Initialise the Himalayas plugin.
+
+        Himalayas requires no authentication; the ``credentials``
+        argument is accepted for API uniformity but is silently ignored.
 
         Args:
-            page_size: Number of listings to request per API page.
-                Himalayas caps this at 100.  Defaults to 100.
+            credentials: Accepted for interface uniformity; not used.
+            search: :class:`~job_aggregator.schema.SearchParams` instance.
+                All search fields are ignored because the Himalayas
+                public API accepts no query, location, or country
+                parameters.
         """
-        self._page_size: int = min(page_size, _DEFAULT_PAGE_SIZE)
+        super().__init__(credentials=credentials, search=search)
+        self._page_size: int = _DEFAULT_PAGE_SIZE
         self._total: int | None = None  # cached after the first API response
 
     # ------------------------------------------------------------------
     # JobSource abstract method implementations
     # ------------------------------------------------------------------
 
-    def settings_schema(self) -> dict[str, Any]:
+    @classmethod
+    def settings_schema(cls) -> dict[str, Any]:
         """Return an empty dict — Himalayas requires no credentials.
 
         Returns:

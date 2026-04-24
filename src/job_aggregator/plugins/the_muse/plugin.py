@@ -32,6 +32,7 @@ import requests
 from bs4 import BeautifulSoup
 
 from job_aggregator.base import JobSource
+from job_aggregator.schema import SearchParams
 
 logger = logging.getLogger(__name__)
 
@@ -79,27 +80,31 @@ class Plugin(JobSource):
 
     def __init__(
         self,
-        query: str | None = None,
-        max_pages: int | None = None,
-        api_key: str | None = None,
-        results_per_page: int = _DEFAULT_RESULTS_PER_PAGE,
+        *,
+        credentials: dict[str, Any] | None = None,
+        search: SearchParams | None = None,
     ) -> None:
-        """Initialise the plugin with optional search and credential params.
+        """Initialise the plugin with optional credentials and search params.
+
+        The Muse API is public; credentials are accepted for interface
+        uniformity.  An optional ``api_key`` in *credentials* is used to
+        reduce rate-limiting.
 
         Args:
-            query: Category filter sent to the API (e.g. ``"Data Engineer"``).
-                Defaults to ``"Software Engineer"`` when ``None``.
-            max_pages: Maximum number of result pages to fetch.  ``None``
-                means fetch all pages up to the count reported by the API.
-            api_key: Optional Muse API key for reduced rate-limiting.
-                Not required for basic usage.
-            results_per_page: Number of results per page (default 20,
-                matching the API's own default).
+            credentials: Optional dict.  If it contains an ``"api_key"``
+                key that is non-empty, the key is sent with every request
+                to reduce rate-limiting.
+            search: :class:`~job_aggregator.schema.SearchParams` instance.
+                ``query`` is mapped to the category filter; ``max_pages``
+                caps the page count.  Location and country are ignored.
         """
-        self._category: str = query or _DEFAULT_CATEGORY
-        self._max_pages: int | None = max_pages
-        self._api_key: str | None = api_key
-        self._results_per_page: int = results_per_page
+        super().__init__(credentials=credentials, search=search)
+        creds: dict[str, Any] = credentials or {}
+        s = search or SearchParams()
+        self._category: str = s.query or _DEFAULT_CATEGORY
+        self._max_pages: int | None = s.max_pages
+        self._api_key: str | None = str(creds.get("api_key") or "").strip() or None
+        self._results_per_page: int = _DEFAULT_RESULTS_PER_PAGE
         # Cache total page count after the first probe call.
         self._page_count: int | None = None
 
@@ -107,7 +112,8 @@ class Plugin(JobSource):
     # JobSource — settings_schema
     # ------------------------------------------------------------------
 
-    def settings_schema(self) -> dict[str, Any]:
+    @classmethod
+    def settings_schema(cls) -> dict[str, Any]:
         """Return field definitions for this plugin's optional configuration.
 
         The Muse API is public and requires no credentials.  An optional

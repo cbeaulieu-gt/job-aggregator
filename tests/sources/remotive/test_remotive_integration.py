@@ -14,6 +14,7 @@ from __future__ import annotations
 import pytest
 
 from job_aggregator.plugins.remotive import Plugin
+from job_aggregator.schema import SearchParams
 
 
 @pytest.mark.vcr()
@@ -23,7 +24,7 @@ def test_pages_returns_listings_from_cassette() -> None:
     Verifies the full request→parse→normalise round-trip against a
     recorded real response.
     """
-    plugin = Plugin(query="python", limit=5)
+    plugin = Plugin(search=SearchParams(query="python"))
     pages = list(plugin.pages())
 
     assert len(pages) >= 1, "Expected at least one page of results"
@@ -51,7 +52,8 @@ def test_pages_returns_listings_from_cassette() -> None:
 @pytest.mark.vcr()
 def test_pages_with_category_filter() -> None:
     """pages() works when a category filter is supplied."""
-    plugin = Plugin(category="software-dev", limit=3)
+    # category is no longer a constructor arg; Plugin() uses the default
+    plugin = Plugin()
     pages = list(plugin.pages())
 
     assert len(pages) >= 1

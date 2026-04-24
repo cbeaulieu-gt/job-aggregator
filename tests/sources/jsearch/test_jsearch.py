@@ -10,6 +10,7 @@ import pytest
 
 from job_aggregator.errors import CredentialsError
 from job_aggregator.plugins.jsearch import Plugin
+from job_aggregator.schema import SearchParams
 
 # ---------------------------------------------------------------------------
 # Helpers
@@ -25,11 +26,11 @@ def _make_plugin(
     """Construct a Plugin instance with minimal valid params."""
     return Plugin(
         credentials={"api_key": api_key},
-        params={
-            "query": query,
-            "location": location,
-            "max_pages": max_pages,
-        },
+        search=SearchParams(
+            query=query,
+            location=location,
+            max_pages=max_pages,
+        ),
     )
 
 
@@ -103,14 +104,14 @@ class TestConstructor:
 
     def test_raises_credentials_error_when_api_key_missing(self) -> None:
         with pytest.raises(CredentialsError) as exc_info:
-            Plugin(credentials={}, params={"query": "dev", "max_pages": 1})
+            Plugin(credentials={}, search=SearchParams(query="dev", max_pages=1))
         assert "api_key" in str(exc_info.value)
 
     def test_raises_credentials_error_when_api_key_empty_string(self) -> None:
         with pytest.raises(CredentialsError):
             Plugin(
                 credentials={"api_key": ""},
-                params={"query": "dev", "max_pages": 1},
+                search=SearchParams(query="dev", max_pages=1),
             )
 
     def test_accepts_valid_credentials(self) -> None:

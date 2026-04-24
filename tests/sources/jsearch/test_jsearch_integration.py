@@ -35,9 +35,11 @@ def test_pages_returns_results(api_key: str) -> None:
     """pages() yields at least one page with at least one normalised record."""
     from job_aggregator.plugins.jsearch import Plugin
 
+    from job_aggregator.schema import SearchParams
+
     plugin = Plugin(
         credentials={"api_key": api_key},
-        params={"query": "python developer", "location": "Atlanta, GA", "max_pages": 1},
+        search=SearchParams(query="python developer", location="Atlanta, GA", max_pages=1),
     )
     pages = list(plugin.pages())
     assert len(pages) >= 1
@@ -50,10 +52,11 @@ def test_pages_returns_results(api_key: str) -> None:
 def test_normalised_record_has_required_fields(api_key: str) -> None:
     """Every record from pages() has the three identity fields filled."""
     from job_aggregator.plugins.jsearch import Plugin
+    from job_aggregator.schema import SearchParams
 
     plugin = Plugin(
         credentials={"api_key": api_key},
-        params={"query": "python developer", "location": "Atlanta, GA", "max_pages": 1},
+        search=SearchParams(query="python developer", location="Atlanta, GA", max_pages=1),
     )
     for page in plugin.pages():
         for record in page:

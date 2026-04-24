@@ -12,12 +12,13 @@ from __future__ import annotations
 import pytest
 
 from job_aggregator.plugins.arbeitnow import Plugin
+from job_aggregator.schema import SearchParams
 
 
 @pytest.mark.vcr()
 def test_first_page_returns_listings() -> None:
     """pages() yields at least one listing from the live API (cassette)."""
-    plugin = Plugin(max_pages=1)
+    plugin = Plugin(search=SearchParams(max_pages=1))
     pages = list(plugin.pages())
     assert len(pages) >= 1
     assert len(pages[0]) > 0
@@ -26,7 +27,7 @@ def test_first_page_returns_listings() -> None:
 @pytest.mark.vcr()
 def test_normalise_real_listing_has_required_fields() -> None:
     """normalise() on a real API listing produces all required JobRecord fields."""
-    plugin = Plugin(max_pages=1)
+    plugin = Plugin(search=SearchParams(max_pages=1))
     pages = list(plugin.pages())
     assert pages, "No pages returned — cassette may need re-recording"
 

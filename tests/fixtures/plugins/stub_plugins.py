@@ -4,9 +4,9 @@ Three concrete stubs cover the three ``accepts_query`` values
 (``"always"``, ``"partial"``, ``"never"``) so tests can validate
 Q4 mixed-mode ``--query`` behaviour without any real HTTP calls.
 
-All stubs accept the same constructor signature used by the orchestrator:
-``__init__(credentials, params)`` — but credentials are always ignored and
-params are captured for inspection via ``last_params``.
+All stubs use the canonical keyword-only constructor signature:
+``__init__(*, credentials=None, search=None)``.  Credentials are always
+ignored; ``search`` is captured on ``last_search`` for test assertions.
 """
 
 from __future__ import annotations
@@ -15,6 +15,7 @@ from collections.abc import Iterator
 from typing import Any, ClassVar, Literal
 
 from job_aggregator.base import JobSource
+from job_aggregator.schema import SearchParams
 
 
 def _make_record(
@@ -58,7 +59,7 @@ class AlwaysQueryPlugin(JobSource):
     after ``pages()`` is called.
 
     Attributes:
-        last_params: The ``params`` dict passed to the last constructor.
+        last_search: The ``search`` object passed to the last constructor.
     """
 
     SOURCE: ClassVar[str] = "stub_always"
@@ -81,23 +82,26 @@ class AlwaysQueryPlugin(JobSource):
     RATE_LIMIT_NOTES: ClassVar[str] = "No limit."
     REQUIRED_SEARCH_FIELDS: ClassVar[tuple[str, ...]] = ()
 
-    #: Captures the most recent params dict for test assertions.
-    last_params: dict[str, Any] | None = None
+    #: Captures the most recent search object for test assertions.
+    last_search: SearchParams | None = None
 
     def __init__(
         self,
+        *,
         credentials: dict[str, Any] | None = None,
-        params: dict[str, Any] | None = None,
+        search: SearchParams | None = None,
     ) -> None:
-        """Initialise the stub; capture params for later inspection.
+        """Initialise the stub; capture search for later inspection.
 
         Args:
             credentials: Ignored by this stub.
-            params: Search parameters dict; stored in ``last_params``.
+            search: Search parameters; stored in ``last_search``.
         """
-        AlwaysQueryPlugin.last_params = params or {}
+        super().__init__(credentials=credentials, search=search)
+        AlwaysQueryPlugin.last_search = search
 
-    def settings_schema(self) -> dict[str, Any]:
+    @classmethod
+    def settings_schema(cls) -> dict[str, Any]:
         """Return empty schema — no credentials needed.
 
         Returns:
@@ -131,7 +135,7 @@ class PartialQueryPlugin(JobSource):
     No HTTP calls are made.  Yields a single page of one record.
 
     Attributes:
-        last_params: The ``params`` dict passed to the last constructor.
+        last_search: The ``search`` object passed to the last constructor.
     """
 
     SOURCE: ClassVar[str] = "stub_partial"
@@ -154,22 +158,25 @@ class PartialQueryPlugin(JobSource):
     RATE_LIMIT_NOTES: ClassVar[str] = "No limit."
     REQUIRED_SEARCH_FIELDS: ClassVar[tuple[str, ...]] = ()
 
-    last_params: dict[str, Any] | None = None
+    last_search: SearchParams | None = None
 
     def __init__(
         self,
+        *,
         credentials: dict[str, Any] | None = None,
-        params: dict[str, Any] | None = None,
+        search: SearchParams | None = None,
     ) -> None:
-        """Initialise the stub; capture params.
+        """Initialise the stub; capture search.
 
         Args:
             credentials: Ignored.
-            params: Search parameters dict; stored in ``last_params``.
+            search: Search parameters; stored in ``last_search``.
         """
-        PartialQueryPlugin.last_params = params or {}
+        super().__init__(credentials=credentials, search=search)
+        PartialQueryPlugin.last_search = search
 
-    def settings_schema(self) -> dict[str, Any]:
+    @classmethod
+    def settings_schema(cls) -> dict[str, Any]:
         """Return empty schema.
 
         Returns:
@@ -203,7 +210,7 @@ class NeverQueryPlugin(JobSource):
     No HTTP calls are made.
 
     Attributes:
-        last_params: The ``params`` dict passed to the last constructor.
+        last_search: The ``search`` object passed to the last constructor.
     """
 
     SOURCE: ClassVar[str] = "stub_never"
@@ -226,22 +233,25 @@ class NeverQueryPlugin(JobSource):
     RATE_LIMIT_NOTES: ClassVar[str] = "No limit."
     REQUIRED_SEARCH_FIELDS: ClassVar[tuple[str, ...]] = ()
 
-    last_params: dict[str, Any] | None = None
+    last_search: SearchParams | None = None
 
     def __init__(
         self,
+        *,
         credentials: dict[str, Any] | None = None,
-        params: dict[str, Any] | None = None,
+        search: SearchParams | None = None,
     ) -> None:
-        """Initialise the stub; capture params.
+        """Initialise the stub; capture search.
 
         Args:
             credentials: Ignored.
-            params: Search parameters dict; stored in ``last_params``.
+            search: Search parameters; stored in ``last_search``.
         """
-        NeverQueryPlugin.last_params = params or {}
+        super().__init__(credentials=credentials, search=search)
+        NeverQueryPlugin.last_search = search
 
-    def settings_schema(self) -> dict[str, Any]:
+    @classmethod
+    def settings_schema(cls) -> dict[str, Any]:
         """Return empty schema.
 
         Returns:
@@ -298,17 +308,20 @@ class ErrorPlugin(JobSource):
 
     def __init__(
         self,
+        *,
         credentials: dict[str, Any] | None = None,
-        params: dict[str, Any] | None = None,
+        search: SearchParams | None = None,
     ) -> None:
         """Initialise the stub; no state needed.
 
         Args:
             credentials: Ignored.
-            params: Ignored.
+            search: Ignored.
         """
+        super().__init__(credentials=credentials, search=search)
 
-    def settings_schema(self) -> dict[str, Any]:
+    @classmethod
+    def settings_schema(cls) -> dict[str, Any]:
         """Return empty schema.
 
         Returns:

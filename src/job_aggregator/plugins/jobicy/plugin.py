@@ -18,6 +18,7 @@ from bs4 import BeautifulSoup
 
 from job_aggregator.base import JobSource
 from job_aggregator.errors import ScrapeError
+from job_aggregator.schema import SearchParams
 
 logger = logging.getLogger(__name__)
 
@@ -123,25 +124,35 @@ class Plugin(JobSource):
 
     def __init__(
         self,
-        query: str | None = None,
-        count: int = 50,
+        *,
+        credentials: dict[str, Any] | None = None,
+        search: SearchParams | None = None,
     ) -> None:
         """Initialise the Jobicy plugin.
 
+        Jobicy requires no authentication; the ``credentials`` argument
+        is accepted for API uniformity but is silently ignored.
+
+        The ``query`` field of *search* is forwarded to the Jobicy
+        ``tag`` keyword-filter parameter when present.
+
         Args:
-            query: Optional keyword to pass as the ``tag`` parameter.
-                Defaults to ``None`` (no keyword filter applied).
-            count: Number of listings to request (clamped to 1-100).
-                Defaults to ``50``.
+            credentials: Accepted for interface uniformity; not used.
+            search: :class:`~job_aggregator.schema.SearchParams` instance.
+                ``query`` is used as the ``tag`` filter; other fields are
+                not forwarded because the Jobicy API has no location or
+                country parameter.
         """
-        self._query = query
-        self._count = max(1, min(int(count), _MAX_COUNT))
+        super().__init__(credentials=credentials, search=search)
+        self._query: str | None = search.query if search is not None else None
+        self._count: int = _MAX_COUNT
 
     # ------------------------------------------------------------------
     # JobSource interface
     # ------------------------------------------------------------------
 
-    def settings_schema(self) -> dict[str, Any]:
+    @classmethod
+    def settings_schema(cls) -> dict[str, Any]:
         """Return an empty schema — Jobicy requires no credentials.
 
         Returns:

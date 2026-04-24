@@ -7,6 +7,7 @@ The VCR integration tests live in test_jobicy_integration.py.
 from __future__ import annotations
 
 from job_aggregator.plugins.jobicy import Plugin
+from job_aggregator.schema import SearchParams
 
 # ---------------------------------------------------------------------------
 # Minimal raw job dict — mirrors the Jobicy API response shape.
@@ -92,8 +93,7 @@ class TestSettingsSchema:
 
     def test_settings_schema_empty(self) -> None:
         """Jobicy needs no API key; settings_schema must return {}."""
-        plugin = Plugin()
-        assert plugin.settings_schema() == {}
+        assert Plugin.settings_schema() == {}
 
 
 # ---------------------------------------------------------------------------

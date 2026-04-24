@@ -28,6 +28,7 @@ from bs4 import BeautifulSoup
 
 from job_aggregator.base import JobSource
 from job_aggregator.errors import CredentialsError
+from job_aggregator.schema import SearchParams
 
 logger = logging.getLogger(__name__)
 
@@ -190,31 +191,22 @@ class Plugin(JobSource):
 
     def __init__(
         self,
+        *,
         credentials: dict[str, Any] | None = None,
-        query: str = "software engineer",
-        location: str = "",
-        results_per_page: int = _DEFAULT_RESULTS_PER_PAGE,
-        max_pages: int = _DEFAULT_MAX_PAGES,
+        search: SearchParams | None = None,
     ) -> None:
         """Construct a Jooble plugin instance.
 
         Args:
             credentials: Dict containing ``"api_key"`` (required).
-            query: Free-text search query forwarded as ``keywords`` in the
-                POST body.  Defaults to ``"software engineer"``.
-            location: Location filter string (e.g. ``"New York, NY"``).
-                Defaults to empty string (no location filter).
-            results_per_page: Number of results requested per page.
-                Jooble's minimum page size is 20; values below 20 are
-                accepted by the API but may still return 20+ results.
-                Defaults to 20.
-            max_pages: Maximum number of pages to fetch per run.
-                Defaults to 5.
+            search: :class:`~job_aggregator.schema.SearchParams` carrying
+                ``query``, ``location``, and ``max_pages``.
 
         Raises:
             CredentialsError: If ``credentials`` does not contain a
                 non-empty ``"api_key"``.
         """
+        super().__init__(credentials=credentials, search=search)
         creds: dict[str, Any] = credentials or {}
         api_key: str = str(creds.get("api_key") or "").strip()
         if not api_key:
@@ -223,11 +215,12 @@ class Plugin(JobSource):
                 missing_fields=["api_key"],
             )
 
+        s = search or SearchParams()
         self._api_key: str = api_key
-        self._query: str = query
-        self._location: str = location
-        self._results_per_page: int = max(1, int(results_per_page))
-        self._max_pages: int = max(1, int(max_pages))
+        self._query: str = s.query or "software engineer"
+        self._location: str = s.location or ""
+        self._results_per_page: int = _DEFAULT_RESULTS_PER_PAGE
+        self._max_pages: int = s.max_pages if s.max_pages is not None else _DEFAULT_MAX_PAGES
         self._url: str = _BASE_URL.format(api_key=self._api_key)
 
         # Cache populated by the first call to total_pages().
@@ -238,7 +231,8 @@ class Plugin(JobSource):
     # JobSource abstract method implementations
     # ------------------------------------------------------------------
 
-    def settings_schema(self) -> dict[str, Any]:
+    @classmethod
+    def settings_schema(cls) -> dict[str, Any]:
         """Return the credential field definitions for the Jooble plugin.
 
         Returns:
