@@ -41,6 +41,7 @@ job-aggregator = "job_aggregator.cli.__main__:main"
 [project.entry-points."job_aggregator.plugins"]
 adzuna = "job_aggregator.plugins.adzuna:Plugin"
 arbeitnow = "job_aggregator.plugins.arbeitnow:Plugin"
+himalayas = "job_aggregator.plugins.himalayas:Plugin"
 # Third-party plugins may also register here via their own pyproject.toml.
 
 # ---------------------------------------------------------------------------

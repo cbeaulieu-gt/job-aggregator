@@ -1,0 +1,270 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.33.1
+    method: GET
+    uri: https://himalayas.app/jobs/api?limit=1&offset=0
+  response:
+    body:
+      string: "{\"comments\":\"13/03/2026: The API has been updated to include the
+        companySlug field in the response.\",\"updatedAt\":1776989118,\"offset\":0,\"limit\":1,\"totalCount\":100616,\"jobs\":[{\"title\":\"Python
+        Engineer II  (Contract)\",\"excerpt\":\"Fliff unpacks sports gaming into social,
+        free-to-play games for all types of sports fans.\",\"companyName\":\"Fliff\",\"companySlug\":\"fliff\",\"companyLogo\":\"https://cdn-images.himalayas.app/dxdk89pmuyfejbuuentkqj5wjsq6\",\"employmentType\":\"Contractor\",\"minSalary\":null,\"maxSalary\":null,\"seniority\":[\"Mid-level\"],\"currency\":\"USD\",\"locationRestrictions\":[\"Poland\"],\"timezoneRestrictions\":[1],\"categories\":[\"Backend-Engineering\",\"Python-Development\",\"Software-Engineering\",\"Backend-Development\",\"Engineering\"],\"parentCategories\":[],\"description\":\"<div><a
+        href=\\\"https://himalayas.app/companies/fliff\\\">Fliff</a> unpacks sports
+        gaming into social, free-to-play games for all types of sports fans. We've
+        built a social sports gaming experience that allows users to compete for leaderboard
+        positioning, to achieve badges and build their status within the game.</div><div>We
+        are pioneering play-for-fun sports gaming, with our flagship social sportsbook
+        experience that includes sweepstakes promotions and loyalty rewards. We provide
+        sports fans with fun, engaging, and free-to-play alternatives to real money
+        gaming.</div><div>We are seeking a Middle Python Developer to contribute to
+        backend service development in a distributed environment. You will own features
+        and collaborate to deliver reliable, maintainable backend services using Python
+        and Django. </div><div>This role requires full working-hour alignment with
+        Central European Time (CET \xB12 hours) to enable daily, real-time collaboration
+        with our Sofia-based team. We are only considering candidates located within
+        this time zone range. Applicants outside CET \xB12 hours will not be considered.</div><h3>What
+        You\u2019ll Do</h3><ul><li>Take ownership of assigned backend features and
+        services from development through deployment and support</li><li>Develop backend
+        APIs and services using Python and Django</li><li>Work on message-driven systems
+        (Kafka)</li><li>Write clean, reliable, and well-tested code (unit and integration
+        tests)</li><li>Collaborate with team members to design scalable solutions
+        and meet delivery deadlines</li><li>Participate in code reviews</li><li>Assist
+        in the deployment and maintenance of containerized services</li><li>Support
+        cloud-based environments and CI/CD pipelines</li><li>Participate in on-call
+        rotations and production support</li></ul><h3>What We're Looking For:</h3><ul><li>3+
+        years of professional Python backend development experience</li><li>Solid
+        experience with Django and asynchronous Python ( asyncio)</li><li>Exposure
+        to Apache Kafka or similar message brokers in production</li><li>Experience
+        with Docker containerization</li><li>Familiarity with cloud platforms (AWS
+        or others)</li><li>Good knowledge of PostgreSQL or relational databases</li><li>Experience
+        writing automated tests</li><li>Comfortable with CI/CD workflows and monitoring
+        tools (Grafana, Prometheus)</li><li>Good English communication skills</li><li>Ability
+        to work in Agile teams and perform code reviews</li><li>Willingness to participate
+        in on-call rotations</li></ul><h3>Nice to Have</h3><ul><li>Kubernetes experience</li><li>Knowledge
+        of frontend technologies (React)</li><li>Exposure to event sourcing and CQRS</li><li>Experience
+        with big data frameworks like Flink</li></ul><h3>Benefits:</h3><ul><li>Fully
+        remote work environment.</li><li>Professional development opportunities in
+        a dynamic, global setting.</li><li>A supportive, collaborative, and knowledge-driven
+        workplace.</li><li>An engaging and challenging role with the freedom to innovate
+        and develop effective solutions.</li></ul><div>We are a multinational company
+        with our headquarters based in Philadelphia, and offices in New York, Austin,
+        and Sofia, Bulgaria. Wherever we are in the world, we pride ourselves on being
+        a close-knit, focused team that is welcoming and friendly, and the work that
+        we do is always interesting and rewarding. Wherever we are in the world, we
+        pride ourselves on being a close-knit, focused team that is:</div><h3>Welcoming
+        and Friendly</h3><div>We want to reflect the diversity of the cities we serve.
+        By creating an inclusive culture where everyone can thrive, we\u2019ll make
+        <a href=\\\"https://himalayas.app/companies/fliff\\\">Fliff</a> better for
+        employees and customers alike.</div><h3>Lively and Creative</h3><div>We respect
+        and value each other\u2019s ideas, experience and expertise. There is no such
+        thing as a bad idea; only ideas that are executed and ideas that are discarded
+        after consideration.</div><h3>Stimulating and Rewarding</h3><div>We know bright
+        minds love a challenge, and we understand your desire to see your hard work
+        pay off. We\u2019ll make sure your daily tasks align with your career ambitions
+        as we grow together.</div><h3>Equal Employment Opportunity Statement</h3><div><a
+        href=\\\"https://himalayas.app/companies/fliff\\\">Fliff</a> is an equal-opportunity
+        employer. We celebrate diversity and are committed to creating an inclusive
+        environment for all employees. All qualified applicants will receive consideration
+        for employment without regard to race, color, religion, gender, gender identity
+        or expression, sexual orientation, national origin, genetics, disability,
+        age, or veteran status.</div><h3>Join Our Team!</h3><div>If you're ready to
+        be part of an exciting, innovative, and dynamic team, apply now to help shape
+        the future of sports gaming with <a href=\\\"https://himalayas.app/companies/fliff\\\">Fliff</a>.</div><div><b>IMPORTANT
+        NOTICE:</b> The privacy and security of applicant information is paramount
+        and we take fraud attempts very seriously. Please note that <a href=\\\"https://himalayas.app/companies/fliff\\\">Fliff</a>
+        will never ask for payment or personal financial information during the application
+        process. All of our legitimate job opportunities can be found on our official
+        career site (<a style=\\\"font-size: 15px\\\" href=\\\"https://www.getfliff.com/careers\\\"
+        rel=\\\"nofollow ugc noopener noreferrer\\\" target=\\\"_blank\\\">https://www.getfliff.com/careers</a>).
+        Please be cautious of communications and links that come from non-company
+        email addresses (@getfliff.com), social media messaging platforms or unsolicited
+        phone calls.</div><p>Originally posted on <a href=\\\"https://himalayas.app\\\">Himalayas</a></p>\",\"pubDate\":1776989118,\"expiryDate\":1782173117,\"applicationLink\":\"https://himalayas.app/companies/fliff/jobs/python-engineer-ii-contract-6421264382\",\"guid\":\"https://himalayas.app/companies/fliff/jobs/python-engineer-ii-contract-6421264382\"}]}"
+    headers:
+      CF-RAY:
+      - 9f10db77b9154c2c-MIA
+      Cache-Control:
+      - public, s-maxage=86400, stale-while-revalidate=86400
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 24 Apr 2026 00:05:36 GMT
+      Nel:
+      - '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+      Report-To:
+      - '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=ws7S2x8rv0VAFX1chaqsMvdqsOoHd1eKewx2GqsklEzoSm9muiFq8D7l%2FIx4QQxxeWIkupZPPPo3R%2BzeVioNe7g0sZIJPg0QYSN%2BkisPrOOWUPG6aosBQ6d69MzNXI8%3D"}]}'
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - hide-ads=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT
+      Speculation-Rules:
+      - '"/cdn-cgi/speculation"'
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains; preload
+      Transfer-Encoding:
+      - chunked
+      alt-svc:
+      - h3=":443"; ma=86400
+      cf-cache-status:
+      - DYNAMIC
+      permissions-policy:
+      - camera=(), microphone=(self), geolocation=()
+      referrer-policy:
+      - origin-when-cross-origin
+      vary:
+      - Accept-Encoding
+      - rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.33.1
+    method: GET
+    uri: https://himalayas.app/jobs/api?limit=1&offset=0
+  response:
+    body:
+      string: "{\"comments\":\"13/03/2026: The API has been updated to include the
+        companySlug field in the response.\",\"updatedAt\":1776989118,\"offset\":0,\"limit\":1,\"totalCount\":100616,\"jobs\":[{\"title\":\"Python
+        Engineer II  (Contract)\",\"excerpt\":\"Fliff unpacks sports gaming into social,
+        free-to-play games for all types of sports fans.\",\"companyName\":\"Fliff\",\"companySlug\":\"fliff\",\"companyLogo\":\"https://cdn-images.himalayas.app/dxdk89pmuyfejbuuentkqj5wjsq6\",\"employmentType\":\"Contractor\",\"minSalary\":null,\"maxSalary\":null,\"seniority\":[\"Mid-level\"],\"currency\":\"USD\",\"locationRestrictions\":[\"Poland\"],\"timezoneRestrictions\":[1],\"categories\":[\"Backend-Engineering\",\"Python-Development\",\"Software-Engineering\",\"Backend-Development\",\"Engineering\"],\"parentCategories\":[],\"description\":\"<div><a
+        href=\\\"https://himalayas.app/companies/fliff\\\">Fliff</a> unpacks sports
+        gaming into social, free-to-play games for all types of sports fans. We've
+        built a social sports gaming experience that allows users to compete for leaderboard
+        positioning, to achieve badges and build their status within the game.</div><div>We
+        are pioneering play-for-fun sports gaming, with our flagship social sportsbook
+        experience that includes sweepstakes promotions and loyalty rewards. We provide
+        sports fans with fun, engaging, and free-to-play alternatives to real money
+        gaming.</div><div>We are seeking a Middle Python Developer to contribute to
+        backend service development in a distributed environment. You will own features
+        and collaborate to deliver reliable, maintainable backend services using Python
+        and Django. </div><div>This role requires full working-hour alignment with
+        Central European Time (CET \xB12 hours) to enable daily, real-time collaboration
+        with our Sofia-based team. We are only considering candidates located within
+        this time zone range. Applicants outside CET \xB12 hours will not be considered.</div><h3>What
+        You\u2019ll Do</h3><ul><li>Take ownership of assigned backend features and
+        services from development through deployment and support</li><li>Develop backend
+        APIs and services using Python and Django</li><li>Work on message-driven systems
+        (Kafka)</li><li>Write clean, reliable, and well-tested code (unit and integration
+        tests)</li><li>Collaborate with team members to design scalable solutions
+        and meet delivery deadlines</li><li>Participate in code reviews</li><li>Assist
+        in the deployment and maintenance of containerized services</li><li>Support
+        cloud-based environments and CI/CD pipelines</li><li>Participate in on-call
+        rotations and production support</li></ul><h3>What We're Looking For:</h3><ul><li>3+
+        years of professional Python backend development experience</li><li>Solid
+        experience with Django and asynchronous Python ( asyncio)</li><li>Exposure
+        to Apache Kafka or similar message brokers in production</li><li>Experience
+        with Docker containerization</li><li>Familiarity with cloud platforms (AWS
+        or others)</li><li>Good knowledge of PostgreSQL or relational databases</li><li>Experience
+        writing automated tests</li><li>Comfortable with CI/CD workflows and monitoring
+        tools (Grafana, Prometheus)</li><li>Good English communication skills</li><li>Ability
+        to work in Agile teams and perform code reviews</li><li>Willingness to participate
+        in on-call rotations</li></ul><h3>Nice to Have</h3><ul><li>Kubernetes experience</li><li>Knowledge
+        of frontend technologies (React)</li><li>Exposure to event sourcing and CQRS</li><li>Experience
+        with big data frameworks like Flink</li></ul><h3>Benefits:</h3><ul><li>Fully
+        remote work environment.</li><li>Professional development opportunities in
+        a dynamic, global setting.</li><li>A supportive, collaborative, and knowledge-driven
+        workplace.</li><li>An engaging and challenging role with the freedom to innovate
+        and develop effective solutions.</li></ul><div>We are a multinational company
+        with our headquarters based in Philadelphia, and offices in New York, Austin,
+        and Sofia, Bulgaria. Wherever we are in the world, we pride ourselves on being
+        a close-knit, focused team that is welcoming and friendly, and the work that
+        we do is always interesting and rewarding. Wherever we are in the world, we
+        pride ourselves on being a close-knit, focused team that is:</div><h3>Welcoming
+        and Friendly</h3><div>We want to reflect the diversity of the cities we serve.
+        By creating an inclusive culture where everyone can thrive, we\u2019ll make
+        <a href=\\\"https://himalayas.app/companies/fliff\\\">Fliff</a> better for
+        employees and customers alike.</div><h3>Lively and Creative</h3><div>We respect
+        and value each other\u2019s ideas, experience and expertise. There is no such
+        thing as a bad idea; only ideas that are executed and ideas that are discarded
+        after consideration.</div><h3>Stimulating and Rewarding</h3><div>We know bright
+        minds love a challenge, and we understand your desire to see your hard work
+        pay off. We\u2019ll make sure your daily tasks align with your career ambitions
+        as we grow together.</div><h3>Equal Employment Opportunity Statement</h3><div><a
+        href=\\\"https://himalayas.app/companies/fliff\\\">Fliff</a> is an equal-opportunity
+        employer. We celebrate diversity and are committed to creating an inclusive
+        environment for all employees. All qualified applicants will receive consideration
+        for employment without regard to race, color, religion, gender, gender identity
+        or expression, sexual orientation, national origin, genetics, disability,
+        age, or veteran status.</div><h3>Join Our Team!</h3><div>If you're ready to
+        be part of an exciting, innovative, and dynamic team, apply now to help shape
+        the future of sports gaming with <a href=\\\"https://himalayas.app/companies/fliff\\\">Fliff</a>.</div><div><b>IMPORTANT
+        NOTICE:</b> The privacy and security of applicant information is paramount
+        and we take fraud attempts very seriously. Please note that <a href=\\\"https://himalayas.app/companies/fliff\\\">Fliff</a>
+        will never ask for payment or personal financial information during the application
+        process. All of our legitimate job opportunities can be found on our official
+        career site (<a style=\\\"font-size: 15px\\\" href=\\\"https://www.getfliff.com/careers\\\"
+        rel=\\\"nofollow ugc noopener noreferrer\\\" target=\\\"_blank\\\">https://www.getfliff.com/careers</a>).
+        Please be cautious of communications and links that come from non-company
+        email addresses (@getfliff.com), social media messaging platforms or unsolicited
+        phone calls.</div><p>Originally posted on <a href=\\\"https://himalayas.app\\\">Himalayas</a></p>\",\"pubDate\":1776989118,\"expiryDate\":1782173117,\"applicationLink\":\"https://himalayas.app/companies/fliff/jobs/python-engineer-ii-contract-6421264382\",\"guid\":\"https://himalayas.app/companies/fliff/jobs/python-engineer-ii-contract-6421264382\"}]}"
+    headers:
+      CF-RAY:
+      - 9f10db783fede710-MIA
+      Cache-Control:
+      - public, s-maxage=86400, stale-while-revalidate=86400
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 24 Apr 2026 00:05:36 GMT
+      Nel:
+      - '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+      Report-To:
+      - '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=CKy1a2iaUIZVC8tkfpbbsTUaRJXqHgMMCEWaxMfynNe1j%2FwtN1synGjvkM%2BhRvx7ol%2BRLtPa%2FzhSwxFY3wkUwTXOZ3u7b7di8xJ7qtDLSCv5GBIfcGnOMacCPjhAs34%3D"}]}'
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - hide-ads=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT
+      Speculation-Rules:
+      - '"/cdn-cgi/speculation"'
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains; preload
+      Transfer-Encoding:
+      - chunked
+      alt-svc:
+      - h3=":443"; ma=86400
+      cf-cache-status:
+      - DYNAMIC
+      permissions-policy:
+      - camera=(), microphone=(self), geolocation=()
+      referrer-policy:
+      - origin-when-cross-origin
+      vary:
+      - Accept-Encoding
+      - rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+version: 1
