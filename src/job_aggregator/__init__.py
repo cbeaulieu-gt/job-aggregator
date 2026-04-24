@@ -8,12 +8,18 @@ import logging
 from importlib.metadata import PackageNotFoundError, version
 
 from job_aggregator.base import JobSource
+from job_aggregator.envelope import build_envelope, build_jsonl_lines
 from job_aggregator.errors import (
     CredentialsError,
     JobAggregatorError,
     PluginConflictError,
     SchemaVersionError,
     ScrapeError,
+)
+from job_aggregator.normalizer import (
+    SCRAPE_MIN_LENGTH,
+    classify_description_source,
+    normalize,
 )
 from job_aggregator.schema import (
     JobRecord,
@@ -52,6 +58,7 @@ logging.getLogger(__name__).addHandler(logging.NullHandler())
 # ---------------------------------------------------------------------------
 
 __all__: list[str] = [
+    "SCRAPE_MIN_LENGTH",
     "CredentialsError",
     "JobAggregatorError",
     "JobRecord",
@@ -63,4 +70,8 @@ __all__: list[str] = [
     "ScrapeError",
     "SearchParams",
     "__version__",
+    "build_envelope",
+    "build_jsonl_lines",
+    "classify_description_source",
+    "normalize",
 ]
