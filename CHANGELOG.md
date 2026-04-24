@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Plugin: `arbeitnow` source migrated from legacy repo (#6)
 - Plugin: `himalayas` source migrated from legacy repo (#7)
 - Plugin: `jobicy` source migrated from legacy repo (#8)
+- Plugin: `jooble` source migrated from legacy repo (#9)
 
 ### Changed
 

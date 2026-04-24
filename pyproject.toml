@@ -43,6 +43,7 @@ adzuna = "job_aggregator.plugins.adzuna:Plugin"
 arbeitnow = "job_aggregator.plugins.arbeitnow:Plugin"
 himalayas = "job_aggregator.plugins.himalayas:Plugin"
 jobicy = "job_aggregator.plugins.jobicy:Plugin"
+jooble = "job_aggregator.plugins.jooble:Plugin"
 # Third-party plugins may also register here via their own pyproject.toml.
 
 # ---------------------------------------------------------------------------
