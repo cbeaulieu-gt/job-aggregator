@@ -19,8 +19,12 @@ pip install job-aggregator
 # List available plugins and whether credentials are configured
 job-aggregator sources
 
-# Fetch listings from no-auth sources and enrich with full descriptions
+# Fetch listings from no-auth sources and enrich with full descriptions.
+# Run `job-aggregator sources` to see which plugins need credentials —
+# the example below excludes the four credentialed plugins so it runs
+# out of the box without a credentials file.
 job-aggregator jobs --query "python developer" --hours 24 \
+  --exclude-sources adzuna,jooble,jsearch,usajobs \
   | job-aggregator hydrate > full.jsonl
 ```
 
