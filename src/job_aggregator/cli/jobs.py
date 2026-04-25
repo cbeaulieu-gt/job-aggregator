@@ -17,6 +17,14 @@ The dispatcher wires this in with two lines::
 
     from job_aggregator.cli import jobs as _jobs_cmd
     _jobs_cmd.register(subparsers)
+
+Credentials are optional (#50)
+-------------------------------
+``--credentials`` is no longer required.  When omitted, the command
+inspects the selected sources and proceeds with an empty credentials
+dict if none of them require credentials.  If any selected source
+*does* require credentials and ``--credentials`` was not supplied, the
+command exits non-zero with a message naming the offending sources.
 """
 
 from __future__ import annotations
@@ -25,6 +33,9 @@ import argparse
 import json
 import sys
 from typing import Any
+
+from job_aggregator.registry import list_plugins
+from job_aggregator.schema import PluginInfo
 
 # ---------------------------------------------------------------------------
 # Public subcommand API
@@ -121,9 +132,13 @@ def register(subparsers: argparse._SubParsersAction[argparse.ArgumentParser]) ->
     p.add_argument(
         "--credentials",
         type=str,
-        required=True,
+        default=None,
         metavar="PATH",
-        help="Path to a JSON credentials file (see package docs §10). Required.",
+        help=(
+            "Path to a JSON credentials file (see docs/credentials_format.md). "
+            "Optional when all selected sources are no-auth; required when any "
+            "selected source needs credentials."
+        ),
     )
     p.add_argument(
         "--format",
@@ -175,31 +190,58 @@ def register(subparsers: argparse._SubParsersAction[argparse.ArgumentParser]) ->
     p.set_defaults(func=run)
 
 
+def _resolve_selected_sources(
+    sources: list[str] | None,
+    exclude_sources: list[str] | None,
+) -> list[PluginInfo]:
+    """Return the effective list of selected :class:`PluginInfo` objects.
+
+    Uses the registry to enumerate all registered plugins and applies the
+    same ``--sources`` / ``--exclude-sources`` filter logic as the
+    orchestrator, so the CLI can inspect ``requires_credentials`` before
+    deciding whether a credentials file is mandatory.
+
+    Args:
+        sources: Allowlist of plugin keys from ``--sources``, or ``None``
+            to select all registered plugins.
+        exclude_sources: Blocklist of plugin keys from
+            ``--exclude-sources``, or ``None`` for no exclusions.
+
+    Returns:
+        A list of :class:`PluginInfo` for the selected plugins (may be
+        empty when no plugins are registered or none match the filters).
+    """
+    all_plugins = list_plugins()
+
+    # Apply --sources allowlist
+    selected = [p for p in all_plugins if p.key in sources] if sources else list(all_plugins)
+
+    # Apply --exclude-sources blocklist
+    if exclude_sources:
+        selected = [p for p in selected if p.key not in exclude_sources]
+
+    return selected
+
+
 def run(ns: argparse.Namespace) -> None:
     """Execute the ``jobs`` subcommand.
 
-    Loads the credentials file, resolves plugin filters, delegates to
-    :func:`~job_aggregator.orchestrator.run_jobs`, and writes the result
+    Resolves credentials (loading from file when ``--credentials`` is
+    supplied, or using an empty dict when all selected sources are
+    no-auth), then delegates to
+    :func:`~job_aggregator.orchestrator.run_jobs` and writes the result
     to stdout (or the file named by ``--output``).
+
+    When ``--credentials`` is omitted but one or more selected sources
+    require credentials, the command exits with code 2 and a message
+    naming the offending sources.
 
     Args:
         ns: Parsed :class:`argparse.Namespace` from the ``jobs`` subparser.
     """
     from job_aggregator.orchestrator import run_jobs
 
-    # Load credentials file
-    credentials: dict[str, Any] = {}
-    try:
-        with open(ns.credentials, encoding="utf-8") as fh:
-            creds_doc = json.load(fh)
-        # Credentials file format: {"schema_version": "1.0", "plugins": {...}}
-        if isinstance(creds_doc, dict):
-            credentials = creds_doc.get("plugins", {})
-    except (OSError, json.JSONDecodeError) as exc:
-        print(f"ERROR: Cannot load credentials from {ns.credentials!r}: {exc}", file=sys.stderr)
-        sys.exit(1)
-
-    # Parse comma-separated source lists
+    # Parse comma-separated source lists (needed for creds check too)
     sources: list[str] | None = None
     if getattr(ns, "sources", None):
         sources = [s.strip() for s in ns.sources.split(",") if s.strip()]
@@ -207,6 +249,43 @@ def run(ns: argparse.Namespace) -> None:
     exclude_sources: list[str] | None = None
     if getattr(ns, "exclude_sources", None):
         exclude_sources = [s.strip() for s in ns.exclude_sources.split(",") if s.strip()]
+
+    # ------------------------------------------------------------------
+    # Credentials: load from file, or validate that none are needed
+    # ------------------------------------------------------------------
+    credentials: dict[str, Any] = {}
+
+    if ns.credentials is not None:
+        # --credentials supplied — load and validate as before
+        try:
+            with open(ns.credentials, encoding="utf-8") as fh:
+                creds_doc = json.load(fh)
+            # Credentials file format:
+            #   {"schema_version": "1.0", "plugins": {...}}
+            if isinstance(creds_doc, dict):
+                credentials = creds_doc.get("plugins", {})
+        except (OSError, json.JSONDecodeError) as exc:
+            print(
+                f"ERROR: Cannot load credentials from {ns.credentials!r}: {exc}",
+                file=sys.stderr,
+            )
+            sys.exit(1)
+    else:
+        # --credentials omitted — check whether any selected source needs
+        # credentials; if so, exit with a helpful error message.
+        selected = _resolve_selected_sources(sources, exclude_sources)
+        needs_creds = [p.key for p in selected if p.requires_credentials]
+        if needs_creds:
+            keys_str = ", ".join(sorted(needs_creds))
+            print(
+                f"error: --credentials is required because the following "
+                f"selected sources need credentials: {keys_str}. "
+                f"Omit these sources (via --exclude-sources) or supply a "
+                f"credentials file.",
+                file=sys.stderr,
+            )
+            sys.exit(2)
+        # No selected source needs credentials — proceed with empty dict
 
     result = run_jobs(
         credentials=credentials,
@@ -229,7 +308,10 @@ def run(ns: argparse.Namespace) -> None:
             with open(ns.output, "w", encoding="utf-8") as fh:
                 fh.write(result)
         except OSError as exc:
-            print(f"ERROR: Cannot write output to {ns.output!r}: {exc}", file=sys.stderr)
+            print(
+                f"ERROR: Cannot write output to {ns.output!r}: {exc}",
+                file=sys.stderr,
+            )
             sys.exit(1)
     else:
         print(result, end="")
